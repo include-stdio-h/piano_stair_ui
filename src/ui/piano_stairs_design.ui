@@ -176,12 +176,12 @@ border-radius: 20px;
      <rect>
       <x>220</x>
       <y>10</y>
-      <width>591</width>
+      <width>631</width>
       <height>531</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
