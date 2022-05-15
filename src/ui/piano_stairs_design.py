@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'piano_stairs_design.ui'
+# Form implementation generated from reading ui file '.\piano_stairs_design.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -16,6 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 480)
         MainWindow.setWindowOpacity(1.0)
+        MainWindow.setAutoFillBackground(True)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -27,6 +28,7 @@ class Ui_MainWindow(object):
         self.ToolBar.setText("")
         self.ToolBar.setObjectName("ToolBar")
         self.BlueToothButton = QtWidgets.QPushButton(self.centralwidget)
+        self.BlueToothButton.setEnabled(True)
         self.BlueToothButton.setGeometry(QtCore.QRect(80, 90, 90, 30))
         font = QtGui.QFont()
         font.setFamily("HY견고딕")
@@ -34,9 +36,15 @@ class Ui_MainWindow(object):
         self.BlueToothButton.setFont(font)
         self.BlueToothButton.setToolTipDuration(-15)
         self.BlueToothButton.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.BlueToothButton.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"")
+        self.BlueToothButton.setAutoFillBackground(False)
+        self.BlueToothButton.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.BlueToothButton.setInputMethodHints(QtCore.Qt.ImhNone)
         self.BlueToothButton.setShortcut("")
+        self.BlueToothButton.setCheckable(False)
+        self.BlueToothButton.setAutoExclusive(False)
+        self.BlueToothButton.setAutoRepeatInterval(100)
+        self.BlueToothButton.setAutoDefault(False)
+        self.BlueToothButton.setDefault(False)
         self.BlueToothButton.setFlat(True)
         self.BlueToothButton.setObjectName("BlueToothButton")
         self.InstrumentButton = QtWidgets.QPushButton(self.centralwidget)
@@ -91,6 +99,7 @@ class Ui_MainWindow(object):
         self.DeviceStatus.setObjectName("DeviceStatus")
         self.ToolBar_3 = QtWidgets.QLabel(self.page)
         self.ToolBar_3.setGeometry(QtCore.QRect(10, 200, 331, 221))
+        self.ToolBar_3.setAutoFillBackground(True)
         self.ToolBar_3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-radius: 20px;\n"
 "")
@@ -127,7 +136,7 @@ class Ui_MainWindow(object):
         self.Status2.setFont(font)
         self.Status2.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Status2.setStyleSheet("border-radius: 20px;\n"
-"background-color: rgb(114, 240, 145);\n"
+"background-color: rgb(234, 234, 234);\n"
 "color: rgb(255, 255, 255);\n"
 "")
         self.Status2.setAlignment(QtCore.Qt.AlignCenter)
@@ -178,7 +187,7 @@ class Ui_MainWindow(object):
         self.Statua5.setFont(font)
         self.Statua5.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Statua5.setStyleSheet("border-radius: 20px;\n"
-"background-color: rgb(114, 240, 145);\n"
+"background-color: rgb(234, 234, 234);\n"
 "color: rgb(255, 255, 255);\n"
 "")
         self.Statua5.setAlignment(QtCore.Qt.AlignCenter)
@@ -191,7 +200,7 @@ class Ui_MainWindow(object):
         self.Status6.setFont(font)
         self.Status6.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Status6.setStyleSheet("border-radius: 20px;\n"
-"background-color: rgb(114, 240, 145);\n"
+"background-color: rgb(234, 234, 234);\n"
 "color: rgb(255, 255, 255);\n"
 "")
         self.Status6.setAlignment(QtCore.Qt.AlignCenter)
@@ -204,7 +213,7 @@ class Ui_MainWindow(object):
         self.Status7.setFont(font)
         self.Status7.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Status7.setStyleSheet("border-radius: 20px;\n"
-"background-color: rgb(114, 240, 145);\n"
+"background-color: rgb(234, 234, 234);\n"
 "color: rgb(255, 255, 255);\n"
 "")
         self.Status7.setAlignment(QtCore.Qt.AlignCenter)
@@ -373,13 +382,13 @@ class Ui_MainWindow(object):
         self.SelectedMenu.setText("")
         self.SelectedMenu.setObjectName("SelectedMenu")
         self.ToolBar.raise_()
-        self.InstrumentButton.raise_()
-        self.InstrumentIcon.raise_()
         self.QuitButton.raise_()
         self.WorkSpace.raise_()
         self.SelectedMenu.raise_()
         self.BlueToothIcon.raise_()
         self.BlueToothButton.raise_()
+        self.InstrumentIcon.raise_()
+        self.InstrumentButton.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
