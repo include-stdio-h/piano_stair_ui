@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\piano_stairs_design.ui'
+# Form implementation generated from reading ui file '.\ui\piano_stairs_design.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -247,13 +247,13 @@ class Ui_MainWindow(object):
         self.WorkSpace.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
-        self.ElectGuitarBack = QtWidgets.QLabel(self.page_2)
-        self.ElectGuitarBack.setGeometry(QtCore.QRect(210, 30, 171, 161))
-        self.ElectGuitarBack.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.ElecGuitarBack = QtWidgets.QLabel(self.page_2)
+        self.ElecGuitarBack.setGeometry(QtCore.QRect(210, 30, 171, 161))
+        self.ElecGuitarBack.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-radius: 20px;\n"
 "")
-        self.ElectGuitarBack.setText("")
-        self.ElectGuitarBack.setObjectName("ElectGuitarBack")
+        self.ElecGuitarBack.setText("")
+        self.ElecGuitarBack.setObjectName("ElecGuitarBack")
         self.ChelloBack = QtWidgets.QLabel(self.page_2)
         self.ChelloBack.setGeometry(QtCore.QRect(400, 30, 171, 161))
         self.ChelloBack.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -295,15 +295,15 @@ class Ui_MainWindow(object):
         self.BaseGuitarSelect.setIconSize(QtCore.QSize(100, 100))
         self.BaseGuitarSelect.setFlat(True)
         self.BaseGuitarSelect.setObjectName("BaseGuitarSelect")
-        self.BaseGuiterBack = QtWidgets.QLabel(self.page_2)
-        self.BaseGuiterBack.setGeometry(QtCore.QRect(20, 30, 171, 161))
-        self.BaseGuiterBack.setStyleSheet("border-radius: 20px;\n"
+        self.BaseGuitarBack = QtWidgets.QLabel(self.page_2)
+        self.BaseGuitarBack.setGeometry(QtCore.QRect(20, 30, 171, 161))
+        self.BaseGuitarBack.setStyleSheet("border-radius: 20px;\n"
 "background-color: rgb(182, 182, 182);\n"
 "")
-        self.BaseGuiterBack.setText("")
-        self.BaseGuiterBack.setObjectName("BaseGuiterBack")
+        self.BaseGuitarBack.setText("")
+        self.BaseGuitarBack.setObjectName("BaseGuitarBack")
         self.ElecGuitarSelect = QtWidgets.QPushButton(self.page_2)
-        self.ElecGuitarSelect.setGeometry(QtCore.QRect(220, 40, 151, 141))
+        self.ElecGuitarSelect.setGeometry(QtCore.QRect(215, 35, 160, 151))
         self.ElecGuitarSelect.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-radius: 15px;\n"
 "")
@@ -315,7 +315,7 @@ class Ui_MainWindow(object):
         self.ElecGuitarSelect.setFlat(True)
         self.ElecGuitarSelect.setObjectName("ElecGuitarSelect")
         self.ChelloSelect = QtWidgets.QPushButton(self.page_2)
-        self.ChelloSelect.setGeometry(QtCore.QRect(410, 40, 151, 141))
+        self.ChelloSelect.setGeometry(QtCore.QRect(405, 35, 160, 151))
         self.ChelloSelect.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-radius: 15px;\n"
 "")
@@ -327,7 +327,7 @@ class Ui_MainWindow(object):
         self.ChelloSelect.setFlat(True)
         self.ChelloSelect.setObjectName("ChelloSelect")
         self.PianoSelect = QtWidgets.QPushButton(self.page_2)
-        self.PianoSelect.setGeometry(QtCore.QRect(30, 240, 151, 141))
+        self.PianoSelect.setGeometry(QtCore.QRect(25, 235, 160, 151))
         self.PianoSelect.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-radius: 15px;\n"
 "")
@@ -339,7 +339,7 @@ class Ui_MainWindow(object):
         self.PianoSelect.setFlat(True)
         self.PianoSelect.setObjectName("PianoSelect")
         self.DrumSelect = QtWidgets.QPushButton(self.page_2)
-        self.DrumSelect.setGeometry(QtCore.QRect(220, 240, 151, 141))
+        self.DrumSelect.setGeometry(QtCore.QRect(215, 235, 160, 151))
         self.DrumSelect.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-radius: 15px;\n"
 "")
@@ -351,7 +351,7 @@ class Ui_MainWindow(object):
         self.DrumSelect.setFlat(True)
         self.DrumSelect.setObjectName("DrumSelect")
         self.VoiceSelect = QtWidgets.QPushButton(self.page_2)
-        self.VoiceSelect.setGeometry(QtCore.QRect(410, 240, 151, 141))
+        self.VoiceSelect.setGeometry(QtCore.QRect(405, 235, 160, 151))
         self.VoiceSelect.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-radius: 15px;\n"
 "")
@@ -362,12 +362,12 @@ class Ui_MainWindow(object):
         self.VoiceSelect.setIconSize(QtCore.QSize(100, 100))
         self.VoiceSelect.setFlat(True)
         self.VoiceSelect.setObjectName("VoiceSelect")
-        self.ElectGuitarBack.raise_()
+        self.ElecGuitarBack.raise_()
         self.ChelloBack.raise_()
         self.DrumBack.raise_()
         self.VoiceBack.raise_()
         self.PianoBack.raise_()
-        self.BaseGuiterBack.raise_()
+        self.BaseGuitarBack.raise_()
         self.BaseGuitarSelect.raise_()
         self.ElecGuitarSelect.raise_()
         self.ChelloSelect.raise_()
@@ -400,7 +400,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.WorkSpace.setCurrentIndex(0)
+        self.WorkSpace.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
