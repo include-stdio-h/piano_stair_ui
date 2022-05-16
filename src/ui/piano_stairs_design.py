@@ -54,6 +54,7 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.InstrumentButton.setFont(font)
         self.InstrumentButton.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.InstrumentButton.setShortcut("")
         self.InstrumentButton.setFlat(True)
         self.InstrumentButton.setObjectName("InstrumentButton")
         self.BlueToothIcon = QtWidgets.QLabel(self.centralwidget)
@@ -99,7 +100,7 @@ class Ui_MainWindow(object):
         self.DeviceStatus.setObjectName("DeviceStatus")
         self.ToolBar_3 = QtWidgets.QLabel(self.page)
         self.ToolBar_3.setGeometry(QtCore.QRect(10, 200, 331, 221))
-        self.ToolBar_3.setAutoFillBackground(True)
+        self.ToolBar_3.setAutoFillBackground(False)
         self.ToolBar_3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-radius: 20px;\n"
 "")
