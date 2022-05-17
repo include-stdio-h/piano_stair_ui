@@ -18,20 +18,21 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
 
         # Instrument Handle
         self.before_instrument = self.BaseGuitarBack
-        self.selected_instrument = "BaseGuitar"
+        self.selected_instrument = 1
 
-        self.BaseGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BaseGuitarBack))
-        self.ElecGuitarSelect.clicked.connect(lambda : self.change_instrument(self.ElecGuitarBack))
-        self.ChelloSelect.clicked.connect(lambda : self.change_instrument(self.ChelloBack))
-        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack))
-        self.DrumSelect.clicked.connect(lambda : self.change_instrument(self.DrumBack))
-        self.VoiceSelect.clicked.connect(lambda : self.change_instrument(self.VoiceBack))
+        self.BaseGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BaseGuitarBack, 1))
+        self.ElecGuitarSelect.clicked.connect(lambda : self.change_instrument(self.ElecGuitarBack, 2))
+        self.ChelloSelect.clicked.connect(lambda : self.change_instrument(self.ChelloBack, 3))
+        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack, 4))
+        self.DrumSelect.clicked.connect(lambda : self.change_instrument(self.DrumBack, 5))
+        self.VoiceSelect.clicked.connect(lambda : self.change_instrument(self.VoiceBack, 6))
 
-    def change_instrument(self, now):
+    def change_instrument(self, now, instrument_type):
         self.before_instrument.setStyleSheet(UNSELECTED_INSTRUMENT_STYLE)
         self.before_instrument = now
         
         now.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
+        self.selected_instrument = instrument_type
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
