@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets
+from PyQt5.QtCore import QPropertyAnimation, QPoint, QEasingCurve
 
 import sys
 
@@ -13,8 +14,11 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
 
     def init_func(self):
         # Page Handle
-        self.BlueToothButton.clicked.connect(lambda : self.WorkSpace.setCurrentIndex(BLUETOOTH_PAGE_INDEX))
-        self.InstrumentButton.clicked.connect(lambda : self.WorkSpace.setCurrentIndex(INSTRUMENT_PAGE_INDEX))
+        self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX))
+        self.InstrumentButton.clicked.connect(lambda : self.change_page(INSTRUMENT_PAGE_INDEX))
+
+        # Page Select Animation
+        self.SelectedMenuAnimation = QPropertyAnimation(self.SelectedMenu, b"pos")
 
         # Instrument Handle
         self.before_instrument = self.BaseGuitarBack
@@ -29,6 +33,14 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
 
         # Quit App
         self.QuitButton.clicked.connect(lambda : self.quit_app())
+
+    def change_page(self, page_index):
+        self.SelectedMenuAnimation.setEasingCurve(QEasingCurve.InOutCubic)
+        self.SelectedMenuAnimation.setEndValue(QPoint(30, 155)) 
+        self.SelectedMenuAnimation.setDuration(750)
+        self.SelectedMenuAnimation.start()
+        self.WorkSpace.setCurrentIndex(page_index)
+
 
     def change_instrument(self, now, instrument_type):
         self.before_instrument.setStyleSheet(UNSELECTED_INSTRUMENT_STYLE)
