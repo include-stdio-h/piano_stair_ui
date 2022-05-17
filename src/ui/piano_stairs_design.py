@@ -65,7 +65,7 @@ class Ui_MainWindow(object):
         self.BlueToothIcon.setScaledContents(True)
         self.BlueToothIcon.setObjectName("BlueToothIcon")
         self.InstrumentIcon = QtWidgets.QLabel(self.centralwidget)
-        self.InstrumentIcon.setGeometry(QtCore.QRect(35, 157, 31, 31))
+        self.InstrumentIcon.setGeometry(QtCore.QRect(38, 160, 28, 28))
         self.InstrumentIcon.setText("")
         self.InstrumentIcon.setPixmap(QtGui.QPixmap("C:/Users/2203kdh/Downloads/live-music.png"))
         self.InstrumentIcon.setScaledContents(True)
@@ -400,7 +400,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.WorkSpace.setCurrentIndex(1)
+        self.WorkSpace.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
