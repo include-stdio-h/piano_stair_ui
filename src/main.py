@@ -63,7 +63,7 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
     def change_page(self, page_index):
         self.SelectedMenuAnimation.setEasingCurve(QEasingCurve.InOutCubic)
         self.SelectedMenuAnimation.setEndValue(QPoint(30, 85+(70*page_index))) 
-        self.SelectedMenuAnimation.setDuration(500)
+        self.SelectedMenuAnimation.setDuration(650)
         self.SelectedMenuAnimation.start()
         self.WorkSpace.setCurrentIndex(page_index)
 
