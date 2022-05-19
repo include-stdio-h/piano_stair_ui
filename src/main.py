@@ -49,7 +49,7 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack))
         self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack))
         self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack))
-        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack))        
+        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack))
 
         self.QuitButton.clicked.connect(sys.exit)
 
@@ -58,7 +58,7 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
 
     def change_page(self, page_index):
         self.SelectedMenuAnimation.setEasingCurve(QEasingCurve.InOutCubic)
-        self.SelectedMenuAnimation.setEndValue(QPoint(30, 85+(70*page_index))) 
+        self.SelectedMenuAnimation.setEndValue(QPoint(30, 85+(70*page_index)))
         self.SelectedMenuAnimation.setDuration(650)
         self.SelectedMenuAnimation.start()
         self.WorkSpace.setCurrentIndex(page_index)
