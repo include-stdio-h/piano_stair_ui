@@ -5,7 +5,10 @@ import sys
 
 from ui.piano_stairs_design import Ui_MainWindow
 from style.style_handler import StyleHandler
-from constants import BLUETOOTH_PAGE_INDEX, INSTRUMENT_PAGE_INDEX, SELECTED_INSTRUMENT_STYLE, UNSELECTED_INSTRUMENT_STYLE
+from constants import BLUETOOTH_PAGE_INDEX, INSTRUMENT_PAGE_INDEX, \
+                        SELECTED_INSTRUMENT_STYLE, UNSELECTED_INSTRUMENT_STYLE, \
+                        SELECTED_MENU_SIGN_DEFAULT_X_LOCATION, SELECTED_MENU_SIGN_DEFAULT_Y_LOCATION, VERTICAL_DISTANCE_BETWEEN_MENUS, \
+                        ANIMATION_SPEED
 
 class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
     def __init__(self, parent=None):
@@ -58,8 +61,9 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
 
     def change_page(self, page_index):
         self.SelectedMenuAnimation.setEasingCurve(QEasingCurve.InOutCubic)
-        self.SelectedMenuAnimation.setEndValue(QPoint(30, 85+(70*page_index)))
-        self.SelectedMenuAnimation.setDuration(650)
+        self.SelectedMenuAnimation.setEndValue(QPoint(SELECTED_MENU_SIGN_DEFAULT_X_LOCATION, 
+                                                        SELECTED_MENU_SIGN_DEFAULT_Y_LOCATION + (VERTICAL_DISTANCE_BETWEEN_MENUS * page_index)))
+        self.SelectedMenuAnimation.setDuration(ANIMATION_SPEED)
         self.SelectedMenuAnimation.start()
         self.WorkSpace.setCurrentIndex(page_index)
 
