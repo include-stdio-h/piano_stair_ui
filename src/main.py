@@ -1,10 +1,10 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QPropertyAnimation, QPoint, QEasingCurve
-from PyQt5.QtWidgets import QGraphicsDropShadowEffect
 
 import sys
 
 from ui.piano_stairs_design import Ui_MainWindow
+from handler.style.style_handler import StyleHandler
 from constants import BLUETOOTH_PAGE_INDEX, INSTRUMENT_PAGE_INDEX, SELECTED_INSTRUMENT_STYLE, UNSELECTED_INSTRUMENT_STYLE
 
 class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
@@ -15,12 +15,12 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
 
     def variable_init(self):
         self.instruments = {
-            self.BaseGuitarSelect : (self.BaseGuitarBack, 1),
-            self.OrganSelect : (self.OrganBack, 2),
-            self.AccordionSelect : (self.AccordionBack, 3),
-            self.PianoSelect : (self.PianoBack, 4),
-            self.HarpSelect : (self.HarpBack, 5),
-            self.VibraPhoneSelect : (self.VibraPhoneBack, 6)
+            self.BaseGuitarSelect : [self.BaseGuitarBack, 1],
+            self.OrganSelect : [self.OrganBack, 2],
+            self.AccordionSelect : [self.AccordionBack, 3],
+            self.PianoSelect : [self.PianoBack, 4],
+            self.HarpSelect : [self.HarpBack, 5],
+            self.VibraPhoneSelect : [self.VibraPhoneBack, 6]
         }
 
         self.bluetooth_widgets = [
@@ -38,12 +38,12 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
 
     def design_init(self):
         for _, back in self.instruments.items():
-            self.add_shadow(back[0])
+            back[0] = StyleHandler.add_shadow(back[0])
         
         for bluetooth_widget in self.bluetooth_widgets:
-            self.add_shadow(bluetooth_widget)
+            bluetooth_widget = StyleHandler.add_shadow(bluetooth_widget)
 
-        self.add_shadow(self.ToolBar)
+        self.ToolBar = StyleHandler.add_shadow(self.ToolBar)
 
     def signal_init(self):
         for button, back in self.instruments.items():
@@ -69,13 +69,6 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         
         now.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
         self.selected_instrument = instrument_type
-
-    def add_shadow(self, widget):
-        shadow = QGraphicsDropShadowEffect()
-        shadow.setBlurRadius(5)
-        shadow.setXOffset(3)
-        shadow.setYOffset(3)
-        widget.setGraphicsEffect(shadow)
 
     def quit_app(self):
         sys.exit()
