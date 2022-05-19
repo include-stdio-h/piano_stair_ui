@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QPropertyAnimation, QPoint, QEasingCurve
+from PyQt5.QtWidgets import QGraphicsDropShadowEffect
 
 import sys
 
@@ -12,10 +13,21 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.setupUi(self)
         super().__init__()
 
-    def init_func(self):
-        # Page Handle
-        self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX))
-        self.InstrumentButton.clicked.connect(lambda : self.change_page(INSTRUMENT_PAGE_INDEX))
+    def variable_init(self):
+        self.instruments = [
+            self.BaseGuitarBack, 
+            self.ElecGuitarBack, 
+            self.ChelloBack,
+            self.PianoBack, 
+            self.DrumBack, 
+            self.VoiceBack
+        ]
+
+        self.bluetooth_widgets = [
+            self.DeviceStatus,
+            self.LoggerBack,
+            self.StatusBar
+        ]
 
         # Page Select Animation
         self.SelectedMenuAnimation = QPropertyAnimation(self.SelectedMenu, b"pos")
@@ -24,6 +36,16 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.before_instrument = self.BaseGuitarBack
         self.selected_instrument = 1
 
+    def design_init(self):
+        for instrument in self.instruments:
+            self.add_shadow(instrument)
+        
+        for bluetooth_widget in self.bluetooth_widgets:
+            self.add_shadow(bluetooth_widget)
+
+        self.add_shadow(self.ToolBar)
+
+    def signal_init(self):
         self.BaseGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BaseGuitarBack, 1))
         self.ElecGuitarSelect.clicked.connect(lambda : self.change_instrument(self.ElecGuitarBack, 2))
         self.ChelloSelect.clicked.connect(lambda : self.change_instrument(self.ChelloBack, 3))
@@ -34,13 +56,16 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         # Quit App
         self.QuitButton.clicked.connect(lambda : self.quit_app())
 
+         # Page Handle
+        self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX))
+        self.InstrumentButton.clicked.connect(lambda : self.change_page(INSTRUMENT_PAGE_INDEX))
+
     def change_page(self, page_index):
         self.SelectedMenuAnimation.setEasingCurve(QEasingCurve.InOutCubic)
         self.SelectedMenuAnimation.setEndValue(QPoint(30, 85+(70*page_index))) 
-        self.SelectedMenuAnimation.setDuration(500)
+        self.SelectedMenuAnimation.setDuration(650)
         self.SelectedMenuAnimation.start()
         self.WorkSpace.setCurrentIndex(page_index)
-
 
     def change_instrument(self, now, instrument_type):
         self.before_instrument.setStyleSheet(UNSELECTED_INSTRUMENT_STYLE)
@@ -48,6 +73,13 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         
         now.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
         self.selected_instrument = instrument_type
+
+    def add_shadow(self, widget):
+        shadow = QGraphicsDropShadowEffect()
+        shadow.setBlurRadius(5)
+        shadow.setXOffset(3)
+        shadow.setYOffset(3)
+        widget.setGraphicsEffect(shadow)
 
     def quit_app(self):
         sys.exit()
@@ -59,7 +91,10 @@ if __name__ == '__main__':
 
     piano_stair = PianoStairUI()
     piano_stair.setupUi(MainWindow)
-    piano_stair.init_func()
+
+    piano_stair.variable_init()
+    piano_stair.design_init()
+    piano_stair.signal_init()
 
     MainWindow.show()
 

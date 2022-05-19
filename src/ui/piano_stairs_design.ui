@@ -152,7 +152,7 @@ border-radius: 20px;
    <widget class="QLabel" name="InstrumentIcon">
     <property name="geometry">
      <rect>
-      <x>38</x>
+      <x>36</x>
       <y>160</y>
       <width>28</width>
       <height>28</height>
@@ -203,7 +203,7 @@ border-radius: 20px;
    <widget class="QStackedWidget" name="WorkSpace">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>210</x>
       <y>10</y>
       <width>631</width>
       <height>531</height>
@@ -240,7 +240,7 @@ background-color: rgb(114, 240, 145);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="ToolBar_3">
+     <widget class="QLabel" name="LoggerBack">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -305,7 +305,7 @@ border-radius: 20px;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="ToolBar_4">
+     <widget class="QLabel" name="StatusBar">
       <property name="geometry">
        <rect>
         <x>360</x>
@@ -452,7 +452,7 @@ color: rgb(255, 255, 255);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="Statua5">
+     <widget class="QLabel" name="Status5">
       <property name="geometry">
        <rect>
         <x>390</x>
@@ -922,7 +922,7 @@ border-radius: 15px;
      <rect>
       <x>30</x>
       <y>85</y>
-      <width>171</width>
+      <width>41</width>
       <height>41</height>
      </rect>
     </property>
