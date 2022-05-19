@@ -12,3 +12,8 @@ class StyleHandler():
         shadow.setYOffset(3)
 
         return widget.setGraphicsEffect(shadow)
+
+    @staticmethod
+    def change_theme(widget, theme):
+        widget.setStyleSheet(theme)
+        return widget

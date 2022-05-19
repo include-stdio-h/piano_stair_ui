@@ -64,10 +64,10 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.WorkSpace.setCurrentIndex(page_index)
 
     def change_instrument(self, now):
-        self.before_instrument.setStyleSheet(UNSELECTED_INSTRUMENT_STYLE)
+        self.before_instrument = StyleHandler.change_theme(self.before_instrument, UNSELECTED_INSTRUMENT_STYLE)
+        now = StyleHandler.change_theme(now, SELECTED_INSTRUMENT_STYLE)
+
         self.before_instrument = now
-        
-        now.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
         self.selected_instrument = self.instrument_backs.index(now) + 1
 
 
