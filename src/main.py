@@ -14,14 +14,15 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         super().__init__()
 
     def variable_init(self):
-        self.instruments = {
-            self.BaseGuitarSelect : [self.BaseGuitarBack, 1],
-            self.OrganSelect : [self.OrganBack, 2],
-            self.AccordionSelect : [self.AccordionBack, 3],
-            self.PianoSelect : [self.PianoBack, 4],
-            self.HarpSelect : [self.HarpBack, 5],
-            self.VibraPhoneSelect : [self.VibraPhoneBack, 6]
-        }
+        self.instrument_backs = [
+            self.BaseGuitarBack,
+            self.OrganBack,
+            self.AccordionBack,
+            self.PianoBack,
+            self.HarpBack,
+            self.VibraPhoneBack
+        ]
+
 
         self.bluetooth_widgets = [
             self.DeviceStatus,
@@ -37,8 +38,8 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.selected_instrument = 1
 
     def design_init(self):
-        for _, back in self.instruments.items():
-            back[0] = StyleHandler.add_shadow(back[0])
+        for back in self.instrument_backs:
+            back = StyleHandler.add_shadow(back)
         
         for bluetooth_widget in self.bluetooth_widgets:
             bluetooth_widget = StyleHandler.add_shadow(bluetooth_widget)
@@ -46,14 +47,18 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.ToolBar = StyleHandler.add_shadow(self.ToolBar)
 
     def signal_init(self):
-        for button, back in self.instruments.items():
-            button.clicked.connect(lambda : self.change_instrument(back[0], back[1]))
+        self.BaseGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BaseGuitarBack))
+        self.OrganSelect.clicked.connect(lambda : self.change_instrument(self.OrganBack))
+        self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack))
+        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack))
+        self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack))
+        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack))        
 
         # Quit App
         self.QuitButton.clicked.connect(self.quit_app)
 
          # Page Handle
-        self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX))
+        self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX, self.WorkSpace))
         self.InstrumentButton.clicked.connect(lambda : self.change_page(INSTRUMENT_PAGE_INDEX))
 
     def change_page(self, page_index):
@@ -63,12 +68,12 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.SelectedMenuAnimation.start()
         self.WorkSpace.setCurrentIndex(page_index)
 
-    def change_instrument(self, now, instrument_type):
+    def change_instrument(self, now):
         self.before_instrument.setStyleSheet(UNSELECTED_INSTRUMENT_STYLE)
         self.before_instrument = now
         
         now.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
-        self.selected_instrument = instrument_type
+        self.selected_instrument = self.instrument_backs.index(now) + 1
 
     def quit_app(self):
         sys.exit()
