@@ -65,7 +65,7 @@ class Ui_MainWindow(object):
         self.BlueToothIcon.setScaledContents(True)
         self.BlueToothIcon.setObjectName("BlueToothIcon")
         self.InstrumentIcon = QtWidgets.QLabel(self.centralwidget)
-        self.InstrumentIcon.setGeometry(QtCore.QRect(38, 160, 28, 28))
+        self.InstrumentIcon.setGeometry(QtCore.QRect(36, 160, 28, 28))
         self.InstrumentIcon.setText("")
         self.InstrumentIcon.setPixmap(QtGui.QPixmap("C:/Users/2203kdh/Downloads/live-music.png"))
         self.InstrumentIcon.setScaledContents(True)
@@ -376,7 +376,7 @@ class Ui_MainWindow(object):
         self.VoiceSelect.raise_()
         self.WorkSpace.addWidget(self.page_2)
         self.SelectedMenu = QtWidgets.QLabel(self.centralwidget)
-        self.SelectedMenu.setGeometry(QtCore.QRect(30, 85, 171, 41))
+        self.SelectedMenu.setGeometry(QtCore.QRect(30, 85, 41, 41))
         self.SelectedMenu.setStyleSheet("border-radius: 20px;\n"
 "background-color: rgb(41, 255, 194);\n"
 "")

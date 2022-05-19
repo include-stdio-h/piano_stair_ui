@@ -152,7 +152,7 @@ border-radius: 20px;
    <widget class="QLabel" name="InstrumentIcon">
     <property name="geometry">
      <rect>
-      <x>38</x>
+      <x>36</x>
       <y>160</y>
       <width>28</width>
       <height>28</height>
@@ -922,7 +922,7 @@ border-radius: 15px;
      <rect>
       <x>30</x>
       <y>85</y>
-      <width>171</width>
+      <width>41</width>
       <height>41</height>
      </rect>
     </property>
