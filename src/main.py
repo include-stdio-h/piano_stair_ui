@@ -29,10 +29,8 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
             self.StatusBar
         ]
 
-        # Page Select Animation
         self.SelectedMenuAnimation = QPropertyAnimation(self.SelectedMenu, b"pos")
 
-        # Instrument Handle
         self.before_instrument = self.BaseGuitarBack
         self.selected_instrument = 1
 
@@ -53,10 +51,8 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack))
         self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack))        
 
-        # Quit App
         self.QuitButton.clicked.connect(sys.exit)
 
-         # Page Handle
         self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX))
         self.InstrumentButton.clicked.connect(lambda : self.change_page(INSTRUMENT_PAGE_INDEX))
 
