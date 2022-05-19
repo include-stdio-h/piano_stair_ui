@@ -14,14 +14,14 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         super().__init__()
 
     def variable_init(self):
-        self.instruments = [
-            self.BaseGuitarBack, 
-            self.ElecGuitarBack, 
-            self.ChelloBack,
-            self.PianoBack, 
-            self.DrumBack, 
-            self.VoiceBack
-        ]
+        self.instruments = {
+            self.BaseGuitarSelect : (self.BaseGuitarBack, 1),
+            self.OrganSelect : (self.OrganBack, 2),
+            self.AccordionSelect : (self.AccordionBack, 3),
+            self.PianoSelect : (self.PianoBack, 4),
+            self.HarpSelect : (self.HarpBack, 5),
+            self.VibraPhoneSelect : (self.VibraPhoneBack, 6)
+        }
 
         self.bluetooth_widgets = [
             self.DeviceStatus,
@@ -37,8 +37,8 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.selected_instrument = 1
 
     def design_init(self):
-        for instrument in self.instruments:
-            self.add_shadow(instrument)
+        for _, back in self.instruments.items():
+            self.add_shadow(back[0])
         
         for bluetooth_widget in self.bluetooth_widgets:
             self.add_shadow(bluetooth_widget)
@@ -46,12 +46,8 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.add_shadow(self.ToolBar)
 
     def signal_init(self):
-        self.BaseGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BaseGuitarBack, 1))
-        self.ElecGuitarSelect.clicked.connect(lambda : self.change_instrument(self.ElecGuitarBack, 2))
-        self.ChelloSelect.clicked.connect(lambda : self.change_instrument(self.ChelloBack, 3))
-        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack, 4))
-        self.DrumSelect.clicked.connect(lambda : self.change_instrument(self.DrumBack, 5))
-        self.VoiceSelect.clicked.connect(lambda : self.change_instrument(self.VoiceBack, 6))
+        for button, back in self.instruments.items():
+            button.clicked.connect(lambda : self.change_instrument(back[0], back[1]))
 
         # Quit App
         self.QuitButton.clicked.connect(lambda : self.quit_app())

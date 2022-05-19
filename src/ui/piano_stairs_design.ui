@@ -210,7 +210,7 @@ border-radius: 20px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
@@ -606,7 +606,7 @@ background-color: rgb(174, 255, 242);
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QLabel" name="ElecGuitarBack">
+     <widget class="QLabel" name="OrganBack">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -624,7 +624,7 @@ border-radius: 20px;
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="ChelloBack">
+     <widget class="QLabel" name="AccordionBack">
       <property name="geometry">
        <rect>
         <x>400</x>
@@ -642,7 +642,7 @@ border-radius: 20px;
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="DrumBack">
+     <widget class="QLabel" name="HarpBack">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -660,7 +660,7 @@ border-radius: 20px;
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="VoiceBack">
+     <widget class="QLabel" name="VibraPhoneBack">
       <property name="geometry">
        <rect>
         <x>400</x>
@@ -748,7 +748,7 @@ background-color: rgb(182, 182, 182);
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="ElecGuitarSelect">
+     <widget class="QPushButton" name="OrganSelect">
       <property name="geometry">
        <rect>
         <x>215</x>
@@ -767,7 +767,7 @@ border-radius: 15px;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>C:/Users/2203kdh/Downloads/guitar.png</normaloff>C:/Users/2203kdh/Downloads/guitar.png</iconset>
+        <normaloff>C:/Users/2203kdh/Downloads/organ.png</normaloff>C:/Users/2203kdh/Downloads/organ.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -779,7 +779,7 @@ border-radius: 15px;
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="ChelloSelect">
+     <widget class="QPushButton" name="AccordionSelect">
       <property name="geometry">
        <rect>
         <x>405</x>
@@ -798,7 +798,7 @@ border-radius: 15px;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>C:/Users/2203kdh/Downloads/cello.png</normaloff>C:/Users/2203kdh/Downloads/cello.png</iconset>
+        <normaloff>C:/Users/2203kdh/Downloads/accordion.png</normaloff>C:/Users/2203kdh/Downloads/accordion.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -841,7 +841,7 @@ border-radius: 15px;
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="DrumSelect">
+     <widget class="QPushButton" name="HarpSelect">
       <property name="geometry">
        <rect>
         <x>215</x>
@@ -860,7 +860,7 @@ border-radius: 15px;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>C:/Users/2203kdh/Downloads/drums.png</normaloff>C:/Users/2203kdh/Downloads/drums.png</iconset>
+        <normaloff>C:/Users/2203kdh/Downloads/harp.png</normaloff>C:/Users/2203kdh/Downloads/harp.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -872,7 +872,7 @@ border-radius: 15px;
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="VoiceSelect">
+     <widget class="QPushButton" name="VibraPhoneSelect">
       <property name="geometry">
        <rect>
         <x>405</x>
@@ -891,7 +891,7 @@ border-radius: 15px;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>C:/Users/2203kdh/Downloads/microphone.png</normaloff>C:/Users/2203kdh/Downloads/microphone.png</iconset>
+        <normaloff>C:/Users/2203kdh/Downloads/vibraphone.png</normaloff>C:/Users/2203kdh/Downloads/vibraphone.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -903,18 +903,18 @@ border-radius: 15px;
        <bool>true</bool>
       </property>
      </widget>
-     <zorder>ElecGuitarBack</zorder>
-     <zorder>ChelloBack</zorder>
-     <zorder>DrumBack</zorder>
-     <zorder>VoiceBack</zorder>
+     <zorder>OrganBack</zorder>
+     <zorder>AccordionBack</zorder>
+     <zorder>HarpBack</zorder>
+     <zorder>VibraPhoneBack</zorder>
      <zorder>PianoBack</zorder>
      <zorder>BaseGuitarBack</zorder>
      <zorder>BaseGuitarSelect</zorder>
-     <zorder>ElecGuitarSelect</zorder>
-     <zorder>ChelloSelect</zorder>
+     <zorder>OrganSelect</zorder>
+     <zorder>AccordionSelect</zorder>
      <zorder>PianoSelect</zorder>
-     <zorder>DrumSelect</zorder>
-     <zorder>VoiceSelect</zorder>
+     <zorder>HarpSelect</zorder>
+     <zorder>VibraPhoneSelect</zorder>
     </widget>
    </widget>
    <widget class="QLabel" name="SelectedMenu">
