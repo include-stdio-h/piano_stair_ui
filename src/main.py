@@ -23,7 +23,6 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
             self.VibraPhoneBack
         ]
 
-
         self.bluetooth_widgets = [
             self.DeviceStatus,
             self.LoggerBack,
@@ -55,7 +54,7 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack))        
 
         # Quit App
-        self.QuitButton.clicked.connect(self.quit_app)
+        self.QuitButton.clicked.connect(sys.exit)
 
          # Page Handle
         self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX))
@@ -74,9 +73,6 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         
         now.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
         self.selected_instrument = self.instrument_backs.index(now) + 1
-
-    def quit_app(self):
-        sys.exit()
 
 
 if __name__ == '__main__':
