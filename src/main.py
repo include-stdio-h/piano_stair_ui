@@ -4,7 +4,7 @@ from PyQt5.QtCore import QPropertyAnimation, QPoint, QEasingCurve
 import sys
 
 from ui.piano_stairs_design import Ui_MainWindow
-from handler.style.style_handler import StyleHandler
+from style.style_handler import StyleHandler
 from constants import BLUETOOTH_PAGE_INDEX, INSTRUMENT_PAGE_INDEX, SELECTED_INSTRUMENT_STYLE, UNSELECTED_INSTRUMENT_STYLE
 
 class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
