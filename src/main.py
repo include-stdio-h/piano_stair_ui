@@ -1,16 +1,15 @@
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QPropertyAnimation, QPoint, QEasingCurve
 
 import sys
 
 from ui.piano_stairs_design import Ui_MainWindow
 from style.style_handler import StyleHandler
+from style.animation_handler import AnimationHandler
 from constants import BLUETOOTH_PAGE_INDEX, INSTRUMENT_PAGE_INDEX, \
-                        SELECTED_INSTRUMENT_STYLE, UNSELECTED_INSTRUMENT_STYLE, \
-                        SELECTED_MENU_SIGN_DEFAULT_X_LOCATION, SELECTED_MENU_SIGN_DEFAULT_Y_LOCATION, VERTICAL_DISTANCE_BETWEEN_MENUS, \
-                        ANIMATION_SPEED
+                        SELECTED_INSTRUMENT_STYLE, UNSELECTED_INSTRUMENT_STYLE
 
-class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
+
+class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         QtWidgets.QMainWindow.__init__(self, parent=parent)
         self.setupUi(self)
@@ -32,7 +31,7 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
             self.StatusBar
         ]
 
-        self.SelectedMenuAnimation = QPropertyAnimation(self.SelectedMenu, b"pos")
+        self.selected_menu_animation = AnimationHandler(self.SelectedMenu, b"pos")
 
         self.before_instrument = self.BaseGuitarBack
         self.selected_instrument = 1
@@ -60,11 +59,7 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.InstrumentButton.clicked.connect(lambda : self.change_page(INSTRUMENT_PAGE_INDEX))
 
     def change_page(self, page_index):
-        self.SelectedMenuAnimation.setEasingCurve(QEasingCurve.InOutCubic)
-        self.SelectedMenuAnimation.setEndValue(QPoint(SELECTED_MENU_SIGN_DEFAULT_X_LOCATION, 
-                                                        SELECTED_MENU_SIGN_DEFAULT_Y_LOCATION + (VERTICAL_DISTANCE_BETWEEN_MENUS * page_index)))
-        self.SelectedMenuAnimation.setDuration(ANIMATION_SPEED)
-        self.SelectedMenuAnimation.start()
+        self.selected_menu_animation.select_menu_animation(page_index)
         self.WorkSpace.setCurrentIndex(page_index)
 
     def change_instrument(self, now):
