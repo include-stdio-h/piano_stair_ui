@@ -58,7 +58,7 @@ class PianoStairUI(QtWidgets.QMainWindow,Ui_MainWindow):
         self.QuitButton.clicked.connect(self.quit_app)
 
          # Page Handle
-        self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX, self.WorkSpace))
+        self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX))
         self.InstrumentButton.clicked.connect(lambda : self.change_page(INSTRUMENT_PAGE_INDEX))
 
     def change_page(self, page_index):
