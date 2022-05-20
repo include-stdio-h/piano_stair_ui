@@ -37,7 +37,8 @@ class Ui_MainWindow(object):
         self.BlueToothButton.setToolTipDuration(-15)
         self.BlueToothButton.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.BlueToothButton.setAutoFillBackground(False)
-        self.BlueToothButton.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.BlueToothButton.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-style: outset;")
         self.BlueToothButton.setInputMethodHints(QtCore.Qt.ImhNone)
         self.BlueToothButton.setShortcut("")
         self.BlueToothButton.setCheckable(False)
@@ -53,7 +54,8 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(11)
         self.InstrumentButton.setFont(font)
-        self.InstrumentButton.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.InstrumentButton.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-style: outset;")
         self.InstrumentButton.setShortcut("")
         self.InstrumentButton.setFlat(True)
         self.InstrumentButton.setObjectName("InstrumentButton")
