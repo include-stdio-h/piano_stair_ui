@@ -4,7 +4,6 @@ import sys
 
 from ui.piano_stairs_design import Ui_MainWindow
 from style.style_handler import StyleHandler
-from style.animation import AnimationHandler
 from style.animation.menu import MenuAnimation
 from style.animation.theme import ThemeAnimation
 from constants import ( 
