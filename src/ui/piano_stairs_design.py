@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\ui\piano_stairs_design.ui'
+# Form implementation generated from reading ui file '.\piano_stairs_design.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -382,14 +382,21 @@ class Ui_MainWindow(object):
 "")
         self.SelectedMenu.setText("")
         self.SelectedMenu.setObjectName("SelectedMenu")
+        self.BaseGuitarTheme = QtWidgets.QLabel(self.centralwidget)
+        self.BaseGuitarTheme.setGeometry(QtCore.QRect(160, 200, 41, 41))
+        self.BaseGuitarTheme.setStyleSheet("border-radius: 20px;\n"
+"background-color: rgb(254, 176, 47);")
+        self.BaseGuitarTheme.setText("")
+        self.BaseGuitarTheme.setObjectName("BaseGuitarTheme")
+        self.WorkSpace.raise_()
         self.ToolBar.raise_()
         self.QuitButton.raise_()
-        self.WorkSpace.raise_()
         self.SelectedMenu.raise_()
         self.BlueToothIcon.raise_()
         self.BlueToothButton.raise_()
         self.InstrumentIcon.raise_()
         self.InstrumentButton.raise_()
+        self.BaseGuitarTheme.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
@@ -400,7 +407,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.WorkSpace.setCurrentIndex(0)
+        self.WorkSpace.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

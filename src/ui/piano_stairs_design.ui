@@ -210,7 +210,7 @@ border-radius: 20px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
@@ -935,14 +935,32 @@ background-color: rgb(41, 255, 194);
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="BaseGuitarTheme">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>200</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+background-color: rgb(254, 176, 47);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>WorkSpace</zorder>
    <zorder>ToolBar</zorder>
    <zorder>QuitButton</zorder>
-   <zorder>WorkSpace</zorder>
    <zorder>SelectedMenu</zorder>
    <zorder>BlueToothIcon</zorder>
    <zorder>BlueToothButton</zorder>
    <zorder>InstrumentIcon</zorder>
    <zorder>InstrumentButton</zorder>
+   <zorder>BaseGuitarTheme</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
