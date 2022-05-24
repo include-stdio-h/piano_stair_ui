@@ -10,7 +10,7 @@ VERTICAL_DISTANCE_BETWEEN_MENUS = 70
 
 ANIMATION_SPEED = 650
 
-INTRUMENTS_THEME = {
+INSTRUMENTS_THEME = {
     "bass_guitar" : {
         "location" : (87, 90),
         "style" : "border-radius: 20px;\nbackground-color: rgb(255, 195, 56);"

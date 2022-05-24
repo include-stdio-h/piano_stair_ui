@@ -11,7 +11,7 @@ from constants import (
     INSTRUMENT_PAGE_INDEX,
     SELECTED_INSTRUMENT_STYLE, 
     UNSELECTED_INSTRUMENT_STYLE,
-    INTRUMENTS_THEME
+    INSTRUMENTS_THEME
 )
 
 
@@ -43,7 +43,7 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.before_instrument = self.BassGuitarBack
         self.selected_instrument = 1
-        self.current_theme = INTRUMENTS_THEME["bass_guitar"]["style"]
+        self.current_theme = INSTRUMENTS_THEME["bass_guitar"]["style"]
 
     def design_init(self):
         for back in self.instrument_backs:
@@ -55,12 +55,27 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ToolBar = StyleHandler.add_shadow(self.ToolBar)
 
     def signal_init(self):
-        self.BassGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BassGuitarBack, INTRUMENTS_THEME["bass_guitar"]))
-        self.OrganSelect.clicked.connect(lambda : self.change_instrument(self.OrganBack, INTRUMENTS_THEME["organ"]))
-        self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack, INTRUMENTS_THEME["accordion"]))
-        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack, INTRUMENTS_THEME["piano"]))
-        self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack, INTRUMENTS_THEME["harp"]))
-        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack, INTRUMENTS_THEME["vibra_phone"]))
+        # table = {
+        #     self.BassGuitarSelect : (self.BassGuitarBack, INSTRUMENTS_THEME["bass_guitar"]),
+        #     self.OrganSelect : (self.OrganBack, INSTRUMENTS_THEME["organ"]),
+        #     self.AccordionSelect : (self.AccordionBack, INSTRUMENTS_THEME["accordion"]),
+        #     self.PianoSelect: (self.PianoBack, INSTRUMENTS_THEME["piano"]),
+        #     self.HarpSelect : (self.HarpBack, INSTRUMENTS_THEME["harp"]),
+        #     self.VibraPhoneSelect : (self.VibraPhoneBack, INSTRUMENTS_THEME["vibra_phone"])
+        # }
+
+        # for k, v in table.items():
+        #     print(k)
+        #     if k.clicked:
+        #         k.clicked.connect(lambda : self.change_instrument(v[0], v[1]))
+        #         break
+
+        self.BassGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BassGuitarBack, INSTRUMENTS_THEME["bass_guitar"]))
+        self.OrganSelect.clicked.connect(lambda : self.change_instrument(self.OrganBack, INSTRUMENTS_THEME["organ"]))
+        self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack, INSTRUMENTS_THEME["accordion"]))
+        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack, INSTRUMENTS_THEME["piano"]))
+        self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack, INSTRUMENTS_THEME["harp"]))
+        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack, INSTRUMENTS_THEME["vibra_phone"]))
 
         self.QuitButton.clicked.connect(sys.exit)
 
