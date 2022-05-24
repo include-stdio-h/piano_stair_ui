@@ -9,3 +9,32 @@ SELECTED_MENU_SIGN_DEFAULT_Y_LOCATION = 85
 VERTICAL_DISTANCE_BETWEEN_MENUS = 70
 
 ANIMATION_SPEED = 650
+
+INSTRUMENTS_THEME = {
+    "bass_guitar" : {
+        "location" : (87, 90),
+        "style" : "border-radius: 20px;\nbackground-color: rgb(255, 195, 56);"
+    },
+    "organ" : {
+        "location" : (277, 90),
+        "style" : "border-radius: 20px;\nbackground-color: rgb(237, 196, 114);"
+    },
+    "accordion" : {
+        "location" : (467, 80),
+        "style" : "border-radius: 20px;\nbackground-color: rgb(255, 63, 89);"
+    },
+    "piano" : {
+        "location" : (87, 290),
+        "style" : "border-radius: 20px;\nbackground-color: rgb(182, 159, 139);"
+    },
+    "harp" : {
+        "location" : (277, 290),
+        "style" : "border-radius: 20px;\nbackground-color : rgb(255, 235, 185)"
+    },
+    "vibra_phone" : {
+        "location" : (467, 290),
+        "style" : "border-radius: 20px;\nbackground-color: rgb(213, 218, 243);"
+    }
+}
+
+TOTAL_THEME_LOCATION_DIFF = (203, 10)

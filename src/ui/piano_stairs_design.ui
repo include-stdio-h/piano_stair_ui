@@ -69,7 +69,8 @@ border-radius: 20px;
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-style: outset;</string>
     </property>
     <property name="inputMethodHints">
      <set>Qt::ImhNone</set>
@@ -115,7 +116,8 @@ border-radius: 20px;
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-style: outset;</string>
     </property>
     <property name="text">
      <string>Instrument</string>
@@ -210,7 +212,7 @@ border-radius: 20px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
@@ -264,11 +266,14 @@ border-radius: 20px;
      <widget class="QLabel" name="DeviceStatusIcon">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>100</y>
-        <width>51</width>
-        <height>51</height>
+        <x>160</x>
+        <y>110</y>
+        <width>41</width>
+        <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(114, 240, 145);</string>
       </property>
       <property name="text">
        <string/>
@@ -296,7 +301,8 @@ border-radius: 20px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(114, 240, 145);</string>
       </property>
       <property name="text">
        <string>Ready</string>
@@ -696,7 +702,7 @@ border-radius: 20px;
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="BaseGuitarSelect">
+     <widget class="QPushButton" name="BassGuitarSelect">
       <property name="geometry">
        <rect>
         <x>25</x>
@@ -730,7 +736,7 @@ border-radius: 15px;
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="BaseGuitarBack">
+     <widget class="QLabel" name="BassGuitarBack">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -903,13 +909,37 @@ border-radius: 15px;
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="InstrumentTheme">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>90</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 20px;
+background-color: rgb(255, 195, 56);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>InstrumentTheme</zorder>
      <zorder>OrganBack</zorder>
      <zorder>AccordionBack</zorder>
      <zorder>HarpBack</zorder>
      <zorder>VibraPhoneBack</zorder>
      <zorder>PianoBack</zorder>
-     <zorder>BaseGuitarBack</zorder>
-     <zorder>BaseGuitarSelect</zorder>
+     <zorder>BassGuitarBack</zorder>
+     <zorder>BassGuitarSelect</zorder>
      <zorder>OrganSelect</zorder>
      <zorder>AccordionSelect</zorder>
      <zorder>PianoSelect</zorder>
@@ -935,23 +965,44 @@ background-color: rgb(41, 255, 194);
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="BaseGuitarTheme">
+   <widget class="QLabel" name="TotalTheme">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>200</y>
+      <x>290</x>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="styleSheet">
      <string notr="true">border-radius: 20px;
-background-color: rgb(254, 176, 47);</string>
+background-color: rgb(255, 195, 56);</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="Background">
+    <property name="geometry">
+     <rect>
+      <x>-170</x>
+      <y>-60</y>
+      <width>1091</width>
+      <height>701</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>Background</zorder>
+   <zorder>TotalTheme</zorder>
    <zorder>WorkSpace</zorder>
    <zorder>ToolBar</zorder>
    <zorder>QuitButton</zorder>
@@ -960,7 +1011,6 @@ background-color: rgb(254, 176, 47);</string>
    <zorder>BlueToothButton</zorder>
    <zorder>InstrumentIcon</zorder>
    <zorder>InstrumentButton</zorder>
-   <zorder>BaseGuitarTheme</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
