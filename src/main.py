@@ -1,17 +1,24 @@
 from PyQt5 import QtWidgets
+from PyQt5.QtGui import QPixmap
 
 import sys
+import threading
 
 from ui.piano_stairs_design import Ui_MainWindow
 from style.style_handler import StyleHandler
 from style.animation.menu import MenuAnimation
 from style.animation.theme import ThemeAnimation
+# from network.bluetooth_connect import bluetooth_socket
 from constants import ( 
     BLUETOOTH_PAGE_INDEX, 
     INSTRUMENT_PAGE_INDEX,
     SELECTED_INSTRUMENT_STYLE, 
     UNSELECTED_INSTRUMENT_STYLE,
-    INSTRUMENTS_THEME
+    INSTRUMENTS_THEME,
+    DEVICE_READY_STATUS_STYLE,
+    DEVICE_READY_STATUS_ICON_STYLE,
+    DEVICE_DISABLE_STATUS_STYLE,
+    DEVICE_DISABLE_STATUS_ICON_STYLE
 )
 
 
@@ -112,6 +119,10 @@ if __name__ == '__main__':
     piano_stair.variable_init()
     piano_stair.design_init()
     piano_stair.signal_init()
+
+    # th = threading.Thread(target=bluetooth_socket, args=piano_stair)
+    # th.daemon = True
+    # th.start()
 
     MainWindow.show()
 

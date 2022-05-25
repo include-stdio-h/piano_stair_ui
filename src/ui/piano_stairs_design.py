@@ -94,9 +94,9 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(22)
         self.DeviceStatus.setFont(font)
-        self.DeviceStatus.setStyleSheet("border-radius: 20px;\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(114, 240, 145);")
+        self.DeviceStatus.setStyleSheet("color: rgb(255, 255, 255);\n"
+"border-radius: 20px;\n"
+"background-color: rgb(255, 100,100);")
         self.DeviceStatus.setText("")
         self.DeviceStatus.setAlignment(QtCore.Qt.AlignCenter)
         self.DeviceStatus.setObjectName("DeviceStatus")
@@ -110,9 +110,9 @@ class Ui_MainWindow(object):
         self.LoggerBack.setObjectName("LoggerBack")
         self.DeviceStatusIcon = QtWidgets.QLabel(self.page)
         self.DeviceStatusIcon.setGeometry(QtCore.QRect(160, 110, 41, 41))
-        self.DeviceStatusIcon.setStyleSheet("background-color: rgb(114, 240, 145);")
+        self.DeviceStatusIcon.setStyleSheet("background-color: rgb(255, 100,100);")
         self.DeviceStatusIcon.setText("")
-        self.DeviceStatusIcon.setPixmap(QtGui.QPixmap("C:/Users/2203kdh/Downloads/check.png"))
+        self.DeviceStatusIcon.setPixmap(QtGui.QPixmap("C:/Users/2203kdh/Downloads/remove.png"))
         self.DeviceStatusIcon.setScaledContents(True)
         self.DeviceStatusIcon.setObjectName("DeviceStatusIcon")
         self.DeviceStatusLabel = QtWidgets.QLabel(self.page)
@@ -122,7 +122,7 @@ class Ui_MainWindow(object):
         font.setPointSize(26)
         self.DeviceStatusLabel.setFont(font)
         self.DeviceStatusLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
-"background-color: rgb(114, 240, 145);")
+"background-color: rgb(255, 100,100);")
         self.DeviceStatusLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.DeviceStatusLabel.setObjectName("DeviceStatusLabel")
         self.StatusBar = QtWidgets.QLabel(self.page)
@@ -441,7 +441,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.BlueToothButton.setText(_translate("MainWindow", "BlueTooth"))
         self.InstrumentButton.setText(_translate("MainWindow", "Instrument"))
-        self.DeviceStatusLabel.setText(_translate("MainWindow", "Ready"))
+        self.DeviceStatusLabel.setText(_translate("MainWindow", "Disable"))
         self.Status2.setText(_translate("MainWindow", "2"))
         self.Status1.setText(_translate("MainWindow", "1"))
         self.Status3.setText(_translate("MainWindow", "3"))
