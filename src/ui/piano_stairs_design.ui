@@ -231,9 +231,9 @@ border-style: outset;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 20px;
-color: rgb(255, 255, 255);
-background-color: rgb(114, 240, 145);</string>
+       <string notr="true">color: rgb(255, 255, 255);
+border-radius: 20px;
+background-color: rgb(255, 100,100);</string>
       </property>
       <property name="text">
        <string/>
@@ -273,13 +273,13 @@ border-radius: 20px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(114, 240, 145);</string>
+       <string notr="true">background-color: rgb(255, 100,100);</string>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>C:/Users/2203kdh/Downloads/check.png</pixmap>
+       <pixmap>C:/Users/2203kdh/Downloads/remove.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -302,10 +302,10 @@ border-radius: 20px;
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(114, 240, 145);</string>
+background-color: rgb(255, 100,100);</string>
       </property>
       <property name="text">
-       <string>Ready</string>
+       <string>Disable</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
