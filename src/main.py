@@ -8,17 +8,13 @@ from ui.piano_stairs_design import Ui_MainWindow
 from style.style_handler import StyleHandler
 from style.animation.menu import MenuAnimation
 from style.animation.theme import ThemeAnimation
-# from network.bluetooth_connect import bluetooth_socket
+from network.bluetooth_connect import bluetooth_socket
 from constants import ( 
     BLUETOOTH_PAGE_INDEX, 
     INSTRUMENT_PAGE_INDEX,
     SELECTED_INSTRUMENT_STYLE, 
     UNSELECTED_INSTRUMENT_STYLE,
-    INSTRUMENTS_THEME,
-    DEVICE_READY_STATUS_STYLE,
-    DEVICE_READY_STATUS_ICON_STYLE,
-    DEVICE_DISABLE_STATUS_STYLE,
-    DEVICE_DISABLE_STATUS_ICON_STYLE
+    INSTRUMENTS_THEME
 )
 
 
@@ -62,21 +58,6 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ToolBar = StyleHandler.add_shadow(self.ToolBar)
 
     def signal_init(self):
-        # table = {
-        #     self.BassGuitarSelect : (self.BassGuitarBack, INSTRUMENTS_THEME["bass_guitar"]),
-        #     self.OrganSelect : (self.OrganBack, INSTRUMENTS_THEME["organ"]),
-        #     self.AccordionSelect : (self.AccordionBack, INSTRUMENTS_THEME["accordion"]),
-        #     self.PianoSelect: (self.PianoBack, INSTRUMENTS_THEME["piano"]),
-        #     self.HarpSelect : (self.HarpBack, INSTRUMENTS_THEME["harp"]),
-        #     self.VibraPhoneSelect : (self.VibraPhoneBack, INSTRUMENTS_THEME["vibra_phone"])
-        # }
-
-        # for k, v in table.items():
-        #     print(k)
-        #     if k.clicked:
-        #         k.clicked.connect(lambda : self.change_instrument(v[0], v[1]))
-        #         break
-
         self.BassGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BassGuitarBack, INSTRUMENTS_THEME["bass_guitar"]))
         self.OrganSelect.clicked.connect(lambda : self.change_instrument(self.OrganBack, INSTRUMENTS_THEME["organ"]))
         self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack, INSTRUMENTS_THEME["accordion"]))
@@ -120,9 +101,9 @@ if __name__ == '__main__':
     piano_stair.design_init()
     piano_stair.signal_init()
 
-    # th = threading.Thread(target=bluetooth_socket, args=piano_stair)
-    # th.daemon = True
-    # th.start()
+    th = threading.Thread(target=bluetooth_socket, args=piano_stair)
+    th.daemon = True
+    th.start()
 
     MainWindow.show()
 
