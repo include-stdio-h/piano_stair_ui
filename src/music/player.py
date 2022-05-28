@@ -14,15 +14,6 @@ key_lst = [pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/{key}") for ke
 def select_instrument(instrument_num):
     global key_lst
     key_lst = [pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
-    # do = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/do.wav")
-    # re = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/re.wav")
-    # mi = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/mi.wav")
-    # fa = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/fa.wav")
-    # sol = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/sol.wav")
-    # la = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/la.wav")
-    # si = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/si.wav")
-    # high_do = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/high_do.wav")
-
 
 def do_play(lst):
    while True:
