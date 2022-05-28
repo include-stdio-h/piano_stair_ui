@@ -1,4 +1,3 @@
-from ast import arg
 import threading
 import time
 import pygame
@@ -38,44 +37,24 @@ def bluetooth_socket(ui):
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
-    data = ''
+    data = list()
     lst = [0] * 17
 
     music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
 
     music_threads = [threading.Thread(target=music_func, args=(lst,)) for music_func in music_play_functions]
-    
-    for i in music_threads:
-        i.start()
 
-    # t1 = threading.Thread(target=mpl.do_play, args=(lst,))
-    # t1.start()
-    # t2 = threading.Thread(target=mpl.re_play, args=(lst,))
-    # t2.start()
-    # t3 = threading.Thread(target=mpl.mi_play, args=(lst,))
-    # t3.start()
-    # t4 = threading.Thread(target=mpl.fa_play, args=(lst,))
-    # t4.start()
-    # t5 = threading.Thread(target=mpl.sol_play, args=(lst,))
-    # t5.start()
-    # t6 = threading.Thread(target=mpl.la_play, args=(lst,))
-    # t6.start()
-    # t7 = threading.Thread(target=mpl.si_play, args=(lst,))
-    # t7.start()
-    # t8 = threading.Thread(target=mpl.high_do_play, args=(lst,))
-    # t8.start()
+    for i in music_threads: 
+        i.start()
 
     while True:
         for i in socket.recv(1024):
             i = chr(i).encode('utf-8').decode('utf-8')
-            data += i
+            data.append(i)
             if i == ']':
-                data = list(data)
-                for h in range(len(data)):
-                    lst[h] = data[h]
-                device_status(lst, ui)
+                device_status(data, ui)
                 time.sleep(0.08)
-                data = ''
+                data = list()
 
     socket.close()
 
