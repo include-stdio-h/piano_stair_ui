@@ -52,9 +52,10 @@ def bluetooth_socket(ui):
             i = chr(i).encode('utf-8').decode('utf-8')
             data.append(i)
             if i == ']':
-                device_status(data, ui)
-                time.sleep(0.08)
-                data = list()
+                if len(data) == 17:
+                    device_status(data, ui)
+                    time.sleep(0.08)
+                    data = list()
 
     socket.close()
 
