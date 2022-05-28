@@ -13,7 +13,12 @@ key_lst = [pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/{key}") for ke
 
 def select_instrument(instrument_num):
     global key_lst
-    key_lst = [pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
+    key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
+
+    if INSTRUMENTS[instrument_num] == "Accordion" or INSTRUMENTS[instrument_num] == "Vibra_phone":
+        for key in key_lst:
+            key.set_volume(0.5)
+
 
 def do_play(lst):
    while True:
