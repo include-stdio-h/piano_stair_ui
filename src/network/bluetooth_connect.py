@@ -14,12 +14,14 @@ from constants import (
 
 
 def bluetooth_socket(ui):
+    print("Here")
     icon_pixmap = QPixmap()
 
     pygame.init()
     pygame.mixer.init()
     socket = BluetoothSocket( RFCOMM )
     try:
+        print("There")
         socket.connect(("98:D3:71:F9:6A:40", 1))
         print("bluetooth connected!")
 
