@@ -9,7 +9,7 @@ pygame.mixer.init()
 
 music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
 
-key_lst = [pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/{key}") for key in music_keys]
+key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in music_keys]
 
 def select_instrument(instrument_num):
     global key_lst
