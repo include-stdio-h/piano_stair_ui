@@ -37,12 +37,12 @@ def bluetooth_socket(ui):
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
-    data = [0 for i in range(17)]
-    cnt = 0
+    data = ''
+    lst = [0 for i in range(17)]
 
     music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
 
-    music_threads = [threading.Thread(target=music_func, args=(data,)) for music_func in music_play_functions]
+    music_threads = [threading.Thread(target=music_func, args=(lst,)) for music_func in music_play_functions]
 
     for i in music_threads: 
         i.start()
@@ -50,13 +50,13 @@ def bluetooth_socket(ui):
     while True:
         for i in socket.recv(1024):
             i = chr(i).encode('utf-8').decode('utf-8')
-            data[cnt] = i
-            cnt += 1
+            data += i
             if i == ']':
-                    device_status(data, ui)
+                    for i in range(len(data)):
+                        lst[i] = data[i]
+                    device_status(lst, ui)
                     time.sleep(0.08)
-                    data = [0 for i in range(17)]
-                    cnt = 0
+                    data = ''
 
     socket.close()
 
