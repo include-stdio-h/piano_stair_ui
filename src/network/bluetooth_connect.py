@@ -37,8 +37,8 @@ def bluetooth_socket(ui):
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
-    data = list()
-    lst = [0] * 17
+    data = [0 for i in range(17)]
+    cnt = 0
 
     music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
 
@@ -50,9 +50,9 @@ def bluetooth_socket(ui):
     while True:
         for i in socket.recv(1024):
             i = chr(i).encode('utf-8').decode('utf-8')
-            data.append(i)
+            data[cnt] = i
+            cnt += 1
             if i == ']':
-                if len(data) == 17:
                     device_status(data, ui)
                     time.sleep(0.08)
                     data = list()
