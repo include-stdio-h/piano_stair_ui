@@ -6,7 +6,6 @@ from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
 import music.player as mpl
-from music.player import select_instrument
 from constants import (
     DEVICE_READY_STATUS_STYLE,
     DEVICE_READY_STATUS_ICON_STYLE,
@@ -42,9 +41,6 @@ def bluetooth_socket(ui):
     data = ''
     lst = [0] * 17
 
-    #select_instrument(ui.selected_instrument)
-    #print(ui.selected_instrument)
-
     t1 = threading.Thread(target=mpl.do_play, args=(lst,))
     t1.start()
     t2 = threading.Thread(target=mpl.re_play, args=(lst,))
@@ -65,13 +61,11 @@ def bluetooth_socket(ui):
     while True:
         for i in socket.recv(1024):
             i = chr(i).encode('utf-8').decode('utf-8')
-            #i = i.encode('utf-8')
             data += i
             if i == ']':
                 data = list(data)
                 for h in range(len(data)):
                     lst[h] = data[h]
-                print(lst)
                 device_status(lst, ui)
                 time.sleep(0.08)
                 data = ''

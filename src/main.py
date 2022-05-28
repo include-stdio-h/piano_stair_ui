@@ -15,7 +15,13 @@ from constants import (
     INSTRUMENT_PAGE_INDEX,
     SELECTED_INSTRUMENT_STYLE, 
     UNSELECTED_INSTRUMENT_STYLE,
-    INSTRUMENTS_THEME
+    INSTRUMENTS_THEME,
+    GRAND_PIANO_INDEX,
+    HARP_INDEX,
+    ORGAN_INDEX,
+    GUITAR_INDEX,
+    ACCORDION_INDEX,
+    VIBRA_PHONE_INDEX, 
 )
 
 class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -58,12 +64,12 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ToolBar = StyleHandler.add_shadow(self.ToolBar)
 
     def signal_init(self):
-        self.BassGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BassGuitarBack, INSTRUMENTS_THEME["bass_guitar"], 3))
-        self.OrganSelect.clicked.connect(lambda : self.change_instrument(self.OrganBack, INSTRUMENTS_THEME["organ"], 2))
-        self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack, INSTRUMENTS_THEME["accordion"], 4))
-        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack, INSTRUMENTS_THEME["piano"], 0))
-        self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack, INSTRUMENTS_THEME["harp"], 1))
-        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack, INSTRUMENTS_THEME["vibra_phone"], 5))
+        self.BassGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BassGuitarBack, INSTRUMENTS_THEME["bass_guitar"], GUITAR_INDEX))
+        self.OrganSelect.clicked.connect(lambda : self.change_instrument(self.OrganBack, INSTRUMENTS_THEME["organ"], ORGAN_INDEX))
+        self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack, INSTRUMENTS_THEME["accordion"], ACCORDION_INDEX))
+        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack, INSTRUMENTS_THEME["piano"], GRAND_PIANO_INDEX))
+        self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack, INSTRUMENTS_THEME["harp"], HARP_INDEX))
+        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack, INSTRUMENTS_THEME["vibra_phone"], VIBRA_PHONE_INDEX))
 
         self.QuitButton.clicked.connect(sys.exit)
 
@@ -78,7 +84,6 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.WorkSpace.setCurrentIndex(page_index)
 
     def change_instrument(self, now, widget_theme, instrument_num):
-        # self.selected_instrument = instrument_num
         select_instrument(instrument_num)
         self.change_instrumenttheme_animation.change_theme(widget_theme, "instrument")
         self.change_total_theme_animation.change_theme(widget_theme, "total")

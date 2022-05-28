@@ -46,3 +46,10 @@ DEVICE_DISABLE_STATUS_STYLE = "border-radius: 20px;\ncolor: rgb(255, 255, 255);\
 DEVICE_DISABLE_STATUS_ICON_STYLE = "background-color: rgb(255, 100,100);"
 
 INSTRUMENTS = ["/Grandpiano", "/Harp", "/Organ", "/12_lines_of_guitar", "/Accordion", "/Vibra_phone"]
+
+GRAND_PIANO_INDEX = 0
+HARP_INDEX = 1
+ORGAN_INDEX = 2
+GUITAR_INDEX = 3
+ACCORDION_INDEX = 4
+VIBRA_PHONE_INDEX = 5 
