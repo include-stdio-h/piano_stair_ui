@@ -44,3 +44,5 @@ DEVICE_READY_STATUS_ICON_STYLE = "background-color: rgb(114, 240, 145);"
 
 DEVICE_DISABLE_STATUS_STYLE = "border-radius: 20px;\ncolor: rgb(255, 255, 255);\nbackground-color: rgb(255, 100,100);"
 DEVICE_DISABLE_STATUS_ICON_STYLE = "background-color: rgb(255, 100,100);"
+
+INSTRUMENTS = ["/Grandpiano", "/Harp", "/Organ", "/12_lines_of_guitar", "/Accordion", "/Vibra_phone"]

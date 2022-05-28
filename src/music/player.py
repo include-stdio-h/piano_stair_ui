@@ -1,18 +1,33 @@
 import pygame
 import time
 
+from constants import INSTRUMENTS
+
 pygame.init()
 pygame.mixer.pre_init(44100, 16, 2, 4096) 
 pygame.mixer.init()
 
-do = pygame.mixer.Sound("/home/pi/project/piano_stair_ui-main/piano_stair_ui-main/src/music/do.wav")
-re = pygame.mixer.Sound("/home/pi/project/piano_stair_ui-main/piano_stair_ui-main/src/music/re.wav")
-mi = pygame.mixer.Sound("/home/pi/project/piano_stair_ui-main/piano_stair_ui-main/src/music/mi.wav")
-fa = pygame.mixer.Sound("/home/pi/project/piano_stair_ui-main/piano_stair_ui-main/src/music/fa.wav")
-sol = pygame.mixer.Sound("/home/pi/project/piano_stair_ui-main/piano_stair_ui-main/src/music/sol.wav")
-la = pygame.mixer.Sound("/home/pi/project/piano_stair_ui-main/piano_stair_ui-main/src/music/la.wav")
-si = pygame.mixer.Sound("/home/pi/project/piano_stair_ui-main/piano_stair_ui-main/src/music/si.wav")
-high_do = pygame.mixer.Sound("/home/pi/project/piano_stair_ui-main/piano_stair_ui-main/src/music/high_do.wav")
+
+do = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/do.wav")
+re = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/re.wav")
+mi = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/mi.wav")
+fa = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/fa.wav")
+sol = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/sol.wav")
+la = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/la.wav")
+si = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/si.wav")
+high_do = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[3]}/high_do.wav")
+
+def select_instrument(instrument_num):
+    global do, re, mi, fa, sol, la, si, high_do
+    print(instrument_num)
+    do = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/do.wav")
+    re = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/re.wav")
+    mi = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/mi.wav")
+    fa = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/fa.wav")
+    sol = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/sol.wav")
+    la = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/la.wav")
+    si = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/si.wav")
+    high_do = pygame.mixer.Sound(f"music/instruments{INSTRUMENTS[instrument_num]}/high_do.wav")
 
 
 def do_play(lst):

@@ -9,6 +9,7 @@ from style.style_handler import StyleHandler
 from style.animation.menu import MenuAnimation
 from style.animation.theme import ThemeAnimation
 from network.bluetooth_connect import bluetooth_socket
+from music.player import select_instrument
 from constants import ( 
     BLUETOOTH_PAGE_INDEX, 
     INSTRUMENT_PAGE_INDEX,
@@ -57,12 +58,12 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ToolBar = StyleHandler.add_shadow(self.ToolBar)
 
     def signal_init(self):
-        self.BassGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BassGuitarBack, INSTRUMENTS_THEME["bass_guitar"]))
-        self.OrganSelect.clicked.connect(lambda : self.change_instrument(self.OrganBack, INSTRUMENTS_THEME["organ"]))
-        self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack, INSTRUMENTS_THEME["accordion"]))
-        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack, INSTRUMENTS_THEME["piano"]))
-        self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack, INSTRUMENTS_THEME["harp"]))
-        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack, INSTRUMENTS_THEME["vibra_phone"]))
+        self.BassGuitarSelect.clicked.connect(lambda : self.change_instrument(self.BassGuitarBack, INSTRUMENTS_THEME["bass_guitar"], 3))
+        self.OrganSelect.clicked.connect(lambda : self.change_instrument(self.OrganBack, INSTRUMENTS_THEME["organ"], 2))
+        self.AccordionSelect.clicked.connect(lambda : self.change_instrument(self.AccordionBack, INSTRUMENTS_THEME["accordion"], 4))
+        self.PianoSelect.clicked.connect(lambda : self.change_instrument(self.PianoBack, INSTRUMENTS_THEME["piano"], 0))
+        self.HarpSelect.clicked.connect(lambda : self.change_instrument(self.HarpBack, INSTRUMENTS_THEME["harp"], 1))
+        self.VibraPhoneSelect.clicked.connect(lambda : self.change_instrument(self.VibraPhoneBack, INSTRUMENTS_THEME["vibra_phone"], 5))
 
         self.QuitButton.clicked.connect(sys.exit)
 
@@ -76,7 +77,9 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.selected_menu_animation.updown_animation(page_index)
         self.WorkSpace.setCurrentIndex(page_index)
 
-    def change_instrument(self, now, widget_theme):
+    def change_instrument(self, now, widget_theme, instrument_num):
+        # self.selected_instrument = instrument_num
+        select_instrument(instrument_num)
         self.change_instrumenttheme_animation.change_theme(widget_theme, "instrument")
         self.change_total_theme_animation.change_theme(widget_theme, "total")
 
@@ -100,10 +103,9 @@ if __name__ == '__main__':
     piano_stair.design_init()
     piano_stair.signal_init()
 
-    th = threading.Thread(target=bluetooth_socket, args=(piano_stair,))
+    th = threading.Thread(target=bluetooth_socket, args=(piano_stair, ))
     th.daemon = True
     th.start()
-    print("Thread On")
 
     MainWindow.show()
 

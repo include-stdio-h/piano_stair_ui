@@ -6,6 +6,7 @@ from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
 import music.player as mpl
+from music.player import select_instrument
 from constants import (
     DEVICE_READY_STATUS_STYLE,
     DEVICE_READY_STATUS_ICON_STYLE,
@@ -28,18 +29,21 @@ def bluetooth_socket(ui):
         ui.DeviceStatusLabel.setStyleSheet(DEVICE_READY_STATUS_STYLE)
         ui.DeviceStatus.setStyleSheet(DEVICE_READY_STATUS_STYLE)
         ui.DeviceStatusIcon.setStyleSheet(DEVICE_READY_STATUS_ICON_STYLE)
-        icon_pixmap.load("../style/icons/ready.png")
+        icon_pixmap.load("style/icons/ready.png")
     except:
         ui.DeviceStatusLabel.setText("Disable")
         ui.DeviceStatusLabel.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
         ui.DeviceStatus.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
         ui.DeviceStatusIcon.setStyleSheet(DEVICE_DISABLE_STATUS_ICON_STYLE)
-        icon_pixmap.load("../style/icons/disable.png")
+        icon_pixmap.load("style/icons/disable.png")
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
     data = ''
     lst = [0] * 17
+
+    #select_instrument(ui.selected_instrument)
+    #print(ui.selected_instrument)
 
     t1 = threading.Thread(target=mpl.do_play, args=(lst,))
     t1.start()
@@ -67,8 +71,24 @@ def bluetooth_socket(ui):
                 data = list(data)
                 for h in range(len(data)):
                     lst[h] = data[h]
-                    print(lst)
+                print(lst)
+                device_status(lst, ui)
                 time.sleep(0.08)
                 data = ''
 
     socket.close()
+
+
+def device_status(lst, ui):
+    status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
+    
+    count = 1
+
+    for i in range(len(lst)):
+        if lst[i] == '0' or lst[i] == '1':
+            status[i-count].setStyleSheet(DEVICE_READY_STATUS_STYLE)
+            count += 1
+        elif lst[i] == '2':
+            status[i-count].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
+            count += 1
+
