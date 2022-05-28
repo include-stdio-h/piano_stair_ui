@@ -44,7 +44,7 @@ def bluetooth_socket(ui):
 
     # music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
 
-    music_threads = [threading.Thread(target=music_player, args=(lst, i, i*2+1, )) for i in range(8)]
+    music_threads = [threading.Thread(target=music_player, args=(lst, i*2+1, i, )) for i in range(8)]
 
     for i in music_threads: 
         i.start()
