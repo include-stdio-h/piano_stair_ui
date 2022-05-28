@@ -4,7 +4,7 @@ import pygame
 from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
-from music import music_player
+from music.player import music_player
 from constants import (
     DEVICE_READY_STATUS_STYLE,
     DEVICE_READY_STATUS_ICON_STYLE,
