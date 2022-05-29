@@ -20,6 +20,7 @@ def select_instrument(instrument_num):
             key.set_volume(0.5)
 
 def music_player(socket_status, key_index):
+    print(socket_status)
     print(key_index)
     while True:
         if socket_status == '1':
