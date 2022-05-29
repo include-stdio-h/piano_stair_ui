@@ -19,13 +19,13 @@ def select_instrument(instrument_num):
         for key in key_lst:
             key.set_volume(0.5)
 
-def music_player(socket_status, key_index):
-    print(socket_status)
+def music_player(socket_lst, key_index):
+    print(socket_lst)
     print(key_index)
     while True:
-        if socket_status == '1':
+        if socket_lst[key_index*2+1] == '1':
             key_lst[key_index].play()
-            while socket_status == '1':
+            while socket_lst[key_index*2+1] == '1':
                 time.sleep(0.08)
 
 
