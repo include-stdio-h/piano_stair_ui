@@ -23,8 +23,8 @@ def music_player(socket_lst, socket_idx, key_index):
     while True:
         if socket_lst[socket_idx] == '1':
             key_lst[key_index].play()
-            while socket_lst[socket_idx] == '1':
-                time.sleep(0.08)
+            # while socket_lst[socket_idx] == '1':
+            #     time.sleep(0.08)
 
 
 def do_play(lst):
