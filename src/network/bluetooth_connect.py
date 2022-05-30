@@ -13,8 +13,24 @@ from constants import (
     DEVICE_DISABLE_STATUS_ICON_STYLE
 )
 
+import pygame
+import time
+
+from constants import INSTRUMENTS
+
+pygame.init()
+pygame.mixer.pre_init(44100, 16, 2, 4096) 
+pygame.mixer.init()
+
+music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
+
+key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in music_keys]
+channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
+
+lst = [0 for i in range(10)]
 
 def bluetooth_socket(ui):
+    global lst
     print("Here")
     icon_pixmap = QPixmap()
 
@@ -41,7 +57,6 @@ def bluetooth_socket(ui):
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
     data = list()
-    lst = [0 for i in range(10)]
     flag = 0
 
     # music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
@@ -80,3 +95,20 @@ def device_status(lst, ui):
         elif lst[i] == 2:
             status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
 
+def select_instrument(instrument_num):
+    global key_lst
+    key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
+
+    if INSTRUMENTS[instrument_num] == "Accordion" or "Vibra_phone" or "Grandpiano":
+        for key in key_lst:
+            key.set_volume(0.4)
+
+def music_player(key_index):
+    global lst
+    while True:
+        print(lst)
+        if lst[key_index+1] == 1:
+            print(f"{music_keys[key_index]} Play")
+            channel_lst[key_index].play(key_lst[key_index])
+            while lst[key_index+1] == 1:
+                pass
