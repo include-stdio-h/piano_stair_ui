@@ -22,6 +22,8 @@ def select_instrument(instrument_num):
 
 def music_player(socket_lst, key_index):
     while True:
+        print(key_index)
+        print(socket_lst[key_index+1])
         if socket_lst[key_index+1] == 1:
             print(f"{music_keys[key_index]} Play")
             channel_lst[key_index].play(key_lst[key_index])
