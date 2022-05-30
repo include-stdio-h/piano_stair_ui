@@ -12,14 +12,14 @@ print("bluetooth connected!")
 data = ''
 lst = [0] * 17
 
-do = pygame.mixer.Sound("music/instruments/do.wav")
-re = pygame.mixer.Sound("music/instruments/re.wav")
-mi = pygame.mixer.Sound("music/instruments/mi.wav")
-fa = pygame.mixer.Sound("music/instruments/fa.wav")
-sol = pygame.mixer.Sound("music/instruments/sol.wav")
-la = pygame.mixer.Sound("music/instruments/la.wav")
-si = pygame.mixer.Sound("music/instruments/si.wav")
-high_do = pygame.mixer.Sound("music/instruments/highdo.wav")
+do = pygame.mixer.Sound("music/instruments/Grandpiano/do.wav")
+re = pygame.mixer.Sound("music/instruments/Grandpiano/re.wav")
+mi = pygame.mixer.Sound("music/instruments/Grandpiano/mi.wav")
+fa = pygame.mixer.Sound("music/instruments/Grandpiano/fa.wav")
+sol = pygame.mixer.Sound("music/instruments/Grandpiano/sol.wav")
+la = pygame.mixer.Sound("music/instruments/Grandpiano/la.wav")
+si = pygame.mixer.Sound("music/instruments/Grandpiano/si.wav")
+high_do = pygame.mixer.Sound("music/instruments/Grandpiano/highdo.wav")
 
 channel1 = pygame.mixer.Channel(0)
 channel2 = pygame.mixer.Channel(1)
