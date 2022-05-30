@@ -40,8 +40,8 @@ def bluetooth_socket(ui):
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
-    data = ''
-    lst = ''
+    data = list()
+    lst = list()
     flag = 0
 
     # music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
@@ -57,9 +57,9 @@ def bluetooth_socket(ui):
     while True:
         for i in socket.recv(1024):
             # i = chr(i).encode('utf-8').decode('utf-8')
-            data += str(i)
+            data.append(i)
             if i == 91:
-                data = str(i)
+                data = [i]
                 flag = 1
             if i == 93 and flag == 1:
                 lock.acquire()
@@ -67,7 +67,7 @@ def bluetooth_socket(ui):
                 lst = data
                 print(lst)
                 device_status(lst, ui)
-                data = ''
+                data = list()
                 lock.release()
             time.sleep(0.1)
 
