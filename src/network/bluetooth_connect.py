@@ -64,7 +64,7 @@ def bluetooth_socket(ui):
                     device_status(lst, ui)
                     data = ''
                     print(time.time() - a)
-                    time.sleep(0.25)
+                    time.sleep(0.125)
 
     socket.close()
 
