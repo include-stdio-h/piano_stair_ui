@@ -32,3 +32,59 @@ def music_player(socket_lst, key_index, test_lst):
                 while socket_lst[key_index*2+1] == '1':
                     pass
             test_lst[key_index] = 1
+
+def do_play(lst):
+   while True:
+        if lst[1] == '1':
+            key_lst[0].play()
+            while lst[1] == '1':
+                time.sleep(0.08)
+
+def re_play(lst):
+    while True:
+        if lst[3] == '1':
+            key_lst[1].play()
+            while lst[3] == '1':
+                time.sleep(0.08)
+
+def mi_play(lst):
+    while True:
+        if lst[5] == '1':
+            key_lst[2].play()
+            while lst[5] == '1':
+                time.sleep(0.08)
+
+def fa_play(lst):
+    while True:
+        if lst[7] == '1':
+            key_lst[3].play()
+            while lst[7] == '1':
+                time.sleep(0.08)
+
+def sol_play(lst):
+    while True:
+        if lst[9] == '1':
+            key_lst[4].play()
+            while lst[9] == '1':
+                time.sleep(0.08)
+
+def la_play(lst):
+    while True:
+        if lst[11] == '1':
+            key_lst[5].play()
+            while lst[11] == '1':
+                time.sleep(0.08)
+
+def si_play(lst):
+    while True:
+        if lst[13] == '1':
+            key_lst[6].play()
+            while lst[13] == '1':
+                time.sleep(0.08)
+
+def high_do_play(lst):
+    while True:
+        if lst[15] == '1':
+            key_lst[7].play()
+            while lst[15] == '1':
+                time.sleep(0.08)
