@@ -41,7 +41,7 @@ def bluetooth_socket(ui):
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
     data = ''
-    lst = [0 for i in range(17)]
+    lst = [0 for i in range(10)]
     test_lst = [1 for i in range(8)]
     flag = 0
 
