@@ -20,15 +20,12 @@ def select_instrument(instrument_num):
         for key in key_lst:
             key.set_volume(0.4)
 
-def music_player(socket_lst, key_index, test_lst):
+def music_player(socket_lst, key_index):
     while True:
-        if test_lst[key_index] == 0:
-            if socket_lst[key_index+1] == '1':
-                channel_lst[key_index].play(key_lst[key_index])
-                test_lst[key_index] = 1
-                while socket_lst[key_index+1] == '1':
-                    pass
-            test_lst[key_index] = 1
+        if socket_lst[key_index+1] == '1':
+            channel_lst[key_index].play(key_lst[key_index])
+            while socket_lst[key_index+1] == '1':
+                pass
 
 def do_play(lst):
    while True:
