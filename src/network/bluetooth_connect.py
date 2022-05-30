@@ -55,15 +55,14 @@ def bluetooth_socket(ui):
     while True:
         a = time.time()
         for i in socket.recv(1024):
-            print(i)
             i = chr(i).encode('utf-8').decode('utf-8')
             data += i
             if i == ']':
                     for i in range(len(data)):
                         lst[i] = data[i]
+                    print(lst)
                     device_status(lst, ui)
                     data = ''
-                    print(time.time() - a)
                     time.sleep(0.125)
 
     socket.close()
