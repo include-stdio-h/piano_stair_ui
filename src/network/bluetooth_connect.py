@@ -52,7 +52,6 @@ def bluetooth_socket(ui):
     for i in music_threads: 
         i.start()
 
-
     while True:
         a = time.time()
         for i in socket.recv(1024):
