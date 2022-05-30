@@ -78,7 +78,9 @@ def bluetooth_socket(ui):
                 flag = 1
             if i == 93 and flag == 1:
                 flag = 0 
+                print(data)
                 lst = data
+                print(lst)
                 device_status(lst, ui)
                 data = list()
             time.sleep(0.4)
@@ -106,7 +108,6 @@ def select_instrument(instrument_num):
 def music_player(key_index):
     global lst
     while True:
-        print(lst)
         if lst[key_index+1] == 1:
             print(f"{music_keys[key_index]} Play")
             channel_lst[key_index].play(key_lst[key_index])
