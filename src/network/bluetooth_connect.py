@@ -42,6 +42,7 @@ def bluetooth_socket(ui):
 
     data = ''
     lst = [0 for i in range(17)]
+    flag = 0
 
     # music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
     # music_threads = [threading.Thread(target=music_func, args=(lst, music_play_functions[music_func].index(), )) for music_func in music_play_functions]
@@ -57,7 +58,10 @@ def bluetooth_socket(ui):
         for i in socket.recv(1024):
             i = chr(i).encode('utf-8').decode('utf-8')
             data += i
-            if i == ']' and len(data) == 17:
+            if i == '[':
+                flag = 1
+            if i == ']' and flag == 1:
+                flag = 0                
                 lock.acquire()
                 for i in range(len(data)):
                     lst[i] = data[i]
