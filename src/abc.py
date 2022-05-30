@@ -19,7 +19,7 @@ fa = pygame.mixer.Sound("music/instruments/Grandpiano/fa.wav")
 sol = pygame.mixer.Sound("music/instruments/Grandpiano/sol.wav")
 la = pygame.mixer.Sound("music/instruments/Grandpiano/la.wav")
 si = pygame.mixer.Sound("music/instruments/Grandpiano/si.wav")
-high_do = pygame.mixer.Sound("music/instruments/Grandpiano/highdo.wav")
+high_do = pygame.mixer.Sound("music/instruments/Grandpiano/high_do.wav")
 
 channel1 = pygame.mixer.Channel(0)
 channel2 = pygame.mixer.Channel(1)
