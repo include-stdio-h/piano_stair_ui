@@ -60,6 +60,7 @@ def bluetooth_socket(ui):
             data += i
             print(data)
             if i == '[':
+                data = i
                 flag = 1
             if i == ']' and flag == 1:
                 flag = 0 
