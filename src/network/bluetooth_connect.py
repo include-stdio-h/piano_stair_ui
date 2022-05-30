@@ -14,25 +14,7 @@ from constants import (
 )
 
 
-import pygame
-import time
-
-from constants import INSTRUMENTS
-
-pygame.init()
-pygame.mixer.pre_init(44100, 16, 2, 4096) 
-pygame.mixer.init()
-
-music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
-
-key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in music_keys]
-channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
-
-lst = [0 for i in range(17)]
-test_lst = [1 for i in range(8)]
-
 def bluetooth_socket(ui):
-    global lst, test_lst
     print("Here")
     icon_pixmap = QPixmap()
 
@@ -59,20 +41,21 @@ def bluetooth_socket(ui):
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
     data = ''
+    lst = [0 for i in range(17)]
+    test_lst = [1 for i in range(8)]
     flag = 0
 
-    music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
-    music_threads = [threading.Thread(target=music_func) for music_func in music_play_functions]
+    # music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
+    # music_threads = [threading.Thread(target=music_func, args=(lst, music_play_functions[music_func].index(), )) for music_func in music_play_functions]
 
 
-    # music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
+    music_threads = [threading.Thread(target=music_player, args=(lst, i, test_lst, )) for i in range(8)]
     lock = threading.Lock()
 
     for i in music_threads:
         i.start()
 
     while True:
-        start_time = time.time()
         for i in socket.recv(1024):
             i = chr(i).encode('utf-8').decode('utf-8')
             data += i
@@ -80,9 +63,10 @@ def bluetooth_socket(ui):
                 data = i
                 flag = 1
             if i == ']' and flag == 1:
-                print(time.time() - start_time)
                 flag = 0 
-                while sum(test_lst) != 8: pass
+                print(test_lst)
+                print(sum(test_lst))
+                while sum(test_lst) != 8: print(sum(test_lst))
                 lock.acquire()
                 for i in range(len(data)):
                     lst[i] = data[i]
@@ -90,6 +74,9 @@ def bluetooth_socket(ui):
                 test_lst = [0 for i in range(8)]
                 data = ''
                 lock.release()
+                print(lst)
+                print(test_lst)
+                time.sleep(0.5)
 
     socket.close()
 
@@ -107,77 +94,3 @@ def device_status(lst, ui):
             status[i-count].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
             count += 1
 
-def select_instrument(instrument_num):
-    global key_lst
-    key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
-
-    if INSTRUMENTS[instrument_num] == "Accordion" or "Vibra_phone" or "Grandpiano":
-        for key in key_lst:
-            key.set_volume(0.4)
-
-def music_player(key_index):
-    global lst, test_lst
-    while True:
-        if test_lst[key_index] == 0:
-            if lst[key_index*2+1] == '1':
-                channel_lst[key_index].play(key_lst[key_index])
-                test_lst[key_index] = 1
-                while lst[key_index*2+1] == '1':
-                    pass
-            test_lst[key_index] = 1
-
-def do_play():
-   while True:
-        if lst[1] == '1':
-            key_lst[0].play()
-            while lst[1] == '1':
-                time.sleep(0.08)
-
-def re_play():
-    while True:
-        if lst[3] == '1':
-            key_lst[1].play()
-            while lst[3] == '1':
-                time.sleep(0.08)
-
-def mi_play():
-    while True:
-        if lst[5] == '1':
-            key_lst[2].play()
-            while lst[5] == '1':
-                time.sleep(0.08)
-
-def fa_play():
-    while True:
-        if lst[7] == '1':
-            key_lst[3].play()
-            while lst[7] == '1':
-                time.sleep(0.08)
-
-def sol_play():
-    while True:
-        if lst[9] == '1':
-            key_lst[4].play()
-            while lst[9] == '1':
-                time.sleep(0.08)
-
-def la_play():
-    while True:
-        if lst[11] == '1':
-            key_lst[5].play()
-            while lst[11] == '1':
-                time.sleep(0.08)
-
-def si_play():
-    while True:
-        if lst[13] == '1':
-            key_lst[6].play()
-            while lst[13] == '1':
-                time.sleep(0.08)
-
-def high_do_play():
-    while True:
-        if lst[15] == '1':
-            key_lst[7].play()
-            while lst[15] == '1':
-                time.sleep(0.08)
