@@ -72,6 +72,7 @@ def bluetooth_socket(ui):
         i.start()
 
     while True:
+        start_time = time.time()
         for i in socket.recv(1024):
             i = chr(i).encode('utf-8').decode('utf-8')
             data += i
@@ -79,9 +80,9 @@ def bluetooth_socket(ui):
                 data = i
                 flag = 1
             if i == ']' and flag == 1:
+                print(time.time() - start_time)
                 flag = 0 
-                print(test_lst)
-                while sum(test_lst) != 8: print(sum(test_lst))
+                while sum(test_lst) != 8: pass
                 lock.acquire()
                 for i in range(len(data)):
                     lst[i] = data[i]
@@ -89,8 +90,6 @@ def bluetooth_socket(ui):
                 test_lst = [0 for i in range(8)]
                 data = ''
                 lock.release()
-                print(lst)
-                print(test_lst)
 
     socket.close()
 
