@@ -40,7 +40,7 @@ def bluetooth_socket(ui):
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
-    data = ''
+    data = list()
     lst = [0 for i in range(10)]
     flag = 0
 
@@ -58,19 +58,19 @@ def bluetooth_socket(ui):
         for i in socket.recv(1024):
             print(i)
             # i = chr(i).encode('utf-8').decode('utf-8')
-            # data += i
-            # if i == '[':
-            #     data = i
-            #     flag = 1
-            # if i == ']' and flag == 1:
-            #     flag = 0 
-            #     lock.acquire()
-            #     print(data)
-            #     for i in range(len(data)):
-            #         lst[i] = data[i]
-            #     device_status(lst, ui)
-            #     data = ''
-            #     lock.release()
+            data.append(i)
+            if i == 91:
+                data = [i]
+                flag = 1
+            if i == 93 and flag == 1:
+                flag = 0 
+                lock.acquire()
+                print(data)
+                for i in range(len(data)):
+                    lst[i] = data[i]
+                device_status(lst, ui)
+                data = ''
+                lock.release()
             time.sleep(0.5)
 
     # socket.close()
