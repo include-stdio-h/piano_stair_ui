@@ -26,7 +26,7 @@ def music_player(socket_lst, key_index):
         if socket_lst[key_index*2+1] == '1':
             key_lst[key_index].play()
             while socket_lst[key_index*2+1] == '1':
-                time.sleep(0.2)
+                time.sleep(0.01)
 
 
 def do_play(lst):
