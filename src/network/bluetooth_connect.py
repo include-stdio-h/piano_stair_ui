@@ -66,6 +66,7 @@ def bluetooth_socket(ui):
                 flag = 0 
                 while sum(test_lst) != 8: pass
                 lock.acquire()
+                print(data)
                 for i in range(len(data)):
                     lst[i] = data[i]
                 device_status(lst, ui)
