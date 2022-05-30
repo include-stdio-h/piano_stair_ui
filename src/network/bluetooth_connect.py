@@ -63,7 +63,7 @@ def bluetooth_socket(ui):
     # music_threads = [threading.Thread(target=music_func, args=(lst, music_play_functions[music_func].index(), )) for music_func in music_play_functions]
 
 
-    music_threads = [threading.Thread(target=music_player, args=(lst, i, )) for i in range(8)]
+    music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
 
     for i in music_threads:
         i.start()
