@@ -48,6 +48,7 @@ def bluetooth_socket(ui):
 
 
     music_threads = [threading.Thread(target=music_player, args=(lst, i, )) for i in range(8)]
+    lock = threading.Lock()
 
     for i in music_threads:
         i.start()
@@ -57,11 +58,13 @@ def bluetooth_socket(ui):
             i = chr(i).encode('utf-8').decode('utf-8')
             data += i
             if i == ']':
+                lock.acquire()
                 for i in range(len(data)):
                     lst[i] = data[i]
                 device_status(lst, ui)
                 data = ''
                 time.sleep(0.1)
+                lock.release()
 
     socket.close()
 

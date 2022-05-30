@@ -18,7 +18,7 @@ def select_instrument(instrument_num):
 
     if INSTRUMENTS[instrument_num] == "Accordion" or "Vibra_phone" or "Grandpiano":
         for key in key_lst:
-            key.set_volume(0.5)
+            key.set_volume(0.4)
 
 def music_player(socket_lst, key_index):
     while True:
