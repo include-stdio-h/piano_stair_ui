@@ -41,7 +41,7 @@ def bluetooth_socket(ui):
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
     data = list()
-    lst = list()
+    lst = [0 for i in range(8)]
     flag = 0
 
     # music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
