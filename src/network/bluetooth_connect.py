@@ -64,8 +64,8 @@ def bluetooth_socket(ui):
             if i == 93 and flag == 1:
                 lock.acquire()
                 flag = 0 
-                print(data)
                 lst = data
+                print(lst)
                 device_status(lst, ui)
                 data = list()
                 lock.release()
@@ -76,14 +76,10 @@ def bluetooth_socket(ui):
 
 def device_status(lst, ui):
     status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
-    
-    count = 1
 
     for i in range(len(lst)):
         if lst[i] == 0 or lst[i] == 1:
-            status[i-count].setStyleSheet(DEVICE_READY_STATUS_STYLE)
-            count += 1
+            status[i].setStyleSheet(DEVICE_READY_STATUS_STYLE)
         elif lst[i] == 2:
-            status[i-count].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
-            count += 1
+            status[i].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
 
