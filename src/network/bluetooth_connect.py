@@ -61,6 +61,7 @@ def bluetooth_socket(ui):
                 lock.acquire()
                 for i in range(len(data)):
                     lst[i] = data[i]
+                print(lst)
                 device_status(lst, ui)
                 data = ''
                 time.sleep(0.1)
