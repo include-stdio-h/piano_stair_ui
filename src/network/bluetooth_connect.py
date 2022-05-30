@@ -79,7 +79,7 @@ def device_status(lst, ui):
 
     for i in range(len(lst)):
         if lst[i] == 0 or lst[i] == 1:
-            status[i].setStyleSheet(DEVICE_READY_STATUS_STYLE)
+            status[i-1].setStyleSheet(DEVICE_READY_STATUS_STYLE)
         elif lst[i] == 2:
-            status[i].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
+            status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
 
