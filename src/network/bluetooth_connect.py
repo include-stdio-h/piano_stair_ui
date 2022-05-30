@@ -57,6 +57,7 @@ def bluetooth_socket(ui):
         for i in socket.recv(1024):
             i = chr(i).encode('utf-8').decode('utf-8')
             data += i
+            print(data)
             if i == ']':
                 lock.acquire()
                 for i in range(len(data)):
