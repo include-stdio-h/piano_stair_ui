@@ -56,6 +56,7 @@ def bluetooth_socket(ui):
 
     while True:
         for i in socket.recv(1024):
+            lock.acquire()
             # i = chr(i).encode('utf-8').decode('utf-8')
             data.append(i)
             if i == 91:
@@ -63,7 +64,6 @@ def bluetooth_socket(ui):
                 flag = 1
             if i == 93 and flag == 1:
                 flag = 0 
-                lock.acquire()
                 print(data)
                 # for i in range(len(data)):
                 #     lst[i] = data[i]
