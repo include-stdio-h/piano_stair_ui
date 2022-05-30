@@ -52,7 +52,9 @@ def bluetooth_socket(ui):
     for i in music_threads: 
         i.start()
 
+
     while True:
+        a = time.time()
         for i in socket.recv(1024):
             print(i)
             i = chr(i).encode('utf-8').decode('utf-8')
@@ -62,6 +64,7 @@ def bluetooth_socket(ui):
                         lst[i] = data[i]
                     device_status(lst, ui)
                     data = ''
+                    print(time.time() - a)
                     time.sleep(0.08)
 
     socket.close()
