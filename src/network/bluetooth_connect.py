@@ -14,7 +14,25 @@ from constants import (
 )
 
 
+import pygame
+import time
+
+from constants import INSTRUMENTS
+
+pygame.init()
+pygame.mixer.pre_init(44100, 16, 2, 4096) 
+pygame.mixer.init()
+
+music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
+
+key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in music_keys]
+channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
+
+lst = [0 for i in range(17)]
+test_lst = [1 for i in range(8)]
+
 def bluetooth_socket(ui):
+    global lst, test_lst
     print("Here")
     icon_pixmap = QPixmap()
 
@@ -41,15 +59,13 @@ def bluetooth_socket(ui):
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
     data = ''
-    lst = [0 for i in range(17)]
-    test_lst = [1 for i in range(8)]
     flag = 0
 
     # music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
     # music_threads = [threading.Thread(target=music_func, args=(lst, music_play_functions[music_func].index(), )) for music_func in music_play_functions]
 
 
-    music_threads = [threading.Thread(target=music_player, args=(lst, i, test_lst, )) for i in range(8)]
+    music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
     lock = threading.Lock()
 
     for i in music_threads:
@@ -93,3 +109,24 @@ def device_status(lst, ui):
             status[i-count].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
             count += 1
 
+def select_instrument(instrument_num):
+    global key_lst
+    key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
+
+    if INSTRUMENTS[instrument_num] == "Accordion" or "Vibra_phone" or "Grandpiano":
+        for key in key_lst:
+            key.set_volume(0.4)
+
+def music_player(key_index):
+    global lst, test_lst
+    while True:
+        if test_lst[key_index] == 0:
+            print("??????")
+            if lst[key_index*2+1] == '1':
+                print("&&&&&&")
+                print(music_keys[key_index])
+                # channel_lst[key_index].play(key_lst[key_index])
+                test_lst[key_index] = 1
+                while lst[key_index*2+1] == '1':
+                    pass
+            test_lst[key_index] = 1
