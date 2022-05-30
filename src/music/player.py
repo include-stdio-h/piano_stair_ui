@@ -22,10 +22,9 @@ def select_instrument(instrument_num):
 def music_player(socket_lst, key_index):
     print(socket_lst)
     print(key_index)
-    while True:
-        if socket_lst[key_index*2+1] == '1':
-            key_lst[key_index].play()
-            time.sleep(0.2)
+    if socket_lst[key_index*2+1] == '1':
+        key_lst[key_index].play()
+        time.sleep(0.2)
             # while socket_lst[key_index*2+1] == '1':
             #     time.sleep(0.01)
 
