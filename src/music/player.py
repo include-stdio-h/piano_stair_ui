@@ -23,6 +23,7 @@ def music_player(socket_lst, key_index):
     while True:
         if socket_lst[key_index*2+1] == '1':
             key_lst[key_index].play()
+            time.sleep(0.05)
         else:
             key_lst[key_index].stop()
 
