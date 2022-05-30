@@ -64,6 +64,7 @@ def bluetooth_socket(ui):
             if i == 93 and flag == 1:
                 lock.acquire()
                 flag = 0 
+                print(data)
                 lst = data
                 print(lst)
                 device_status(lst, ui)
