@@ -56,13 +56,13 @@ def bluetooth_socket(ui):
 
     while True:
         for i in socket.recv(1024):
-            lock.acquire()
             # i = chr(i).encode('utf-8').decode('utf-8')
             data.append(i)
             if i == 91:
                 data = [i]
                 flag = 1
             if i == 93 and flag == 1:
+                lock.acquire()
                 flag = 0 
                 print(data)
                 lst = data
@@ -80,10 +80,10 @@ def device_status(lst, ui):
     count = 1
 
     for i in range(len(lst)):
-        if lst[i] == '0' or lst[i] == '1':
+        if lst[i] == 0 or lst[i] == 1:
             status[i-count].setStyleSheet(DEVICE_READY_STATUS_STYLE)
             count += 1
-        elif lst[i] == '2':
+        elif lst[i] == 2:
             status[i-count].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
             count += 1
 
