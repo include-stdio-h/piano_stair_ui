@@ -65,8 +65,7 @@ def bluetooth_socket(ui):
             if i == ']' and flag == 1:
                 flag = 0 
                 print(test_lst)
-                print(sum(test_lst))
-                while sum(test_lst) != 8: pass
+                while sum(test_lst) != 8: print(sum(test_lst))
                 lock.acquire()
                 for i in range(len(data)):
                     lst[i] = data[i]
