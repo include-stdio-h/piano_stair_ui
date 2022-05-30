@@ -49,27 +49,24 @@ def bluetooth_socket(ui):
 
 
     music_threads = [threading.Thread(target=music_player, args=(lst, i, )) for i in range(8)]
-    lock = threading.Lock()
 
     for i in music_threads:
         i.start()
 
     while True:
         for i in socket.recv(1024):
+            print(i)
             # i = chr(i).encode('utf-8').decode('utf-8')
             data.append(i)
             if i == 91:
                 data = [i]
                 flag = 1
             if i == 93 and flag == 1:
-                lock.acquire()
                 flag = 0 
                 print(data)
                 lst = data
-                print(lst)
                 device_status(lst, ui)
                 data = list()
-                lock.release()
             time.sleep(0.4)
 
     socket.close()
