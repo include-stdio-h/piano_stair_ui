@@ -91,7 +91,6 @@ def bluetooth_socket(ui):
                 lock.release()
                 print(lst)
                 print(test_lst)
-                time.sleep(0.5)
 
     socket.close()
 
