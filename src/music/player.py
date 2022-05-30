@@ -25,7 +25,7 @@ def music_player(socket_lst, key_index):
         if socket_lst[key_index*2+1] == '1':
             channel_lst[key_index].play(key_lst[key_index])
             while socket_lst[key_index*2+1] == '1':
-                pass
+                time.sleep(0.05)
 
 
 def do_play(lst):
