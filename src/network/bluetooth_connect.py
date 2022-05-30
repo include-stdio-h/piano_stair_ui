@@ -1,5 +1,4 @@
 import threading
-import multiprocessing
 import time
 import pygame
 from bluetooth import BluetoothSocket, RFCOMM
@@ -66,7 +65,7 @@ def bluetooth_socket(ui):
     # music_threads = [threading.Thread(target=music_func, args=(lst, music_play_functions[music_func].index(), )) for music_func in music_play_functions]
 
 
-    music_threads = [multiprocessing.Process(target=music_player, args=(i, )) for i in range(8)]
+    music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
     lock = threading.Lock()
 
     for i in music_threads:
