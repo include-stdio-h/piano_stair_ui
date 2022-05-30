@@ -77,11 +77,10 @@ def bluetooth_socket(ui):
                 data = [i]
                 flag = 1
             if i == 93 and flag == 1:
-                flag = 0 
+                flag = 0
                 lst = data
                 device_status(lst, ui)
                 data = list()
-            time.sleep(0.4)
 
     socket.close()
 
