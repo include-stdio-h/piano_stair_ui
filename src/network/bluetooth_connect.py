@@ -73,7 +73,7 @@ def bluetooth_socket(ui):
                 data = ''
                 lock.release()
                 print(test_lst)
-                time.sleep(0.4)
+                time.sleep(0.5)
 
     socket.close()
 
