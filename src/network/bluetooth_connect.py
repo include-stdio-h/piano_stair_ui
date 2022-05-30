@@ -121,11 +121,8 @@ def music_player(key_index):
     global lst, test_lst
     while True:
         if test_lst[key_index] == 0:
-            print("??????")
             if lst[key_index*2+1] == '1':
-                print("&&&&&&")
-                print(music_keys[key_index])
-                # channel_lst[key_index].play(key_lst[key_index])
+                channel_lst[key_index].play(key_lst[key_index])
                 test_lst[key_index] = 1
                 while lst[key_index*2+1] == '1':
                     pass
