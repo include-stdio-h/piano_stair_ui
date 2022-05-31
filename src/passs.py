@@ -118,11 +118,17 @@ t7.start()
 t8 = threading.Thread(target=high_do_play)
 t8.start()
 
+flag = 0
+
 while True:
     for i in socket.recv(1024):
         i = chr(i).encode('utf-8').decode('utf-8') #아스키코드를 문자열로 변환
         data += i #data에 문자열을 합치기
+        if i == '[':
+            data = i
+            flag = 1
         if i == ']':
+            flag = 0
             data = list(data) #data를 리스트로 변경
             for h in range(len(data)): 
                 lst[h] = data[h]
