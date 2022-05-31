@@ -72,7 +72,7 @@ def bluetooth_socket(ui):
 
     while True:
         start_time = time.time()
-        i = socket.recv(1024).decode('utf-8')
+        i = socket.recv(4096).decode('utf-8')
         data += i
         if i == '[':
             data = i
