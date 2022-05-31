@@ -63,8 +63,8 @@ def bluetooth_socket(ui):
     while True:
         i = socket.recv(4096).decode('utf-8')
         lst = i
+        socket_read(lst)
         device_status(i, ui)
-        time.sleep(0.05)
 
     socket.close()
 
@@ -78,7 +78,7 @@ def device_status(lst, ui):
         elif lst[i] == '2':
             status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
     return
-
+"""
 def select_instrument(instrument_num):
     global key_lst
     key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
@@ -93,3 +93,4 @@ def music_player(key_index):
             channel_lst[key_index].play(key_lst[key_index])
             while lst[key_index+1] == '1':
                 pass
+"""

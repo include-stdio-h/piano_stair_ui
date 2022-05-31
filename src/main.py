@@ -8,8 +8,8 @@ from ui.piano_stairs_design import Ui_MainWindow
 from style.style_handler import StyleHandler
 from style.animation.menu import MenuAnimation
 from style.animation.theme import ThemeAnimation
-from network.bluetooth_connect import bluetooth_socket, select_instrument
-# from music.player import select_instrument
+from network.bluetooth_connect import bluetooth_socket
+from music.player import select_instrument
 from constants import ( 
     BLUETOOTH_PAGE_INDEX, 
     INSTRUMENT_PAGE_INDEX,
