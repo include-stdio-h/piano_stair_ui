@@ -2,6 +2,7 @@ import asyncio
 from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
+from music.player import music_player
 from constants import (
     DEVICE_READY_STATUS_STYLE,
     DEVICE_READY_STATUS_ICON_STYLE,
@@ -9,12 +10,11 @@ from constants import (
     DEVICE_DISABLE_STATUS_ICON_STYLE
 )
 
-from music.player import music_player
-
 
 def serial_socket(ui):
     icon_pixmap = QPixmap()
     socket = BluetoothSocket( RFCOMM )
+
     try:
         socket.connect(("98:DA:60:03:C9:9C", 1))
         print("bluetooth connected!")
@@ -36,7 +36,6 @@ def serial_socket(ui):
 
     while True:
         i = socket.recv(1024).decode('utf-8')
-        print(i)
         if lst != i:
             lst = i
             asyncio.run(music_player(lst))

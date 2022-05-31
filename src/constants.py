@@ -53,3 +53,5 @@ ORGAN_INDEX = 2
 GUITAR_INDEX = 3
 ACCORDION_INDEX = 4
 VIBRA_PHONE_INDEX = 5 
+
+MUSIC_KEY_FILES = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
