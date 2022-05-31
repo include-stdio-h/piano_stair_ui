@@ -78,7 +78,6 @@ def bluetooth_socket(ui):
             # print(i)
             # i = chr(i).encode('utf-8').decode('utf-8')
         data += i
-        print(data)
         if i == '[':
             data = i
             flag = 1
