@@ -25,6 +25,7 @@ key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for k
 channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
 
 
+music_status = [0 for i in range(8)]
 lst = [0 for i in range(10)]
 
 def serial_socket(ui):
@@ -46,7 +47,7 @@ def serial_socket(ui):
         ui.DeviceStatusIcon.setStyleSheet(DEVICE_DISABLE_STATUS_ICON_STYLE)
         icon_pixmap.load("style/icons/disable.png")
         while arduino.readable(): 
-            arduino = serial.Serial('/dev/ttyACM1', 9600)
+            arduino = serial.Serial('/dev/ttyUSB0', 9600)
             print("Re-connecting")
             time.sleep(3)
 
@@ -59,14 +60,12 @@ def serial_socket(ui):
 
     while True:
         start_time = time.time()
-        i = arduino.readline().decode('utf-8')
-        print(time.time() - start_time)
-        print(i)
-        lst = i
+        if sum(music_status) == 8:
+            i = arduino.readline().decode('utf-8')
+            print(time.arduinotime() - start_time)
+            print(i)
+            lst = i
         # device_status(i, ui)
-
-    socket.close()
-
 
 def device_status(lst, ui):
     status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
@@ -87,8 +86,12 @@ def select_instrument(instrument_num):
             key.set_volume(0.4)
 
 def music_player(key_index):
+    global music_status
     while True:
-        if lst[key_index+1] == '1':
-            channel_lst[key_index].play(key_lst[key_index])
-            while lst[key_index+1] == '1':
-                pass
+        if music_status[key_index] == 0:
+            if lst[key_index+1] == '1':
+                channel_lst[key_index].play(key_lst[key_index])
+                music_status[key_index] = 1
+                while lst[key_index+1] == '1':
+                    pass
+            music_status[key_index] = 1
