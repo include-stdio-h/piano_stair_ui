@@ -31,7 +31,7 @@ lst = [0 for i in range(8)]
 def serial_socket(ui):
     global lst, music_status
     icon_pixmap = QPixmap()
-    arduino = serial.Serial(port='COM6', baudrate=9600)
+    arduino = serial.Serial(port='/dev/ttyUSB8', baudrate=9600)
     # arduino = serial.Serial(port='COM6', baudrate=9600, timeout=.1)
 
     if arduino.readable():
