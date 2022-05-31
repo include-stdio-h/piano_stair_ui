@@ -73,7 +73,7 @@ def bluetooth_socket(ui):
     status_thread.start()
 
     while True:
-        i = socket.recv(256)
+        i = socket.recv(256).decode('utf-8')
         print(i)
             # print(i)
             # i = chr(i).encode('utf-8').decode('utf-8')
