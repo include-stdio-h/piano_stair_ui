@@ -82,6 +82,7 @@ def bluetooth_socket(ui):
             status_thread.start()
             data = ''
             print((time.time() - start_time) * 10)
+            time.sleep(0.01)
 
         # for i in socket.recv(256):
         #     # print(i)
@@ -98,7 +99,7 @@ def bluetooth_socket(ui):
     socket.close()
 
 
-def device_status(lst, ui):
+def device_status(ui):
     status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
 
     for i in range(1,9):
@@ -106,6 +107,7 @@ def device_status(lst, ui):
             status[i-1].setStyleSheet(DEVICE_READY_STATUS_STYLE)
         elif lst[i] == '2':
             status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
+    return
 
 def select_instrument(instrument_num):
     global key_lst
