@@ -1,5 +1,6 @@
 import threading
 import pygame
+import time
 from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
@@ -63,6 +64,7 @@ def bluetooth_socket(ui):
         i = socket.recv(4096).decode('utf-8')
         socket_read(i)
         device_status(i, ui)
+        time.sleep(0.05)
 
     socket.close()
 
