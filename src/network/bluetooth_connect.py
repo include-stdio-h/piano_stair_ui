@@ -1,5 +1,4 @@
 import threading
-import time
 import pygame
 from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
@@ -14,7 +13,6 @@ from constants import (
 )
 
 import pygame
-import time
 
 from constants import INSTRUMENTS
 
@@ -57,20 +55,13 @@ def bluetooth_socket(ui):
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
-    data = ''
-    flag = 0
-
-    # music_play_functions = [mpl.do_play, mpl.re_play, mpl.mi_play, mpl.fa_play, mpl.sol_play, mpl.la_play, mpl.si_play, mpl.high_do_play]
-    # music_threads = [threading.Thread(target=music_func, args=(lst, music_play_functions[music_func].index(), )) for music_func in music_play_functions]
-
-
-    music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
-    # status_thread = threading.Thread(target=device_status, args=(ui, ))
+    music_threads = [threading.Thread(target=music_player, args=(lst, i, )) for i in range(8)]
 
     for i in music_threads:
         i.start()
 
     while True:
+        socket.settimeout()
         i = socket.recv(4096).decode('utf-8')
         lst = i
         device_status(lst, ui)
@@ -88,6 +79,7 @@ def device_status(lst, ui):
             status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
     return
 
+"""
 def select_instrument(instrument_num):
     global key_lst
     key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
@@ -102,3 +94,4 @@ def music_player(key_index):
             channel_lst[key_index].play(key_lst[key_index])
             while lst[key_index+1] == '1':
                 pass
+"""
