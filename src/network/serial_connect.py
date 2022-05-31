@@ -63,7 +63,7 @@ def serial_socket(ui):
         print(time.time() - start_time)
         print(i)
         lst = i
-        device_status(i, ui)
+        # device_status(i, ui)
 
     socket.close()
 
