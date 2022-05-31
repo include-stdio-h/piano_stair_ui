@@ -1,6 +1,6 @@
-import time
 import serial
 import asyncio
+from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
 from constants import (
@@ -15,17 +15,18 @@ from music.player import music_player
 
 def serial_socket(ui):
     icon_pixmap = QPixmap()
-    arduino = serial.Serial(port='/dev/ttyUSB0', baudrate=9600)
-    # arduino = serial.Serial(port='COM6', baudrate=9600, timeout=.1)
+    socket = BluetoothSocket( RFCOMM )
+    try:
+        socket.connect(("98:DA:60:03:C9:9C", 1))
+        print("bluetooth connected!")
 
-    if arduino.readable():
         print("Serial connected!")
         ui.DeviceStatusLabel.setText("Ready")
         ui.DeviceStatusLabel.setStyleSheet(DEVICE_READY_STATUS_STYLE)
         ui.DeviceStatus.setStyleSheet(DEVICE_READY_STATUS_STYLE)
         ui.DeviceStatusIcon.setStyleSheet(DEVICE_READY_STATUS_ICON_STYLE)
         icon_pixmap.load("style/icons/ready.png")
-    else:
+    except:
         ui.DeviceStatusLabel.setText("Disable")
         ui.DeviceStatusLabel.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
         ui.DeviceStatus.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
@@ -41,8 +42,7 @@ def serial_socket(ui):
     lst = [0 for i in range(8)]
 
     while True:
-        start_time = time.time()
-        i = arduino.readline().decode('utf-8')
+        i = socket.recv(1024).decode('utf-8')
         if lst != i:
             lst = i
             asyncio.run(music_player(lst))
