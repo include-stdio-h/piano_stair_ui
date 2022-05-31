@@ -71,26 +71,9 @@ def bluetooth_socket(ui):
         i.start()
 
     while True:
-        start_time = time.time()
-        i = socket.recv(1024).decode('utf-8')
-        
+        i = socket.recv(4096).decode('utf-8')
         lst = i
         device_status(lst, ui)
-        print((time.time() - start_time) * 10)
-        
-        
-
-        # for i in socket.recv(256):
-        #     # print(i)
-        #     # i = chr(i).encode('utf-8').decode('utf-8')
-        #     data.append(i)
-        #     if i == 91:
-        #         data = [i]
-        #         flag = 1
-        #     if i == 93 and flag == 1:
-        #         flag = 0
-        #         lst = data
-        #         data = list()
 
     socket.close()
 
