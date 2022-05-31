@@ -134,7 +134,7 @@ while True:
             for h in range(len(data)): 
                 lst[h] = data[h]
                 #print(lst)
-            # time.sleep(0.08)
+            time.sleep(0.08)
             data = ''
 
 socket.close()
