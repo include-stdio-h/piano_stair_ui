@@ -26,7 +26,7 @@ def socket_read(lst):
     global socket_lst
     socket_lst = lst
 
-def music_player(socket_lst, key_index):
+def music_player(key_index):
     while True:
         print(socket_lst)
         if socket_lst[key_index+1] == 1:
