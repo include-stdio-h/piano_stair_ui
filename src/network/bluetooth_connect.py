@@ -18,6 +18,7 @@ import time
 
 from constants import INSTRUMENTS
 
+music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
 
 key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in music_keys]
 channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
@@ -26,7 +27,7 @@ pygame.init()
 pygame.mixer.pre_init(44100, 16, 2, 4096) 
 pygame.mixer.init()
 
-music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
+
 
 lst = [0 for i in range(10)]
 
