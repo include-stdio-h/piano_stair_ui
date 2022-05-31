@@ -106,9 +106,9 @@ def device_status(ui):
     status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
 
     for i in range(1,9):
-        if lst[i] == 0 or lst[i] == 1:
+        if lst[i] == '0' or lst[i] == '1':
             status[i-1].setStyleSheet(DEVICE_READY_STATUS_STYLE)
-        elif lst[i] == 2:
+        elif lst[i] == '2':
             status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
 
 def select_instrument(instrument_num):
@@ -122,9 +122,8 @@ def select_instrument(instrument_num):
 def music_player(key_index):
     global lst
     while True:
-        print(f"{music_keys[key_index]} : ",lst[key_index+1])
-        if lst[key_index+1] == 1:
+        if lst[key_index+1] == '1':
             print(f"{music_keys[key_index]} Play")
             channel_lst[key_index].play(key_lst[key_index])
-            while lst[key_index+1] == 1:
+            while lst[key_index+1] == '1':
                 pass
