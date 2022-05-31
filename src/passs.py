@@ -130,9 +130,10 @@ while True:
         if i == ']' and flag == 1:
             flag = 0
             data = list(data) #data를 리스트로 변경
+            print(data)
             for h in range(len(data)): 
                 lst[h] = data[h]
-                print(lst)
+                #print(lst)
             time.sleep(0.08)
             data = ''
 
