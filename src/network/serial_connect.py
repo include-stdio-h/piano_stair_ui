@@ -67,6 +67,8 @@ def serial_socket(ui):
             print("Start!")
             arduino.write('1'.encode('utf-8'))
             print("Start!")
+            arduino.write('1'.encode('utf-8'))
+            print("---------------------")
             time.sleep(0.01)
             i = arduino.readline().decode('utf-8')
             print("Start!")
