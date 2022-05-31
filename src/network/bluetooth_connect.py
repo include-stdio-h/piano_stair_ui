@@ -81,7 +81,7 @@ def bluetooth_socket(ui):
         if i == '[':
             data = i
             flag = 1
-        if i == ']' and flag == 1:
+        if data[-1] == ']' and flag == 1:
             flag = 0
             lst = data
             print(lst)
