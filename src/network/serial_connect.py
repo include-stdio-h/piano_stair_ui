@@ -45,7 +45,7 @@ def serial_socket(ui):
 def device_status(lst, ui):
     status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
 
-    print(lst[i])
+    print(lst)
 
     for i in range(8):
         if lst[i] == '0' or '1':
