@@ -79,7 +79,6 @@ def device_status(lst, ui):
             status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
     return
 
-"""
 def select_instrument(instrument_num):
     global key_lst
     key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
@@ -94,4 +93,3 @@ def music_player(key_index):
             channel_lst[key_index].play(key_lst[key_index])
             while lst[key_index+1] == '1':
                 pass
-"""
