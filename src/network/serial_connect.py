@@ -36,6 +36,7 @@ def serial_socket(ui):
 
     while True:
         i = socket.recv(1024).decode('utf-8')
+        print(i)
         if lst != i:
             lst = i
             asyncio.run(music_player(lst))
