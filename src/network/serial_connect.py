@@ -60,7 +60,7 @@ def serial_socket(ui):
 
     while True:
         start_time = time.time()
-        print(music_status)
+        # print(music_status)
         if sum(music_status) == 8:
             music_status = [0 for i in range(8)]
             i = arduino.readline(arduino.in_waiting).decode('utf-8')
@@ -97,4 +97,5 @@ def music_player(key_index):
                 music_status[key_index] = 1
                 while lst[key_index+1] == '1':
                     pass
-            music_status[key_index] = 1
+            else:
+                music_status[key_index] = 1
