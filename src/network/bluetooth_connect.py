@@ -73,18 +73,29 @@ def bluetooth_socket(ui):
     status_thread.start()
 
     while True:
-        # print(socket.recv(8196).decode('utf-8'))
-        for i in socket.recv(256):
+        i = socket.recv(256)
+        print(i)
             # print(i)
             # i = chr(i).encode('utf-8').decode('utf-8')
-            data.append(i)
-            if i == 91:
-                data = [i]
-                flag = 1
-            if i == 93 and flag == 1:
-                flag = 0
-                lst = data
-                data = list()
+        data.append(i)
+        if i == 91:
+            data = [i]
+            flag = 1
+        if i == 93 and flag == 1:
+            flag = 0
+            lst = data
+            data = list()
+        # for i in socket.recv(256):
+        #     # print(i)
+        #     # i = chr(i).encode('utf-8').decode('utf-8')
+        #     data.append(i)
+        #     if i == 91:
+        #         data = [i]
+        #         flag = 1
+        #     if i == 93 and flag == 1:
+        #         flag = 0
+        #         lst = data
+        #         data = list()
 
     socket.close()
 
