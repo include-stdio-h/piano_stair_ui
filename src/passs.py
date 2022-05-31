@@ -10,7 +10,7 @@ socket.connect(("98:D3:71:F9:6A:40", 1))
 print("bluetooth connected!")
 
 data = '' #문자열을 저장할 변수
-lst = [0] * 17 #리스트 
+lst = [0] * 10 #리스트 
 
 do = pygame.mixer.Sound("music/instruments/Grandpiano/do.wav")
 re = pygame.mixer.Sound("music/instruments/Grandpiano/re.wav")
@@ -33,71 +33,71 @@ def do_play():
 def re_play():
     while True:
         
-        if lst[3] == '1':
+        if lst[2] == '1':
             
             re.play()
             
-            while lst[3] == '1':
+            while lst[2] == '1':
                 time.sleep(0.08)
 
 def mi_play():
     while True:
         
-        if lst[5] == '1':
+        if lst[3] == '1':
 
             mi.play()
             
-            while lst[5] == '1':
+            while lst[3] == '1':
                 time.sleep(0.08)
 
 def fa_play():
     while True:
        
-        if lst[7] == '1':
+        if lst[4] == '1':
            
             fa.play()
             
-            while lst[7] == '1':
+            while lst[4] == '1':
                 time.sleep(0.08)
 
 def sol_play():
     while True:
         
-        if lst[9] == '1':
+        if lst[5] == '1':
             
             sol.play()
             
-            while lst[9] == '1':
+            while lst[5] == '1':
                 time.sleep(0.08)
 
 def la_play():
     while True:
         
-        if lst[11] == '1':
+        if lst[6] == '1':
             
             la.play()
             
-            while lst[11] == '1':
+            while lst[6] == '1':
                 time.sleep(0.08)
 
 def si_play():
     while True:
         
-        if lst[13] == '1':
+        if lst[7] == '1':
             
             si.play()
             
-            while lst[13] == '1':
+            while lst[7] == '1':
                 time.sleep(0.08)
 
 def high_do_play():
     while True:
         
-        if lst[15] == '1':
+        if lst[8] == '1':
             
             high_do.play()
             
-            while lst[15] == '1':
+            while lst[8] == '1':
                 time.sleep(0.08)
                 
 
