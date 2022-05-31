@@ -36,8 +36,6 @@ def bluetooth_socket(ui):
     print("Here")
     icon_pixmap = QPixmap()
 
-    pygame.init()
-    pygame.mixer.init()
     socket = BluetoothSocket( RFCOMM )
     try:
         print("There")
