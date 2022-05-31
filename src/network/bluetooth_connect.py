@@ -74,16 +74,18 @@ def bluetooth_socket(ui):
 
     while True:
         i = socket.recv(256).decode('utf-8')
-        print(i)
+        # print(i)
             # print(i)
             # i = chr(i).encode('utf-8').decode('utf-8')
         data.append(i)
-        if i == 91:
+        print(data)
+        if i == '[':
             data = [i]
             flag = 1
-        if i == 93 and flag == 1:
+        if i == ']' and flag == 1:
             flag = 0
             lst = data
+            print(lst)
             data = list()
         # for i in socket.recv(256):
         #     # print(i)
