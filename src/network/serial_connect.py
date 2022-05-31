@@ -62,7 +62,7 @@ def serial_socket(ui):
         start_time = time.time()
         if sum(music_status) == 8:
             i = arduino.readline().decode('utf-8')
-            print(time.arduinotime() - start_time)
+            print(time.time() - start_time)
             print(i)
             lst = i
         # device_status(i, ui)
