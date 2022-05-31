@@ -66,8 +66,6 @@ def serial_socket(ui):
             music_status = [0 for i in range(8)]
             print("Start!")
             arduino.write('1'.encode('utf-8'))
-            print("Start!")
-            arduino.write('1'.encode('utf-8'))
             print("---------------------")
             time.sleep(0.05)
             i = arduino.readline().decode('utf-8')
