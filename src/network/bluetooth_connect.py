@@ -39,7 +39,8 @@ def bluetooth_socket(ui):
     socket = BluetoothSocket( RFCOMM )
     try:
         print("There")
-        socket.connect(("98:D3:71:F9:6A:40", 1))
+        # socket.connect(("98:D3:71:F9:6A:40", 1))
+        socket.connect(("98:DA:60:03:C9:9C", 1))
         print("bluetooth connected!")
 
         ui.DeviceStatusLabel.setText("Ready")
