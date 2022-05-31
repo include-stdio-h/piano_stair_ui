@@ -4,7 +4,7 @@ import time
 from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
-from music.player import music_player, socket_read
+from music.player import music_player
 from constants import (
     DEVICE_READY_STATUS_STYLE,
     DEVICE_READY_STATUS_ICON_STYLE,
@@ -61,9 +61,8 @@ def bluetooth_socket(ui):
         i.start()
 
     while True:
-        i = socket.recv(4096).decode('utf-8')
+        i = socket.recv(1024).decode('utf-8')
         lst = i
-        socket_read(lst)
         device_status(i, ui)
 
     socket.close()
