@@ -25,7 +25,7 @@ key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for k
 channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
 
 
-music_status = [0 for i in range(8)]
+music_status = [1 for i in range(8)]
 lst = [0 for i in range(10)]
 
 def serial_socket(ui):
@@ -64,6 +64,7 @@ def serial_socket(ui):
         if sum(music_status) == 8:
             music_status = [0 for i in range(8)]
             i = arduino.readline(arduino.in_waiting).decode('utf-8')
+            print(i)
             print(time.time() - start_time)
             # print(i)
             lst = i
