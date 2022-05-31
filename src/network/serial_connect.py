@@ -1,7 +1,6 @@
 import time
 import serial
 import asyncio
-import pygame
 from PyQt5.QtGui import QPixmap
 
 from constants import (
