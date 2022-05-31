@@ -38,7 +38,6 @@ def serial_socket(ui):
         i = socket.recv(1024).decode('utf-8')
         if lst != i:
             lst = i
-            print(lst)
             asyncio.run(music_player(lst))
             device_status(lst, ui)
 
@@ -48,6 +47,7 @@ def device_status(lst, ui):
     print(lst)
 
     for i in range(8):
+        print(lst[i])
         if lst[i] == '0' or '1':
             status[i].setStyleSheet(DEVICE_READY_STATUS_STYLE)
         elif lst[i] == '2':
