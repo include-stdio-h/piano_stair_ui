@@ -31,7 +31,7 @@ lst = [0 for i in range(10)]
 def serial_socket(ui):
     global lst
     icon_pixmap = QPixmap()
-    arduino = serial.Serial('/dev/ttyACM1', 9600)
+    arduino = serial.Serial('/dev/ttyUSB0', 9600)
 
     if arduino.readable():
         print("Serial connected!")
