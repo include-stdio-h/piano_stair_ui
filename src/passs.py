@@ -121,7 +121,7 @@ t8.start()
 flag = 0
 
 while True:
-    for i in socket.recv(10240):
+    for i in socket.recv(4096):
         i = chr(i).encode('utf-8').decode('utf-8') #아스키코드를 문자열로 변환
         data += i #data에 문자열을 합치기
         if i == '[':
@@ -134,7 +134,7 @@ while True:
             for h in range(len(data)): 
                 lst[h] = data[h]
                 #print(lst)
-            # time.sleep(0.08)
+            time.sleep(0.08)
             data = ''
 
 socket.close()
