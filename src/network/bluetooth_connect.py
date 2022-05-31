@@ -24,7 +24,7 @@ music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.w
 key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in music_keys]
 channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
 
-pygame.mixer.pre_init() 
+pygame.mixer.pre_init(channels=8) 
 pygame.mixer.init()
 pygame.init()
 
@@ -64,15 +64,14 @@ def bluetooth_socket(ui):
 
 
     music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
-    status_thread = threading.Thread(target=device_status, args=(ui, ))
+    # status_thread = threading.Thread(target=device_status, args=(ui, ))
 
     for i in music_threads:
         i.start()
-    status_thread.start()
 
     while True:
         start_time = time.time()
-        i = socket.recv(128).decode('utf-8')
+        i = socket.recv(4096).decode('utf-8')
         data += i
         if i == '[':
             data = i
@@ -80,6 +79,7 @@ def bluetooth_socket(ui):
         if data[-1] == ']' and flag == 1:
             flag = 0
             lst = data
+            device_status(lst, ui)
             data = ''
             print((time.time() - start_time) * 10)
 
@@ -98,8 +98,7 @@ def bluetooth_socket(ui):
     socket.close()
 
 
-def device_status(ui):
-    global lst
+def device_status(lst, ui):
     status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
 
     for i in range(1,9):
