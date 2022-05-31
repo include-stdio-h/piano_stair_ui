@@ -38,6 +38,7 @@ def serial_socket(ui):
         i = socket.recv(1024).decode('utf-8')
         if lst != i:
             lst = i
+            print(lst)
             asyncio.run(music_player(lst))
             device_status(lst, ui)
 
