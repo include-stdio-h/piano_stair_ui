@@ -62,7 +62,7 @@ def bluetooth_socket(ui):
 
     while True:
         i = socket.recv(4096).decode('utf-8')
-        socket_read(i)
+        lst = i
         device_status(i, ui)
         time.sleep(0.05)
 
