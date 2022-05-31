@@ -16,7 +16,7 @@ import pygame
 
 from constants import INSTRUMENTS
 
-"""
+
 music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
 
 key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in music_keys]
@@ -25,7 +25,7 @@ channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
 pygame.mixer.pre_init(channels=8) 
 pygame.mixer.init()
 pygame.init()
-"""
+
 
 lst = [0 for i in range(10)]
 
@@ -78,7 +78,7 @@ def device_status(lst, ui):
         elif lst[i] == '2':
             status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
     return
-"""
+
 def select_instrument(instrument_num):
     global key_lst
     key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
@@ -93,4 +93,3 @@ def music_player(key_index):
             channel_lst[key_index].play(key_lst[key_index])
             while lst[key_index+1] == '1':
                 pass
-"""
