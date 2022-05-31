@@ -127,7 +127,7 @@ while True:
         if i == '[':
             data = i
             flag = 1
-        if i == ']':
+        if i == ']' and flag == 1:
             flag = 0
             data = list(data) #data를 리스트로 변경
             for h in range(len(data)): 
