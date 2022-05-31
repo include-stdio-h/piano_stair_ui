@@ -58,7 +58,9 @@ def serial_socket(ui):
         music_threads[i].start()
 
     while True:
+        start_time = time.time()
         i = arduino.readline().decode('utf-8')
+        print(time.time() - start_time)
         print(i)
         lst = i
         device_status(i, ui)
