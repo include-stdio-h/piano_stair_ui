@@ -12,6 +12,8 @@ music_keys = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.w
 key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in music_keys]
 channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
 
+socket_lst = [0 for i in range(10)]
+
 def select_instrument(instrument_num):
     global key_lst
     key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in music_keys]
@@ -19,6 +21,10 @@ def select_instrument(instrument_num):
     if INSTRUMENTS[instrument_num] == "Accordion" or "Vibra_phone" or "Grandpiano":
         for key in key_lst:
             key.set_volume(0.4)
+
+def socket_read(lst):
+    global socket_lst
+    socket_lst = lst
 
 def music_player(socket_lst, key_index):
     while True:

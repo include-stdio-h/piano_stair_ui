@@ -3,8 +3,7 @@ import pygame
 from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
-from music.player import music_player
-import music.player as mpl
+from music.player import music_player, socket_read
 from constants import (
     DEVICE_READY_STATUS_STYLE,
     DEVICE_READY_STATUS_ICON_STYLE,
@@ -55,7 +54,7 @@ def bluetooth_socket(ui):
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
-    music_threads = [threading.Thread(target=music_player, args=(lst, i, )) for i in range(8)]
+    music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
 
     for i in music_threads:
         i.start()
@@ -63,8 +62,8 @@ def bluetooth_socket(ui):
     while True:
         socket.settimeout()
         i = socket.recv(4096).decode('utf-8')
-        lst = i
-        device_status(lst, ui)
+        socket_read(i)
+        device_status(i, ui)
 
     socket.close()
 
