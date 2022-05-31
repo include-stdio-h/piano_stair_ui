@@ -51,4 +51,5 @@ def device_status(lst, ui):
         if lst[i] == '0' or '1':
             status[i].setStyleSheet(DEVICE_READY_STATUS_STYLE)
         elif lst[i] == '2':
+            print("-------------------")
             status[i].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
