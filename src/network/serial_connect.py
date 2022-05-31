@@ -1,10 +1,9 @@
 import threading
 import pygame
 import time
-from bluetooth import BluetoothSocket, RFCOMM
+import serial
 from PyQt5.QtGui import QPixmap
 
-from music.player import music_player
 from constants import (
     DEVICE_READY_STATUS_STYLE,
     DEVICE_READY_STATUS_ICON_STYLE,
@@ -29,41 +28,41 @@ pygame.init()
 
 lst = [0 for i in range(10)]
 
-def bluetooth_socket(ui):
+def serial_socket(ui):
     global lst
-    print("Here")
     icon_pixmap = QPixmap()
+    arduino = serial.Serial('/dev/ttyACM1', 9600)
 
-    socket = BluetoothSocket( RFCOMM )
-    try:
-        print("There")
-        # socket.connect(("98:D3:71:F9:6A:40", 1))
-        socket.connect(("98:DA:60:03:C9:9C", 1))
-        print("bluetooth connected!")
-
+    if arduino.readable():
+        print("Serial connected!")
         ui.DeviceStatusLabel.setText("Ready")
         ui.DeviceStatusLabel.setStyleSheet(DEVICE_READY_STATUS_STYLE)
         ui.DeviceStatus.setStyleSheet(DEVICE_READY_STATUS_STYLE)
         ui.DeviceStatusIcon.setStyleSheet(DEVICE_READY_STATUS_ICON_STYLE)
         icon_pixmap.load("style/icons/ready.png")
-    except:
+    else:
         ui.DeviceStatusLabel.setText("Disable")
         ui.DeviceStatusLabel.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
         ui.DeviceStatus.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
         ui.DeviceStatusIcon.setStyleSheet(DEVICE_DISABLE_STATUS_ICON_STYLE)
         icon_pixmap.load("style/icons/disable.png")
+        while arduino.readable(): 
+            arduino = serial.Serial('/dev/ttyACM1', 9600)
+            print("Re-connecting")
+            time.sleep(3)
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
-    music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
-
-    for i in music_threads:
-        i.start()
+    music_threads = list()
+    for i in range(8):
+        music_threads.append(threading.Thread(target=music_player, args=(i, )))
+        music_threads[i].start()
 
     while True:
-        i = socket.recv(1024).decode('utf-8')
-        lst = i
-        device_status(i, ui)
+        i = arduino.readline().decode('utf-8')
+        print(i)
+        #lst = i
+        #device_status(i, ui)
 
     socket.close()
 
@@ -72,7 +71,7 @@ def device_status(lst, ui):
     status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
 
     for i in range(1,9):
-        if lst[i] == '0' or lst[i] == '1':
+        if lst[i] == '0' or '1':
             status[i-1].setStyleSheet(DEVICE_READY_STATUS_STYLE)
         elif lst[i] == '2':
             status[i-1].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)

@@ -8,7 +8,7 @@ from ui.piano_stairs_design import Ui_MainWindow
 from style.style_handler import StyleHandler
 from style.animation.menu import MenuAnimation
 from style.animation.theme import ThemeAnimation
-from network.bluetooth_connect import bluetooth_socket, select_instrument
+from network.serial_connect import serial_socket, select_instrument
 # from music.player import select_instrument
 from constants import ( 
     BLUETOOTH_PAGE_INDEX, 
@@ -108,7 +108,7 @@ if __name__ == '__main__':
     piano_stair.design_init()
     piano_stair.signal_init()
 
-    th = threading.Thread(target=bluetooth_socket, args=(piano_stair, ))
+    th = threading.Thread(target=serial_socket, args=(piano_stair, ))
     th.daemon = True
     th.start()
 
