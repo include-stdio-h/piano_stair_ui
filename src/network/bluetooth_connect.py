@@ -82,7 +82,6 @@ def bluetooth_socket(ui):
                 flag = 0
                 lst = data
                 data = list()
-            time.sleep(0.01)
 
     socket.close()
 
