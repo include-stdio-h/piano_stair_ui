@@ -59,6 +59,7 @@ def serial_socket(ui):
 
     while True:
         i = arduino.readline().decode('utf-8')
+        print(i)
         lst = i
         device_status(i, ui)
 
