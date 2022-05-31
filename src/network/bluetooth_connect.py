@@ -64,9 +64,11 @@ def bluetooth_socket(ui):
 
 
     music_threads = [threading.Thread(target=music_player, args=(i, )) for i in range(8)]
+    status_thread = threading.Thread(target=music_player, args=(ui, ))
 
     for i in music_threads:
         i.start()
+    status_thread.start()
 
     while True:
         for i in socket.recv(1024):
@@ -79,13 +81,13 @@ def bluetooth_socket(ui):
             if i == 93 and flag == 1:
                 flag = 0
                 lst = data
-                device_status(lst, ui)
                 data = list()
 
     socket.close()
 
 
-def device_status(lst, ui):
+def device_status(ui):
+    global lst
     status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
 
     for i in range(len(lst)):
