@@ -28,7 +28,7 @@ def socket_read(lst):
 
 def music_player(key_index):
     while True:
-        # print(socket_lst)
+        print(socket_lst)
         if socket_lst[key_index+1] == 1:
             print(f"{music_keys[key_index]} Play")
             channel_lst[key_index].play(key_lst[key_index])
