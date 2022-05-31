@@ -1,4 +1,3 @@
-import serial
 import asyncio
 from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
@@ -19,8 +18,6 @@ def serial_socket(ui):
     try:
         socket.connect(("98:DA:60:03:C9:9C", 1))
         print("bluetooth connected!")
-
-        print("Serial connected!")
         ui.DeviceStatusLabel.setText("Ready")
         ui.DeviceStatusLabel.setStyleSheet(DEVICE_READY_STATUS_STYLE)
         ui.DeviceStatus.setStyleSheet(DEVICE_READY_STATUS_STYLE)
@@ -32,10 +29,6 @@ def serial_socket(ui):
         ui.DeviceStatus.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
         ui.DeviceStatusIcon.setStyleSheet(DEVICE_DISABLE_STATUS_ICON_STYLE)
         icon_pixmap.load("style/icons/disable.png")
-        while arduino.readable(): 
-            arduino = serial.Serial('/dev/ttyUSB0', 9600)
-            print("Re-connecting")
-            time.sleep(3)
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
