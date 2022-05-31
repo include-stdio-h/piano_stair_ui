@@ -74,9 +74,6 @@ def bluetooth_socket(ui):
 
     while True:
         i = socket.recv(256).decode('utf-8')
-        # print(i)
-            # print(i)
-            # i = chr(i).encode('utf-8').decode('utf-8')
         data += i
         if i == '[':
             data = i
@@ -84,8 +81,9 @@ def bluetooth_socket(ui):
         if data[-1] == ']' and flag == 1:
             flag = 0
             lst = data
-            print(lst)
             data = ''
+            time.sleep(0.05)
+
         # for i in socket.recv(256):
         #     # print(i)
         #     # i = chr(i).encode('utf-8').decode('utf-8')
