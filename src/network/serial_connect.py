@@ -16,7 +16,7 @@ from music.player import music_player
 
 def serial_socket(ui):
     icon_pixmap = QPixmap()
-    arduino = serial.Serial(port='COM6', baudrate=9600)
+    arduino = serial.Serial(port='/dev/ttyUSB0', baudrate=9600)
     # arduino = serial.Serial(port='COM6', baudrate=9600, timeout=.1)
 
     if arduino.readable():
