@@ -29,7 +29,7 @@ music_status = [0 for i in range(8)]
 lst = [0 for i in range(10)]
 
 def serial_socket(ui):
-    global lst
+    global lst, music_status
     icon_pixmap = QPixmap()
     arduino = serial.Serial('/dev/ttyUSB0', 9600)
 
@@ -62,6 +62,7 @@ def serial_socket(ui):
         start_time = time.time()
         print(music_status)
         if sum(music_status) == 8:
+            music_status = [0 for i in range(8)]
             i = arduino.readline().decode('utf-8')
             print(time.time() - start_time)
             # print(i)
