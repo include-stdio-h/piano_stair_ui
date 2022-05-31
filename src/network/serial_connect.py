@@ -47,10 +47,7 @@ def device_status(lst, ui):
     print(lst)
 
     for i in range(8):
-        print(lst[i])
-        print(type(lst[i]))
-        if lst[i] == '0' or '1':
+        if lst[i] == '0' or lst[i] == '1':
             status[i].setStyleSheet(DEVICE_READY_STATUS_STYLE)
         elif lst[i] == '2':
-            print("-------------------")
             status[i].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
