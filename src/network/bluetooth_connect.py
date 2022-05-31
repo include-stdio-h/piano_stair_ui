@@ -60,7 +60,6 @@ def bluetooth_socket(ui):
         i.start()
 
     while True:
-        socket.settimeout()
         i = socket.recv(4096).decode('utf-8')
         print(i)
         socket_read(i)
