@@ -1,5 +1,5 @@
 import asyncio
-from bluetooth import BluetoothSocket, RFCOMM
+# from bluetooth import BluetoothSocket, RFCOMM
 from PyQt5.QtGui import QPixmap
 
 from music.player import music_player
