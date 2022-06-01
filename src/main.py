@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
 
 import sys
 import threading
@@ -102,6 +103,7 @@ if __name__ == '__main__':
 
     piano_stair = PianoStairUI()
     piano_stair.setupUi(MainWindow)
+    piano_stair.setWindowFlag(Qt.FramelessWindowHint)
 
     piano_stair.variable_init()
     piano_stair.design_init()
