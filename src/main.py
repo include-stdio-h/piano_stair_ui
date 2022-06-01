@@ -29,6 +29,7 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self, parent=parent)
         self.setupUi(self)
         super().__init__()
+        self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
 
     def variable_init(self):
         self.instrument_backs = [
@@ -102,7 +103,6 @@ if __name__ == '__main__':
     MainWindow = QtWidgets.QMainWindow()
 
     piano_stair = PianoStairUI()
-    piano_stair.setWindowFlag(Qt.WindowType.FramelessWindowHint)
     piano_stair.setupUi(MainWindow)
 
     piano_stair.variable_init()
