@@ -82,8 +82,8 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.current_theme = widget_theme["style"]
 
-        self.before_instrument = StyleHandler.change_theme(self.before_instrument, UNSELECTED_INSTRUMENT_STYLE)
-        now = StyleHandler.change_theme(now, SELECTED_INSTRUMENT_STYLE)
+        self.before_instrument = StyleHandler.change_style(self.before_instrument, UNSELECTED_INSTRUMENT_STYLE)
+        now = StyleHandler.change_style(now, SELECTED_INSTRUMENT_STYLE)
 
         self.before_instrument = now
         self.selected_instrument = self.instrument_backs.index(now) + 1
