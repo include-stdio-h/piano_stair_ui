@@ -33,12 +33,14 @@ def serial_socket(ui):
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
     lst = [0 for i in range(8)]
+    before_lst = [0 for i in range(8)]
 
     while True:
         i = socket.recv(1024).decode('utf-8')
         if lst != i:
+            before_lst = lst
             lst = i
-            asyncio.run(music_player(lst))
+            asyncio.run(music_player(lst, before_lst))
             device_status(lst, ui)
 
 def device_status(lst, ui):
