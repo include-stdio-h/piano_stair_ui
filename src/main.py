@@ -46,7 +46,7 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         ]
 
         self.selected_menu_animation = MenuAnimation(self.SelectedMenu, b"pos")
-        self.change_instrumenttheme_animation = ThemeAnimation(self.InstrumentTheme, b"geometry")
+        self.change_instrument_theme_animation = ThemeAnimation(self.InstrumentTheme, b"geometry")
         self.change_total_theme_animation = ThemeAnimation(self.TotalTheme, b"geometry")
 
         self.before_instrument = self.BassGuitarBack
@@ -75,7 +75,7 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.BlueToothButton.clicked.connect(lambda : self.change_page(BLUETOOTH_PAGE_INDEX))
         self.InstrumentButton.clicked.connect(lambda : self.change_page(INSTRUMENT_PAGE_INDEX))
 
-        self.change_instrumenttheme_animation.SelectedMenuAnimation.finished.connect(lambda : self.WorkSpace.setStyleSheet(self.current_theme))
+        self.change_instrument_theme_animation.SelectedMenuAnimation.finished.connect(lambda : self.WorkSpace.setStyleSheet(self.current_theme))
         self.change_total_theme_animation.SelectedMenuAnimation.finished.connect(lambda : self.Background.setStyleSheet(self.current_theme))
 
     def change_page(self, page_index):
@@ -84,13 +84,13 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def change_instrument(self, now, widget_theme, instrument_num):
         select_instrument(instrument_num)
-        self.change_instrumenttheme_animation.change_theme(widget_theme, "instrument")
+        self.change_instrument_theme_animation.change_theme(widget_theme, "instrument")
         self.change_total_theme_animation.change_theme(widget_theme, "total")
 
         self.current_theme = widget_theme["style"]
 
-        self.before_instrument = StyleHandler.change_theme(self.before_instrument, UNSELECTED_INSTRUMENT_STYLE)
-        now = StyleHandler.change_theme(now, SELECTED_INSTRUMENT_STYLE)
+        self.before_instrument = StyleHandler.change_style(self.before_instrument, UNSELECTED_INSTRUMENT_STYLE)
+        now = StyleHandler.change_style(now, SELECTED_INSTRUMENT_STYLE)
 
         self.before_instrument = now
         self.selected_instrument = self.instrument_backs.index(now) + 1
