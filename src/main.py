@@ -113,6 +113,6 @@ if __name__ == '__main__':
     th.daemon = True
     th.start()
 
-    MainWindow.show()
+    MainWindow.showFullScreen()
 
     sys.exit(app.exec_())
