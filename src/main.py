@@ -102,8 +102,8 @@ if __name__ == '__main__':
     MainWindow = QtWidgets.QMainWindow()
 
     piano_stair = PianoStairUI()
-    piano_stair.setupUi(MainWindow)
     piano_stair.setWindowFlag(Qt.FramelessWindowHint)
+    piano_stair.setupUi(MainWindow)
 
     piano_stair.variable_init()
     piano_stair.design_init()
