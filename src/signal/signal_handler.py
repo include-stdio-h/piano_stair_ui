@@ -68,6 +68,7 @@ class SignalHandler():
     @classmethod
     def __change_instrument(cls, now_instrument, widget_theme):
         from constants import SELECTED_INSTRUMENT_STYLE, UNSELECTED_INSTRUMENT_STYLE
+        from music.player import select_instrument
 
         cls.ui.change_instrument_theme_animation.change_theme(widget_theme, "instrument")
         cls.ui.change_total_theme_animation.change_theme(widget_theme, "total")
@@ -77,6 +78,7 @@ class SignalHandler():
         cls.ui.before_instrument.setStyleSheet(UNSELECTED_INSTRUMENT_STYLE)
         now_instrument.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
 
+        select_instrument(now_instrument)
         cls.ui.before_instrument = now_instrument
         cls.ui.selected_instrument = cls.ui.instrument_backs.index(now_instrument) + 1
 
