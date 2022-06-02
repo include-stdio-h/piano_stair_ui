@@ -632,10 +632,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel1.setFont(font)
-        self.VolumeLevel1.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel1.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel1.setText("")
         self.VolumeLevel1.setFlat(True)
         self.VolumeLevel1.setObjectName("VolumeLevel1")
@@ -645,10 +642,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel2.setFont(font)
-        self.VolumeLevel2.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel2.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel2.setText("")
         self.VolumeLevel2.setFlat(True)
         self.VolumeLevel2.setObjectName("VolumeLevel2")
@@ -658,10 +652,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel3.setFont(font)
-        self.VolumeLevel3.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel3.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel3.setText("")
         self.VolumeLevel3.setFlat(True)
         self.VolumeLevel3.setObjectName("VolumeLevel3")
@@ -671,10 +662,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel4.setFont(font)
-        self.VolumeLevel4.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel4.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel4.setText("")
         self.VolumeLevel4.setFlat(True)
         self.VolumeLevel4.setObjectName("VolumeLevel4")
@@ -684,10 +672,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel5.setFont(font)
-        self.VolumeLevel5.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel5.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel5.setText("")
         self.VolumeLevel5.setFlat(True)
         self.VolumeLevel5.setObjectName("VolumeLevel5")
@@ -697,10 +682,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel6.setFont(font)
-        self.VolumeLevel6.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel6.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel6.setText("")
         self.VolumeLevel6.setFlat(True)
         self.VolumeLevel6.setObjectName("VolumeLevel6")
@@ -710,10 +692,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel7.setFont(font)
-        self.VolumeLevel7.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel7.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel7.setText("")
         self.VolumeLevel7.setFlat(True)
         self.VolumeLevel7.setObjectName("VolumeLevel7")
@@ -723,10 +702,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel8.setFont(font)
-        self.VolumeLevel8.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel8.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel8.setText("")
         self.VolumeLevel8.setFlat(True)
         self.VolumeLevel8.setObjectName("VolumeLevel8")
@@ -736,10 +712,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel9.setFont(font)
-        self.VolumeLevel9.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel9.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel9.setText("")
         self.VolumeLevel9.setFlat(True)
         self.VolumeLevel9.setObjectName("VolumeLevel9")
@@ -749,10 +722,7 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel10.setFont(font)
-        self.VolumeLevel10.setStyleSheet("border-radius: 9px;\n"
-"background-color: rgb(157, 255, 185);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.VolumeLevel10.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeLevel10.setText("")
         self.VolumeLevel10.setFlat(True)
         self.VolumeLevel10.setObjectName("VolumeLevel10")
@@ -861,7 +831,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.WorkSpace.setCurrentIndex(0)
+        self.WorkSpace.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

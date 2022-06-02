@@ -128,7 +128,6 @@ class SignalHandler():
             widget.setStyleSheet("background-color: rgb(255, 255, 255);")
 
         cls.ui.device_volume = cls.ui.VolumeController.value()
-        print(cls.ui.device_volume)
         volume_setting(cls.ui.device_volume)
 
         for i in range(cls.ui.device_volume):
