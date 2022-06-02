@@ -212,7 +212,7 @@ border-style: outset;</string>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
@@ -1208,7 +1208,7 @@ background-color: rgb(234, 234, 234);</string>
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>70</y>
+        <y>80</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -1235,7 +1235,7 @@ background-color: rgb(234, 234, 234);</string>
       <property name="geometry">
        <rect>
         <x>410</x>
-        <y>70</y>
+        <y>80</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -1262,7 +1262,7 @@ background-color: rgb(234, 234, 234);</string>
       <property name="geometry">
        <rect>
         <x>410</x>
-        <y>150</y>
+        <y>160</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -1289,7 +1289,7 @@ background-color: rgb(234, 234, 234);</string>
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>150</y>
+        <y>160</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -1316,7 +1316,7 @@ background-color: rgb(234, 234, 234);</string>
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>230</y>
+        <y>240</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -1343,7 +1343,7 @@ background-color: rgb(234, 234, 234);</string>
       <property name="geometry">
        <rect>
         <x>410</x>
-        <y>230</y>
+        <y>240</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -1370,7 +1370,7 @@ background-color: rgb(234, 234, 234);</string>
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>310</y>
+        <y>320</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -1397,7 +1397,7 @@ background-color: rgb(234, 234, 234);</string>
       <property name="geometry">
        <rect>
         <x>410</x>
-        <y>310</y>
+        <y>320</y>
         <width>60</width>
         <height>60</height>
        </rect>
