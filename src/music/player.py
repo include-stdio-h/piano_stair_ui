@@ -21,7 +21,7 @@ def select_instrument(instrument_num):
 def volume_setting(volume):
     global key_lst
     for key in key_lst:
-        key.set_volume(volume)
+        key.set_volume(volume/10)
 
 async def music_player(lst, before_lst, device_key_status):
     for i in range(8):

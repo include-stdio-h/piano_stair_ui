@@ -212,7 +212,7 @@ border-style: outset;</string>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
@@ -1481,6 +1481,27 @@ background-color: rgb(234, 234, 234);</string>
       </property>
       <property name="maximum">
        <number>10</number>
+      </property>
+      <property name="sliderPosition">
+       <number>0</number>
+      </property>
+      <property name="tracking">
+       <bool>true</bool>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
+      <property name="invertedControls">
+       <bool>false</bool>
+      </property>
+      <property name="wrapping">
+       <bool>false</bool>
+      </property>
+      <property name="notchesVisible">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="KeySettingBar_3">
