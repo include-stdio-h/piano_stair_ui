@@ -78,9 +78,9 @@ class SignalHandler():
         cls.ui.before_instrument.setStyleSheet(UNSELECTED_INSTRUMENT_STYLE)
         now_instrument.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
 
-        select_instrument(now_instrument)
         cls.ui.before_instrument = now_instrument
-        cls.ui.selected_instrument = cls.ui.instrument_backs.index(now_instrument) + 1
+        cls.ui.selected_instrument = cls.ui.instrument_backs.index(now_instrument)
+        select_instrument(cls.ui.selected_instrument)
 
     @classmethod
     def __change_device_setting(cls, index):
