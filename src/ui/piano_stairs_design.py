@@ -63,20 +63,20 @@ class Ui_MainWindow(object):
         self.BlueToothIcon.setGeometry(QtCore.QRect(40, 94, 21, 21))
         self.BlueToothIcon.setStyleSheet("")
         self.BlueToothIcon.setText("")
-        self.BlueToothIcon.setPixmap(QtGui.QPixmap("style/icons/bluetooth.png"))
+        self.BlueToothIcon.setPixmap(QtGui.QPixmap(".\\ui\\../style/icons/bluetooth.png"))
         self.BlueToothIcon.setScaledContents(True)
         self.BlueToothIcon.setObjectName("BlueToothIcon")
         self.InstrumentIcon = QtWidgets.QLabel(self.centralwidget)
         self.InstrumentIcon.setGeometry(QtCore.QRect(36, 160, 28, 28))
         self.InstrumentIcon.setText("")
-        self.InstrumentIcon.setPixmap(QtGui.QPixmap("style/icons/live-music.png"))
+        self.InstrumentIcon.setPixmap(QtGui.QPixmap(".\\ui\\../style/icons/live-music.png"))
         self.InstrumentIcon.setScaledContents(True)
         self.InstrumentIcon.setObjectName("InstrumentIcon")
         self.QuitButton = QtWidgets.QPushButton(self.centralwidget)
         self.QuitButton.setGeometry(QtCore.QRect(80, 370, 41, 41))
         self.QuitButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("style/icons/power-on.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\ui\\../style/icons/power-on.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.QuitButton.setIcon(icon)
         self.QuitButton.setIconSize(QtCore.QSize(32, 32))
         self.QuitButton.setShortcut("")
@@ -112,7 +112,7 @@ class Ui_MainWindow(object):
         self.DeviceStatusIcon.setGeometry(QtCore.QRect(160, 110, 41, 41))
         self.DeviceStatusIcon.setStyleSheet("background-color: rgb(255, 100,100);")
         self.DeviceStatusIcon.setText("")
-        self.DeviceStatusIcon.setPixmap(QtGui.QPixmap("style/icons/disable.png"))
+        self.DeviceStatusIcon.setPixmap(QtGui.QPixmap(".\\ui\\../style/icons/disable.png"))
         self.DeviceStatusIcon.setScaledContents(True)
         self.DeviceStatusIcon.setObjectName("DeviceStatusIcon")
         self.DeviceStatusLabel = QtWidgets.QLabel(self.page)
@@ -294,7 +294,7 @@ class Ui_MainWindow(object):
 "")
         self.BassGuitarSelect.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("style/icons/guitar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(".\\ui\\../style/icons/guitar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.BassGuitarSelect.setIcon(icon1)
         self.BassGuitarSelect.setIconSize(QtCore.QSize(100, 100))
         self.BassGuitarSelect.setFlat(True)
@@ -313,7 +313,7 @@ class Ui_MainWindow(object):
 "")
         self.OrganSelect.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("style/icons/organ.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(".\\ui\\../style/icons/organ.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.OrganSelect.setIcon(icon2)
         self.OrganSelect.setIconSize(QtCore.QSize(100, 100))
         self.OrganSelect.setFlat(True)
@@ -325,7 +325,7 @@ class Ui_MainWindow(object):
 "")
         self.AccordionSelect.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("style/icons/accordion.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(".\\ui\\../style/icons/accordion.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.AccordionSelect.setIcon(icon3)
         self.AccordionSelect.setIconSize(QtCore.QSize(100, 100))
         self.AccordionSelect.setFlat(True)
@@ -337,7 +337,7 @@ class Ui_MainWindow(object):
 "")
         self.PianoSelect.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("style/icons/piano.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap(".\\ui\\../style/icons/piano.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.PianoSelect.setIcon(icon4)
         self.PianoSelect.setIconSize(QtCore.QSize(100, 100))
         self.PianoSelect.setFlat(True)
@@ -349,7 +349,7 @@ class Ui_MainWindow(object):
 "")
         self.HarpSelect.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("style/icons/harp.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap(".\\ui\\../style/icons/harp.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.HarpSelect.setIcon(icon5)
         self.HarpSelect.setIconSize(QtCore.QSize(100, 100))
         self.HarpSelect.setFlat(True)
@@ -361,7 +361,7 @@ class Ui_MainWindow(object):
 "")
         self.VibraPhoneSelect.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("style/icons/vibraphone.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap(".\\ui\\../style/icons/vibraphone.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.VibraPhoneSelect.setIcon(icon6)
         self.VibraPhoneSelect.setIconSize(QtCore.QSize(100, 100))
         self.VibraPhoneSelect.setFlat(True)
@@ -605,7 +605,8 @@ class Ui_MainWindow(object):
         self.VolumeController.setGeometry(QtCore.QRect(450, 310, 81, 71))
         self.VolumeController.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeController.setMaximum(10)
-        self.VolumeController.setSliderPosition(0)
+        self.VolumeController.setProperty("value", 10)
+        self.VolumeController.setSliderPosition(10)
         self.VolumeController.setTracking(True)
         self.VolumeController.setOrientation(QtCore.Qt.Horizontal)
         self.VolumeController.setInvertedAppearance(False)
@@ -623,7 +624,7 @@ class Ui_MainWindow(object):
         self.VolumeIcon.setGeometry(QtCore.QRect(480, 60, 21, 21))
         self.VolumeIcon.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.VolumeIcon.setText("")
-        self.VolumeIcon.setPixmap(QtGui.QPixmap("style/icons/volume.png"))
+        self.VolumeIcon.setPixmap(QtGui.QPixmap(".\\ui\\../style/icons/volume.png"))
         self.VolumeIcon.setScaledContents(True)
         self.VolumeIcon.setObjectName("VolumeIcon")
         self.VolumeLevel1 = QtWidgets.QPushButton(self.page_3)
@@ -632,7 +633,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel1.setFont(font)
-        self.VolumeLevel1.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel1.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel1.setText("")
         self.VolumeLevel1.setFlat(True)
         self.VolumeLevel1.setObjectName("VolumeLevel1")
@@ -642,7 +646,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel2.setFont(font)
-        self.VolumeLevel2.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel2.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel2.setText("")
         self.VolumeLevel2.setFlat(True)
         self.VolumeLevel2.setObjectName("VolumeLevel2")
@@ -652,7 +659,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel3.setFont(font)
-        self.VolumeLevel3.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel3.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel3.setText("")
         self.VolumeLevel3.setFlat(True)
         self.VolumeLevel3.setObjectName("VolumeLevel3")
@@ -662,7 +672,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel4.setFont(font)
-        self.VolumeLevel4.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel4.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel4.setText("")
         self.VolumeLevel4.setFlat(True)
         self.VolumeLevel4.setObjectName("VolumeLevel4")
@@ -672,7 +685,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel5.setFont(font)
-        self.VolumeLevel5.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel5.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel5.setText("")
         self.VolumeLevel5.setFlat(True)
         self.VolumeLevel5.setObjectName("VolumeLevel5")
@@ -682,7 +698,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel6.setFont(font)
-        self.VolumeLevel6.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel6.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel6.setText("")
         self.VolumeLevel6.setFlat(True)
         self.VolumeLevel6.setObjectName("VolumeLevel6")
@@ -692,7 +711,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel7.setFont(font)
-        self.VolumeLevel7.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel7.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel7.setText("")
         self.VolumeLevel7.setFlat(True)
         self.VolumeLevel7.setObjectName("VolumeLevel7")
@@ -702,7 +724,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel8.setFont(font)
-        self.VolumeLevel8.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel8.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel8.setText("")
         self.VolumeLevel8.setFlat(True)
         self.VolumeLevel8.setObjectName("VolumeLevel8")
@@ -712,7 +737,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel9.setFont(font)
-        self.VolumeLevel9.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel9.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel9.setText("")
         self.VolumeLevel9.setFlat(True)
         self.VolumeLevel9.setObjectName("VolumeLevel9")
@@ -722,7 +750,10 @@ class Ui_MainWindow(object):
         font.setFamily("HY견고딕")
         font.setPointSize(20)
         self.VolumeLevel10.setFont(font)
-        self.VolumeLevel10.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.VolumeLevel10.setStyleSheet("border-radius: 9px;\n"
+"background-color: rgb(157, 255, 185);\n"
+"color: rgb(255, 255, 255);\n"
+"")
         self.VolumeLevel10.setText("")
         self.VolumeLevel10.setFlat(True)
         self.VolumeLevel10.setObjectName("VolumeLevel10")
@@ -806,7 +837,7 @@ class Ui_MainWindow(object):
         self.Settingicon = QtWidgets.QLabel(self.centralwidget)
         self.Settingicon.setGeometry(QtCore.QRect(40, 235, 21, 21))
         self.Settingicon.setText("")
-        self.Settingicon.setPixmap(QtGui.QPixmap("style/icons/settings.png"))
+        self.Settingicon.setPixmap(QtGui.QPixmap(".\\ui\\../style/icons/settings.png"))
         self.Settingicon.setScaledContents(True)
         self.Settingicon.setObjectName("Settingicon")
         self.Background.raise_()
@@ -831,7 +862,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.WorkSpace.setCurrentIndex(2)
+        self.WorkSpace.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
