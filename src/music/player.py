@@ -21,8 +21,8 @@ def select_instrument(instrument_num):
 async def music_player(lst, before_lst, device_key_status):
     for i in range(8):
         if lst[i] != before_lst[i]:
-            await music_play(lst[i], device_key_status[i]["key"])
+            await music_play(lst[i], i, device_key_status[i]["key"])
 
-async def music_play(key_status, key_index):
+async def music_play(key_status, channel_index,key_index):
     if key_status == '1':
-        channel_lst[key_index].play(key_lst[key_index])
+        channel_lst[channel_index].play(key_lst[key_index])
