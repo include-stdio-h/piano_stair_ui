@@ -8,7 +8,7 @@ from style.style_handler import StyleHandler
 from style.animation.menu import MenuAnimation
 from style.animation.theme import ThemeAnimation
 from network.serial_connect import serial_socket
-from signal.signal_handler import SignalHandler
+from signal import SignalHandler
 from constants import INSTRUMENTS_THEME
 
 
