@@ -1,5 +1,6 @@
 BLUETOOTH_PAGE_INDEX = 0
 INSTRUMENT_PAGE_INDEX = 1
+SETTING_PAGE_INDEX = 2
 
 SELECTED_INSTRUMENT_STYLE = "border-radius: 20px;\nbackground-color: rgb(182, 182, 182);"
 UNSELECTED_INSTRUMENT_STYLE = "border-radius: 20px;\nbackground-color: rgb(255, 255, 255);"
@@ -39,6 +40,12 @@ INSTRUMENTS_THEME = {
 
 TOTAL_THEME_LOCATION_DIFF = (203, 10)
 
+UNSELECTED_BUTTON_STYLE = "border-radius: 20px;\ncolor: rgb(255, 255, 255);\nbackground-color: rgb(234, 234, 234);"
+UNSELECTED_KEY_STYLE = "border-radius: 30px;\ncolor: rgb(255, 255, 255);\nbackground-color: rgb(234, 234, 234);"
+
+SELECTED_BUTTON_STYLE = "border-radius: 20px;\ncolor: rgb(255, 255, 255);\nbackground-color: rgb(114, 240, 145);"
+SELECTED_KEY_STYLE = "border-radius: 30px;\ncolor: rgb(255, 255, 255);\nbackground-color: rgb(114, 240, 145);"
+
 DEVICE_READY_STATUS_STYLE = "border-radius: 20px;\ncolor: rgb(255, 255, 255);\nbackground-color: rgb(114, 240, 145);"
 DEVICE_READY_STATUS_ICON_STYLE = "background-color: rgb(114, 240, 145);"
 
@@ -53,3 +60,5 @@ ORGAN_INDEX = 2
 GUITAR_INDEX = 3
 ACCORDION_INDEX = 4
 VIBRA_PHONE_INDEX = 5 
+
+MUSIC_KEY_FILES = ["do.wav", "re.wav", "mi.wav", "fa.wav", "sol.wav", "la.wav", "si.wav", "high_do.wav"]
