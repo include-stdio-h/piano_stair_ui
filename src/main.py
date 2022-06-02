@@ -20,11 +20,11 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def variable_init(self):
         self.instrument_backs = [
-            self.BassGuitarBack,
-            self.OrganBack,
-            self.AccordionBack,
             self.PianoBack,
             self.HarpBack,
+            self.OrganBack,
+            self.BassGuitarBack,
+            self.AccordionBack,
             self.VibraPhoneBack
         ]
 
