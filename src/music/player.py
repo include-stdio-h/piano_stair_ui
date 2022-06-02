@@ -14,9 +14,9 @@ def select_instrument(instrument_num):
     global key_lst
     key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in MUSIC_KEY_FILES]
 
-    if INSTRUMENTS[instrument_num] == "Accordion" or "Vibra_phone" or "Grandpiano":
-        for key in key_lst:
-            key.set_volume(0.4)
+    # if INSTRUMENTS[instrument_num] == "Accordion" or INSTRUMENTS[instrument_num] == "Vibra_phone" or INSTRUMENTS[instrument_num] == "Grandpiano":
+    #     for key in key_lst:
+    #         key.set_volume(0.4)
 
 def volume_setting(volume):
     global key_lst
