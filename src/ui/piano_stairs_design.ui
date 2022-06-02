@@ -212,7 +212,7 @@ border-style: outset;</string>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
@@ -1435,6 +1435,9 @@ background-color: rgb(234, 234, 234);</string>
         <pointsize>12</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>Module</string>
       </property>
@@ -1456,6 +1459,9 @@ background-color: rgb(234, 234, 234);</string>
         <family>HY견고딕</family>
         <pointsize>12</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Key</string>
