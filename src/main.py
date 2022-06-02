@@ -81,11 +81,11 @@ if __name__ == '__main__':
     StyleHandler.style_init(piano_stair)
     SignalHandler.signal_init(piano_stair)
 
-    # th = threading.Thread(target=serial_socket, args=piano_stair)
-    # th.daemon = True
-    # th.start()
+    th = threading.Thread(target=serial_socket, args=piano_stair)
+    th.daemon = True
+    th.start()
 
-    # MainWindow.showFullScreen()
-    MainWindow.show()
+    MainWindow.showFullScreen()
+    # MainWindow.show()
 
     sys.exit(app.exec_())

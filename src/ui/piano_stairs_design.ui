@@ -950,7 +950,7 @@ background-color: rgb(255, 195, 56);</string>
      <widget class="QLabel" name="KeySettingBar">
       <property name="geometry">
        <rect>
-        <x>260</x>
+        <x>300</x>
         <y>30</y>
         <width>431</width>
         <height>391</height>
@@ -1207,7 +1207,7 @@ background-color: rgb(234, 234, 234);</string>
      <widget class="QPushButton" name="SelectDo">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>330</x>
         <y>70</y>
         <width>60</width>
         <height>60</height>
@@ -1234,7 +1234,7 @@ background-color: rgb(234, 234, 234);</string>
      <widget class="QPushButton" name="SelectRe">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>410</x>
         <y>70</y>
         <width>60</width>
         <height>60</height>
@@ -1261,7 +1261,7 @@ background-color: rgb(234, 234, 234);</string>
      <widget class="QPushButton" name="SelectFa">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>410</x>
         <y>150</y>
         <width>60</width>
         <height>60</height>
@@ -1288,7 +1288,7 @@ background-color: rgb(234, 234, 234);</string>
      <widget class="QPushButton" name="SelectMi">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>330</x>
         <y>150</y>
         <width>60</width>
         <height>60</height>
@@ -1315,7 +1315,7 @@ background-color: rgb(234, 234, 234);</string>
      <widget class="QPushButton" name="SelectSol">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>330</x>
         <y>230</y>
         <width>60</width>
         <height>60</height>
@@ -1342,7 +1342,7 @@ background-color: rgb(234, 234, 234);</string>
      <widget class="QPushButton" name="SelectLa">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>410</x>
         <y>230</y>
         <width>60</width>
         <height>60</height>
@@ -1369,7 +1369,7 @@ background-color: rgb(234, 234, 234);</string>
      <widget class="QPushButton" name="SelectSi">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>330</x>
         <y>310</y>
         <width>60</width>
         <height>60</height>
@@ -1396,7 +1396,7 @@ background-color: rgb(234, 234, 234);</string>
      <widget class="QPushButton" name="SelectHighDo">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>410</x>
         <y>310</y>
         <width>60</width>
         <height>60</height>
@@ -1420,97 +1420,6 @@ background-color: rgb(234, 234, 234);</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QSlider" name="SoundControl">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>70</y>
-        <width>31</width>
-        <height>271</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>470</x>
-        <y>350</y>
-        <width>71</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>HY견고딕</family>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>Sound</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>320</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>HY견고딕</family>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>- 0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>HY견고딕</family>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>- 5</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
      <zorder>StatusBar_2</zorder>
      <zorder>KeySettingBar</zorder>
      <zorder>KeySettingButton1</zorder>
@@ -1529,10 +1438,6 @@ background-color: rgb(234, 234, 234);</string>
      <zorder>SelectLa</zorder>
      <zorder>SelectSi</zorder>
      <zorder>SelectHighDo</zorder>
-     <zorder>SoundControl</zorder>
-     <zorder>label</zorder>
-     <zorder>label_2</zorder>
-     <zorder>label_3</zorder>
     </widget>
    </widget>
    <widget class="QLabel" name="SelectedMenu">

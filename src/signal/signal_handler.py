@@ -89,13 +89,12 @@ class SignalHandler():
             cls.ui.device_setting_widgets[i].setStyleSheet(UNSELECTED_BUTTON_STYLE)
 
         cls.ui.device_setting_widgets[index].setStyleSheet(SELECTED_BUTTON_STYLE)
-        cls.ui.key_setting_widgets[ cls.ui.device_key_status[index]["key"]].setStyleSheet(SELECTED_KEY_STYLE)
-
+        cls.ui.key_setting_widgets[cls.ui.device_key_status[index]["key"]].setStyleSheet(SELECTED_KEY_STYLE)
+        
         cls.ui.selected_device_setting = index
 
     @classmethod
     def __change_device_key(cls, index):
-        print(cls.ui.device_key_status)
         from constants import UNSELECTED_KEY_STYLE, SELECTED_KEY_STYLE
 
         for i in range(len(cls.ui.key_setting_widgets)):
