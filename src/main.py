@@ -46,15 +46,6 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.selected_instrument = 1
         self.current_theme = INSTRUMENTS_THEME["bass_guitar"]["style"]
 
-    def design_init(self):
-        for back in self.instrument_backs:
-            back = StyleHandler.add_shadow(back)
-        
-        for bluetooth_widget in self.bluetooth_widgets:
-            bluetooth_widget = StyleHandler.add_shadow(bluetooth_widget)
-
-        self.ToolBar = StyleHandler.add_shadow(self.ToolBar)
-
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -63,7 +54,7 @@ if __name__ == '__main__':
     piano_stair.setupUi(MainWindow)
 
     piano_stair.variable_init()
-    piano_stair.design_init()
+    StyleHandler.style_init(piano_stair)
     SignalHandler.signal_init(piano_stair)
 
     # th = threading.Thread(target=serial_socket, args=piano_stair)
