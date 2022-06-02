@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 504)
+        MainWindow.resize(800, 480)
         MainWindow.setWindowOpacity(1.0)
         MainWindow.setAutoFillBackground(True)
         MainWindow.setStyleSheet("")
@@ -583,6 +583,22 @@ class Ui_MainWindow(object):
 "background-color: rgb(234, 234, 234);")
         self.SelectHighDo.setFlat(True)
         self.SelectHighDo.setObjectName("SelectHighDo")
+        self.label = QtWidgets.QLabel(self.page_3)
+        self.label.setGeometry(QtCore.QRect(80, 45, 81, 21))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(12)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.page_3)
+        self.label_2.setGeometry(QtCore.QRect(360, 40, 81, 21))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(12)
+        self.label_2.setFont(font)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
         self.StatusBar_2.raise_()
         self.KeySettingBar.raise_()
         self.KeySettingButton1.raise_()
@@ -601,6 +617,8 @@ class Ui_MainWindow(object):
         self.SelectLa.raise_()
         self.SelectSi.raise_()
         self.SelectHighDo.raise_()
+        self.label.raise_()
+        self.label_2.raise_()
         self.WorkSpace.addWidget(self.page_3)
         self.SelectedMenu = QtWidgets.QLabel(self.centralwidget)
         self.SelectedMenu.setGeometry(QtCore.QRect(30, 85, 41, 41))
@@ -663,7 +681,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.WorkSpace.setCurrentIndex(0)
+        self.WorkSpace.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -697,6 +715,8 @@ class Ui_MainWindow(object):
         self.SelectLa.setText(_translate("MainWindow", "LA"))
         self.SelectSi.setText(_translate("MainWindow", "SI"))
         self.SelectHighDo.setText(_translate("MainWindow", "HDO"))
+        self.label.setText(_translate("MainWindow", "Module"))
+        self.label_2.setText(_translate("MainWindow", "Key"))
         self.SettingButton.setText(_translate("MainWindow", "Setting"))
 
 

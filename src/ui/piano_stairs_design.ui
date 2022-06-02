@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>504</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -212,7 +212,7 @@ border-style: outset;</string>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
@@ -1420,6 +1420,50 @@ background-color: rgb(234, 234, 234);</string>
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>45</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>HY견고딕</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Module</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>40</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>HY견고딕</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Key</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
      <zorder>StatusBar_2</zorder>
      <zorder>KeySettingBar</zorder>
      <zorder>KeySettingButton1</zorder>
@@ -1438,6 +1482,8 @@ background-color: rgb(234, 234, 234);</string>
      <zorder>SelectLa</zorder>
      <zorder>SelectSi</zorder>
      <zorder>SelectHighDo</zorder>
+     <zorder>label</zorder>
+     <zorder>label_2</zorder>
     </widget>
    </widget>
    <widget class="QLabel" name="SelectedMenu">
