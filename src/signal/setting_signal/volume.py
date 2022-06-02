@@ -1,4 +1,5 @@
-from music.player import volume_setting
+from features.music.player import volume_setting
+
 
 class VolumeSignal():
     @classmethod

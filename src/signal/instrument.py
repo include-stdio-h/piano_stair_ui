@@ -1,5 +1,5 @@
 from constants import INSTRUMENTS_THEME, SELECTED_INSTRUMENT_STYLE, UNSELECTED_INSTRUMENT_STYLE
-from music.player import select_instrument
+from features.music.player import select_instrument
 
 
 class InstrumentSignal():
