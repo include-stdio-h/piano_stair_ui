@@ -394,7 +394,7 @@ class Ui_MainWindow(object):
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
         self.KeySettingBar = QtWidgets.QLabel(self.page_3)
-        self.KeySettingBar.setGeometry(QtCore.QRect(580, 30, 431, 391))
+        self.KeySettingBar.setGeometry(QtCore.QRect(260, 30, 431, 391))
         self.KeySettingBar.setStyleSheet("border-radius: 20px;\n"
 "background-color: rgb(255, 255, 255);")
         self.KeySettingBar.setText("")
@@ -415,8 +415,7 @@ class Ui_MainWindow(object):
         self.KeySettingButton1.setFont(font)
         self.KeySettingButton1.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(41, 255, 194);\n"
-"")
+"background-color: rgb(234, 234, 234);")
         self.KeySettingButton1.setFlat(True)
         self.KeySettingButton1.setObjectName("KeySettingButton1")
         self.KeySettingButton3 = QtWidgets.QPushButton(self.page_3)
@@ -427,8 +426,7 @@ class Ui_MainWindow(object):
         self.KeySettingButton3.setFont(font)
         self.KeySettingButton3.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(41, 255, 194);\n"
-"")
+"background-color: rgb(234, 234, 234);")
         self.KeySettingButton3.setFlat(True)
         self.KeySettingButton3.setObjectName("KeySettingButton3")
         self.KeySettingButton5 = QtWidgets.QPushButton(self.page_3)
@@ -439,8 +437,7 @@ class Ui_MainWindow(object):
         self.KeySettingButton5.setFont(font)
         self.KeySettingButton5.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(41, 255, 194);\n"
-"")
+"background-color: rgb(234, 234, 234);")
         self.KeySettingButton5.setFlat(True)
         self.KeySettingButton5.setObjectName("KeySettingButton5")
         self.KeySettingButton7 = QtWidgets.QPushButton(self.page_3)
@@ -451,8 +448,7 @@ class Ui_MainWindow(object):
         self.KeySettingButton7.setFont(font)
         self.KeySettingButton7.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(41, 255, 194);\n"
-"")
+"background-color: rgb(234, 234, 234);")
         self.KeySettingButton7.setFlat(True)
         self.KeySettingButton7.setObjectName("KeySettingButton7")
         self.KeySettingButton8 = QtWidgets.QPushButton(self.page_3)
@@ -463,8 +459,7 @@ class Ui_MainWindow(object):
         self.KeySettingButton8.setFont(font)
         self.KeySettingButton8.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(41, 255, 194);\n"
-"")
+"background-color: rgb(234, 234, 234);")
         self.KeySettingButton8.setFlat(True)
         self.KeySettingButton8.setObjectName("KeySettingButton8")
         self.KeySettingButton4 = QtWidgets.QPushButton(self.page_3)
@@ -475,8 +470,7 @@ class Ui_MainWindow(object):
         self.KeySettingButton4.setFont(font)
         self.KeySettingButton4.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(41, 255, 194);\n"
-"")
+"background-color: rgb(234, 234, 234);")
         self.KeySettingButton4.setFlat(True)
         self.KeySettingButton4.setObjectName("KeySettingButton4")
         self.KeySettingButton2 = QtWidgets.QPushButton(self.page_3)
@@ -487,8 +481,7 @@ class Ui_MainWindow(object):
         self.KeySettingButton2.setFont(font)
         self.KeySettingButton2.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(41, 255, 194);\n"
-"")
+"background-color: rgb(234, 234, 234);")
         self.KeySettingButton2.setFlat(True)
         self.KeySettingButton2.setObjectName("KeySettingButton2")
         self.KeySettingButton6 = QtWidgets.QPushButton(self.page_3)
@@ -499,10 +492,129 @@ class Ui_MainWindow(object):
         self.KeySettingButton6.setFont(font)
         self.KeySettingButton6.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(41, 255, 194);\n"
-"")
+"background-color: rgb(234, 234, 234);")
         self.KeySettingButton6.setFlat(True)
         self.KeySettingButton6.setObjectName("KeySettingButton6")
+        self.SelectDo = QtWidgets.QPushButton(self.page_3)
+        self.SelectDo.setGeometry(QtCore.QRect(290, 70, 60, 60))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(13)
+        self.SelectDo.setFont(font)
+        self.SelectDo.setStyleSheet("border-radius: 30px;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(234, 234, 234);")
+        self.SelectDo.setFlat(True)
+        self.SelectDo.setObjectName("SelectDo")
+        self.SelectRe = QtWidgets.QPushButton(self.page_3)
+        self.SelectRe.setGeometry(QtCore.QRect(370, 70, 60, 60))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(13)
+        self.SelectRe.setFont(font)
+        self.SelectRe.setStyleSheet("border-radius: 30px;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(234, 234, 234);")
+        self.SelectRe.setFlat(True)
+        self.SelectRe.setObjectName("SelectRe")
+        self.SelectFa = QtWidgets.QPushButton(self.page_3)
+        self.SelectFa.setGeometry(QtCore.QRect(370, 150, 60, 60))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(13)
+        self.SelectFa.setFont(font)
+        self.SelectFa.setStyleSheet("border-radius: 30px;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(234, 234, 234);")
+        self.SelectFa.setFlat(True)
+        self.SelectFa.setObjectName("SelectFa")
+        self.SelectMi = QtWidgets.QPushButton(self.page_3)
+        self.SelectMi.setGeometry(QtCore.QRect(290, 150, 60, 60))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(13)
+        self.SelectMi.setFont(font)
+        self.SelectMi.setStyleSheet("border-radius: 30px;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(234, 234, 234);")
+        self.SelectMi.setFlat(True)
+        self.SelectMi.setObjectName("SelectMi")
+        self.SelectSol = QtWidgets.QPushButton(self.page_3)
+        self.SelectSol.setGeometry(QtCore.QRect(290, 230, 60, 60))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(13)
+        self.SelectSol.setFont(font)
+        self.SelectSol.setStyleSheet("border-radius: 30px;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(234, 234, 234);")
+        self.SelectSol.setFlat(True)
+        self.SelectSol.setObjectName("SelectSol")
+        self.SelectLa = QtWidgets.QPushButton(self.page_3)
+        self.SelectLa.setGeometry(QtCore.QRect(370, 230, 60, 60))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(13)
+        self.SelectLa.setFont(font)
+        self.SelectLa.setStyleSheet("border-radius: 30px;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(234, 234, 234);")
+        self.SelectLa.setFlat(True)
+        self.SelectLa.setObjectName("SelectLa")
+        self.SelectSi = QtWidgets.QPushButton(self.page_3)
+        self.SelectSi.setGeometry(QtCore.QRect(290, 310, 60, 60))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(13)
+        self.SelectSi.setFont(font)
+        self.SelectSi.setStyleSheet("border-radius: 30px;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(234, 234, 234);")
+        self.SelectSi.setFlat(True)
+        self.SelectSi.setObjectName("SelectSi")
+        self.SelectHighDo = QtWidgets.QPushButton(self.page_3)
+        self.SelectHighDo.setGeometry(QtCore.QRect(370, 310, 60, 60))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(13)
+        self.SelectHighDo.setFont(font)
+        self.SelectHighDo.setStyleSheet("border-radius: 30px;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(234, 234, 234);")
+        self.SelectHighDo.setFlat(True)
+        self.SelectHighDo.setObjectName("SelectHighDo")
+        self.SoundControl = QtWidgets.QSlider(self.page_3)
+        self.SoundControl.setGeometry(QtCore.QRect(490, 70, 31, 271))
+        self.SoundControl.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.SoundControl.setOrientation(QtCore.Qt.Vertical)
+        self.SoundControl.setObjectName("SoundControl")
+        self.label = QtWidgets.QLabel(self.page_3)
+        self.label.setGeometry(QtCore.QRect(470, 350, 71, 31))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(11)
+        self.label.setFont(font)
+        self.label.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.page_3)
+        self.label_2.setGeometry(QtCore.QRect(530, 320, 31, 31))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(11)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.page_3)
+        self.label_3.setGeometry(QtCore.QRect(530, 60, 31, 31))
+        font = QtGui.QFont()
+        font.setFamily("HY견고딕")
+        font.setPointSize(11)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
         self.StatusBar_2.raise_()
         self.KeySettingBar.raise_()
         self.KeySettingButton1.raise_()
@@ -513,6 +625,18 @@ class Ui_MainWindow(object):
         self.KeySettingButton4.raise_()
         self.KeySettingButton2.raise_()
         self.KeySettingButton6.raise_()
+        self.SelectDo.raise_()
+        self.SelectRe.raise_()
+        self.SelectFa.raise_()
+        self.SelectMi.raise_()
+        self.SelectSol.raise_()
+        self.SelectLa.raise_()
+        self.SelectSi.raise_()
+        self.SelectHighDo.raise_()
+        self.SoundControl.raise_()
+        self.label.raise_()
+        self.label_2.raise_()
+        self.label_3.raise_()
         self.WorkSpace.addWidget(self.page_3)
         self.SelectedMenu = QtWidgets.QLabel(self.centralwidget)
         self.SelectedMenu.setGeometry(QtCore.QRect(30, 85, 41, 41))
@@ -601,6 +725,17 @@ class Ui_MainWindow(object):
         self.KeySettingButton4.setText(_translate("MainWindow", "4"))
         self.KeySettingButton2.setText(_translate("MainWindow", "2"))
         self.KeySettingButton6.setText(_translate("MainWindow", "6"))
+        self.SelectDo.setText(_translate("MainWindow", "DO"))
+        self.SelectRe.setText(_translate("MainWindow", "RE"))
+        self.SelectFa.setText(_translate("MainWindow", "FA"))
+        self.SelectMi.setText(_translate("MainWindow", "MI"))
+        self.SelectSol.setText(_translate("MainWindow", "SOL"))
+        self.SelectLa.setText(_translate("MainWindow", "LA"))
+        self.SelectSi.setText(_translate("MainWindow", "SI"))
+        self.SelectHighDo.setText(_translate("MainWindow", "HDO"))
+        self.label.setText(_translate("MainWindow", "Sound"))
+        self.label_2.setText(_translate("MainWindow", "- 0"))
+        self.label_3.setText(_translate("MainWindow", "- 5"))
         self.SettingButton.setText(_translate("MainWindow", "Setting"))
 
 

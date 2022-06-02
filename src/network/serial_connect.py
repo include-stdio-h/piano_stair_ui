@@ -40,7 +40,7 @@ def serial_socket(ui):
         if lst != i:
             before_lst = lst
             lst = i
-            asyncio.run(music_player(lst, before_lst))
+            asyncio.run(music_player(lst, before_lst, ui.device_key_status))
             device_status(lst, ui)
 
 def device_status(lst, ui):

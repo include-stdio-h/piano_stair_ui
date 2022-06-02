@@ -34,17 +34,41 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
             self.StatusBar
         ]
 
+        self.key_setting_widgets = [
+            self.SelectDo,
+            self.SelectRe,
+            self.SelectMi,
+            self.SelectFa,
+            self.SelectSol,
+            self.SelectLa,
+            self.SelectSi,
+            self.SelectHighDo
+        ]
+
+        self.device_setting_widgets = [
+            self.KeySettingButton1,
+            self.KeySettingButton2,
+            self.KeySettingButton3,
+            self.KeySettingButton4,
+            self.KeySettingButton5,
+            self.KeySettingButton6,
+            self.KeySettingButton7,
+            self.KeySettingButton8
+        ]
+
+
         self.selected_menu_updown = MenuAnimation(self.SelectedMenu, b"pos")
         self.selected_menu_shape = MenuAnimation(self.SelectedMenu, b"size")
 
-        self.key_setting_menu = MenuAnimation(self.KeySettingBar, b"pos")
-
-        self.change_instrumenttheme_animation = ThemeAnimation(self.InstrumentTheme, b"geometry")
+        self.change_instrument_theme_animation = ThemeAnimation(self.InstrumentTheme, b"geometry")
         self.change_total_theme_animation = ThemeAnimation(self.TotalTheme, b"geometry")
 
         self.before_instrument = self.BassGuitarBack
         self.selected_instrument = 1
         self.current_theme = INSTRUMENTS_THEME["bass_guitar"]["style"]
+
+        self.device_key_status = [{"key" : i, "sound" : 5} for i in range(8)]
+        self.selected_device_setting = 0
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
