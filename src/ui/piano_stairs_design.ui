@@ -1479,6 +1479,9 @@ background-color: rgb(234, 234, 234);</string>
         <height>71</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
       <property name="maximum">
        <number>10</number>
       </property>
@@ -1832,6 +1835,9 @@ color: rgb(255, 255, 255);
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>-</string>
       </property>
@@ -1844,6 +1850,9 @@ color: rgb(255, 255, 255);
         <width>16</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>+</string>
