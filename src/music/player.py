@@ -18,6 +18,11 @@ def select_instrument(instrument_num):
         for key in key_lst:
             key.set_volume(0.4)
 
+def volume_setting(volume):
+    global key_lst
+    for key in key_lst:
+        key.set_volume(volume)
+
 async def music_player(lst, before_lst, device_key_status):
     for i in range(8):
         if lst[i] != before_lst[i]:

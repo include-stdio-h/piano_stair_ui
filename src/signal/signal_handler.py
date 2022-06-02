@@ -32,6 +32,8 @@ class SignalHandler():
         cls.ui.SelectSi.clicked.connect(lambda : cls.__change_device_key(6))
         cls.ui.SelectHighDo.clicked.connect(lambda : cls.__change_device_key(7))
 
+        cls.ui.VolumeController.valueChanged.connect(lambda : cls.__change_volume())
+
     @classmethod
     def __animation_signal_init(cls):
         cls.ui.change_instrument_theme_animation.Animation.finished.connect(lambda : cls.ui.WorkSpace.setStyleSheet(cls.ui.current_theme))
@@ -104,3 +106,29 @@ class SignalHandler():
 
         cls.ui.device_key_status[cls.ui.selected_device_setting]["key"] = index
         cls.ui.key_setting_widgets[index].setStyleSheet(SELECTED_KEY_STYLE)
+
+    @classmethod
+    def __change_volume(cls):
+        from music.player import volume_setting
+
+        volume_level_widgets = [
+            cls.ui.VolumeLevel1,
+            cls.ui.VolumeLevel2,
+            cls.ui.VolumeLevel3,
+            cls.ui.VolumeLevel4,
+            cls.ui.VolumeLevel5,
+            cls.ui.VolumeLevel6,
+            cls.ui.VolumeLevel7,
+            cls.ui.VolumeLevel8,
+            cls.ui.VolumeLevel9,
+            cls.ui.VolumeLevel10,
+        ]
+
+        for widget in volume_level_widgets:
+            widget.setStyleSheet("background-color: rgb(255, 255, 255);")
+
+        cls.ui.device_volume = cls.ui.VolumeController.value()
+        volume_setting(cls.ui.device_volume)
+
+        for i in range(cls.ui.device_volume):
+            volume_level_widgets[i].setStyleSheet("border-radius: 9px;\nbackground-color: rgb(157, 255, 185);\ncolor: rgb(255, 255, 255);\n")
