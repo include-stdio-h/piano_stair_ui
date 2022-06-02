@@ -1,3 +1,6 @@
+from constants import UNSELECTED_KEY_STYLE, SELECTED_KEY_STYLE
+
+
 class KeySettingSignal():
     @classmethod
     def setting_signal_init(cls, ui):
@@ -13,10 +16,22 @@ class KeySettingSignal():
 
     @classmethod
     def __change_device_key(cls, index):
-        from constants import UNSELECTED_KEY_STYLE, SELECTED_KEY_STYLE
+        before_key = cls.ui.device_key_status[cls.ui.selected_device_setting]["key"]
 
-        for i in range(len(cls.ui.key_setting_widgets)):
-            cls.ui.key_setting_widgets[i].setStyleSheet(UNSELECTED_KEY_STYLE)
+        cls.get_key_setting_widgets(cls.ui)[before_key].setStyleSheet(UNSELECTED_KEY_STYLE)
+        cls.get_key_setting_widgets(cls.ui)[index].setStyleSheet(SELECTED_KEY_STYLE)
 
         cls.ui.device_key_status[cls.ui.selected_device_setting]["key"] = index
-        cls.ui.key_setting_widgets[index].setStyleSheet(SELECTED_KEY_STYLE)
+
+    @staticmethod
+    def get_key_setting_widgets(ui):
+        return [
+            ui.SelectDo,
+            ui.SelectRe,
+            ui.SelectMi,
+            ui.SelectFa,
+            ui.SelectSol,
+            ui.SelectLa,
+            ui.SelectSi,
+            ui.SelectHighDo
+        ]

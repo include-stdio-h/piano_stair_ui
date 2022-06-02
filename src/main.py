@@ -19,43 +19,6 @@ class PianoStairUI(QtWidgets.QMainWindow, Ui_MainWindow):
         super().__init__()
 
     def variable_init(self):
-        self.instrument_backs = [
-            self.PianoBack,
-            self.HarpBack,
-            self.OrganBack,
-            self.BassGuitarBack,
-            self.AccordionBack,
-            self.VibraPhoneBack
-        ]
-
-        self.bluetooth_widgets = [
-            self.DeviceStatus,
-            self.LoggerBack,
-            self.StatusBar
-        ]
-
-        self.key_setting_widgets = [
-            self.SelectDo,
-            self.SelectRe,
-            self.SelectMi,
-            self.SelectFa,
-            self.SelectSol,
-            self.SelectLa,
-            self.SelectSi,
-            self.SelectHighDo
-        ]
-
-        self.device_setting_widgets = [
-            self.KeySettingButton1,
-            self.KeySettingButton2,
-            self.KeySettingButton3,
-            self.KeySettingButton4,
-            self.KeySettingButton5,
-            self.KeySettingButton6,
-            self.KeySettingButton7,
-            self.KeySettingButton8
-        ]
-
         self.selected_menu_updown = MenuAnimation(self.SelectedMenu, b"pos")
         self.selected_menu_shape = MenuAnimation(self.SelectedMenu, b"size")
 

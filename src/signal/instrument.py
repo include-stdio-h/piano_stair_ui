@@ -16,6 +16,8 @@ class InstrumentSignal():
 
     @classmethod
     def __change_instrument(cls, now_instrument, widget_theme):
+        instrument_backs = cls.get_instrument_backs(cls.ui)
+
         cls.ui.change_instrument_theme_animation.change_theme(widget_theme, "instrument")
         cls.ui.change_total_theme_animation.change_theme(widget_theme, "total")
 
@@ -25,5 +27,16 @@ class InstrumentSignal():
         now_instrument.setStyleSheet(SELECTED_INSTRUMENT_STYLE)
 
         cls.ui.before_instrument = now_instrument
-        cls.ui.selected_instrument = cls.ui.instrument_backs.index(now_instrument)
+        cls.ui.selected_instrument = instrument_backs.index(now_instrument)
         select_instrument(cls.ui.selected_instrument)
+
+    @staticmethod
+    def get_instrument_backs(ui):
+        return [
+            ui.PianoBack,
+            ui.HarpBack,
+            ui.OrganBack,
+            ui.BassGuitarBack,
+            ui.AccordionBack,
+            ui.VibraPhoneBack
+        ]
