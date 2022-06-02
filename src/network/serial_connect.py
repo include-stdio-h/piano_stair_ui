@@ -15,20 +15,22 @@ def serial_socket(ui):
     icon_pixmap = QPixmap()
     socket = BluetoothSocket( RFCOMM )
 
-    try:
-        socket.connect(("98:DA:60:03:C9:9C", 1))
-        print("bluetooth connected!")
-        ui.DeviceStatusLabel.setText("Ready")
-        ui.DeviceStatusLabel.setStyleSheet(DEVICE_READY_STATUS_STYLE)
-        ui.DeviceStatus.setStyleSheet(DEVICE_READY_STATUS_STYLE)
-        ui.DeviceStatusIcon.setStyleSheet(DEVICE_READY_STATUS_ICON_STYLE)
-        icon_pixmap.load("style/icons/ready.png")
-    except:
-        ui.DeviceStatusLabel.setText("Disable")
-        ui.DeviceStatusLabel.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
-        ui.DeviceStatus.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
-        ui.DeviceStatusIcon.setStyleSheet(DEVICE_DISABLE_STATUS_ICON_STYLE)
-        icon_pixmap.load("style/icons/disable.png")
+    while True:
+        try:
+            socket.connect(("98:DA:60:03:C9:9C", 1))
+            print("bluetooth connected!")
+            ui.DeviceStatusLabel.setText("Ready")
+            ui.DeviceStatusLabel.setStyleSheet(DEVICE_READY_STATUS_STYLE)
+            ui.DeviceStatus.setStyleSheet(DEVICE_READY_STATUS_STYLE)
+            ui.DeviceStatusIcon.setStyleSheet(DEVICE_READY_STATUS_ICON_STYLE)
+            icon_pixmap.load("style/icons/ready.png")
+            break
+        except:
+            ui.DeviceStatusLabel.setText("Disable")
+            ui.DeviceStatusLabel.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
+            ui.DeviceStatus.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
+            ui.DeviceStatusIcon.setStyleSheet(DEVICE_DISABLE_STATUS_ICON_STYLE)
+            icon_pixmap.load("style/icons/disable.png")
 
     ui.DeviceStatusIcon.setPixmap(icon_pixmap)
 
