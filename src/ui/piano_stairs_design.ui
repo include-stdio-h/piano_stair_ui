@@ -212,7 +212,7 @@ border-style: outset;</string>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="DeviceStatus">
@@ -1485,8 +1485,11 @@ background-color: rgb(234, 234, 234);</string>
       <property name="maximum">
        <number>10</number>
       </property>
+      <property name="value">
+       <number>10</number>
+      </property>
       <property name="sliderPosition">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="tracking">
        <bool>true</bool>
@@ -1562,7 +1565,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1587,7 +1593,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1612,7 +1621,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1637,7 +1649,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1662,7 +1677,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1687,7 +1705,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1712,7 +1733,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1737,7 +1761,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1762,7 +1789,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -1787,7 +1817,10 @@ background-color: rgb(255, 255, 255);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-radius: 9px;
+background-color: rgb(157, 255, 185);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string/>
