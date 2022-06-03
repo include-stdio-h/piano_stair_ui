@@ -7,13 +7,13 @@ pygame.mixer.pre_init(channels=8)
 pygame.mixer.init()
 pygame.init()
 
-key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[3]}/{key}") for key in MUSIC_KEY_FILES]
+key_lst = [pygame.mixer.Sound(f"features/music/instruments/{INSTRUMENTS[3]}/{key}") for key in MUSIC_KEY_FILES]
 channel_lst = [pygame.mixer.Channel(i) for i in range(8)]
 volume = 10
 
 def select_instrument(instrument_num):
     global key_lst
-    key_lst = [pygame.mixer.Sound(f"music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in MUSIC_KEY_FILES]
+    key_lst = [pygame.mixer.Sound(f"features/music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in MUSIC_KEY_FILES]
     volume_setting(volume)
 
 def volume_setting(new_volume):
