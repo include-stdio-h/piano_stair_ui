@@ -14,10 +14,15 @@ volume = 10
 def select_instrument(instrument_num):
     global key_lst
     key_lst = [pygame.mixer.Sound(f"features/music/instruments/{INSTRUMENTS[instrument_num]}/{key}") for key in MUSIC_KEY_FILES]
-    volume_setting(volume)
+
+    if INSTRUMENTS[instrument_num] == "Vibra_phone":
+        volume_setting(volume-3 if volume-3 >= 0 else 1)
+    else:
+        volume_setting(volume)
 
 def volume_setting(new_volume):
     global key_lst, volume
+
     volume = new_volume
 
     for key in key_lst:

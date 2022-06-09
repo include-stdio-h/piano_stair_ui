@@ -47,16 +47,16 @@ def serial_socket(ui):
 async def device_status(lst, ui):
     ui_status = [ui.Status1, ui.Status2, ui.Status3, ui.Status4, ui.Status5, ui.Status6, ui.Status7, ui.Status8]
 
-    for _ui, _status in zip(ui_status, lst):
-        await device_status_change(_status, _ui)
-    # for i in range(8):
-    #     if lst[i] == '0' or lst[i] == '1':
-    #         status[i].setStyleSheet(DEVICE_READY_STATUS_STYLE)
-    #     elif lst[i] == '2':
-    #         status[i].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
+    # for _ui, _status in zip(ui_status, lst):
+    #     await device_status_change(_status, _ui)
+    for i in range(8):
+        if lst[i] == '0' or lst[i] == '1':
+            ui_status[i].setStyleSheet(DEVICE_READY_STATUS_STYLE)
+        elif lst[i] == '2':
+            ui_status[i].setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
 
-async def device_status_change(status, ui):
-    if status == '0' or status == '1':
-        ui.setStyleSheet(DEVICE_READY_STATUS_STYLE)
-    elif status == '2':
-        ui.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
+# async def device_status_change(status, ui):
+#     if status == '0' or status == '1':
+#         ui.setStyleSheet(DEVICE_READY_STATUS_STYLE)
+#     elif status == '2':
+#         ui.setStyleSheet(DEVICE_DISABLE_STATUS_STYLE)
